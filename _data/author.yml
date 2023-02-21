@@ -1,0 +1,23 @@
+name: Mike Logaciuk
+description: "
+  <p>
+    DataOps/DevOps/FinOps Engineer in TERG S.A.
+  </p>
+  <br/>
+  <p>
+    Not much because of my NDA, can be found on my: <a href='https://github.com/mikelogaciuk' target='_blank'>Github</a>
+  </p>
+  <br>
+"
+email: michal.logaciuk@hotmail.com
+contact:
+  - title: linkedin
+    url: https://www.linkedin.com/in/michal-logaciuk/
+  - title: github
+    url: https://github.com/mikelogaciuk
+  - title: dev
+    url: https://dev.to/mikelogaciuk
+  - title: hashnode
+    url: https://mlog.hashnode.dev/
+  - title: email
+    url: mailto:michal.logaciuk@hotmail.com
