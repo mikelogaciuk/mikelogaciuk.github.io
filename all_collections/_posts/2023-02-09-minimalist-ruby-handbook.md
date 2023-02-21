@@ -5,10 +5,7 @@ date: 2023-02-09
 category: ["ruby", "handbook", "notes"]
 ---
 
-# rubyme
-
 <!-- TOC -->
-* [rubyme](#rubyme)
   * [Introduction](#introduction)
   * [Variables](#variables)
   * [Comments](#comments)
