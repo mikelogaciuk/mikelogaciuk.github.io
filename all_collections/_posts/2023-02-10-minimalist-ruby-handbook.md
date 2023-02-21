@@ -369,7 +369,7 @@ Go back to [contents](#rubyme).
 ## Methods
 
 In Ruby, the combined comparison operator, <=>, also known as the spaceship operator is used to compare two objects.
-It returns 0 if the first operand equals the second, 1 if the first operand is greater than the second, and -1 if the first operand is less than the second.
+It returns `0` if the first operand equals the second, `1` if the first operand is greater than the second, and `-1` if the first operand is less than the second.
 
 ```ruby
 puts "Freya" <=> "Alice"
@@ -506,9 +506,9 @@ eu07 = Locomotive.new('Pafag', 'EU07', 'electic', 6)
 
 Inheritance in Ruby is quite simple, but you need to take in mind:
 
-    The initialize method is also inherited when creating a child class.
-    Any method can be subscribed in a child class in order to custom it by defining a method with the same name.
-
+- The initialize method is also inherited when creating a child class.
+- Any method can be subscribed in a child class in order to custom it by defining a method with the same name.
+- 
 Inheritance example:
 
 ```ruby
@@ -531,7 +531,8 @@ end
 Simple class with class variable:
 
 ```ruby
-# In Ruby, class variables are attached to the class in which they are declared. A class variable should be declared with two @ symbols preceding it.
+# In Ruby, class variables are attached to the class in which they are declared. 
+# A class variable should be declared with two @ symbols preceding it.
 class Store
   @@stores = 0
 
@@ -610,7 +611,8 @@ class Product
   attr_accessor :net_price, :minimal_price, :tax, :gross_price
 
   def description
-    puts "The product with code: #{@product}, has initial net price set to: #{@net_price} with tax: #{@tax}, which gives: #{@gross_price} gross price in total. "
+    puts "The product with code: #{@product}, with net price: #{@net_price} and tax: #{@tax}."
+    puts "Has: #{@gross_price} gross price in total. "
   end
 
 end
@@ -653,8 +655,8 @@ end
 
 Ruby allows two main types of inheritance:
 
-    class inheritance 
-    interface inheritance
+- class inheritance 
+- interface inheritance
 
 Interface inheritance is used to isolate specific behaviours.
 
