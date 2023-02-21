@@ -2,8 +2,8 @@ title: Mike Logaciuk
 markdown: kramdown
 
 # basic setup
-domain: mikelogaciuk.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://mikelogaciuk.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+domain: mikelogaciuk.github.io              # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://mikelogaciuk.github.io         # the base hostname and protocol for your site, e.g. http://example.com
 baseurl: /mikelogaciuk.github.io/           # place folder name if the site is served in a subfolder
 
 
