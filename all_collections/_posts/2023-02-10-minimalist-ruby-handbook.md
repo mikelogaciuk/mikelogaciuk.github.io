@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Rubyme - My minimalist Ruby Handbook
+title: My minimalist Ruby Handbook
 date: 2023-02-09
 category: ["ruby", "handbook", "notes"]
 ---
