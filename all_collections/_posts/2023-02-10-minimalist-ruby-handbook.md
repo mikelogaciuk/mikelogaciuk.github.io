@@ -45,14 +45,13 @@ Since Ruby is a dynamic interpreted language, an interpreter sets types automati
 
 Ruby has data structures such as:
 
-    booleans
-    strings
-    integers
-    floats
-    arrays (list)
-    hashes (dictionary for e.g. in Python)
-    arrays of hashes
-    etc..
+- booleans
+- strings
+- integers
+- floats
+- arrays (list)
+- hashes (dictionary for e.g. in Python)
+- arrays of hashes etc..
 
 For printing (console log) we use keyword `puts 'Some text'` or `print('Some text')`.
 
@@ -223,16 +222,18 @@ now.strftime("%Y-%m-%d") # => '2020-01-01'
 
 Snippet:
 
-    %d    Day of the month (01..31)
-    %m    Month of the year (01..12) Use %-m for (1..12)
-    %k    Hour (0..23)
-    %M    Minutes
-    %S    Seconds (00..60)
-    %I    Hour (1..12)
-    %p    AM/PM
-    %Y    Year
-    %A    Day of the week (name)
-    %B    Month (name)
+```xd
+%d    Day of the month (01..31)
+%m    Month of the year (01..12) Use %-m for (1..12)
+%k    Hour (0..23)
+%M    Minutes
+%S    Seconds (00..60)
+%I    Hour (1..12)
+%p    AM/PM
+%Y    Year
+%A    Day of the week (name)
+%B    Month (name)
+```
 
 Go back to [contents](#rubyme).
 
@@ -240,8 +241,8 @@ Go back to [contents](#rubyme).
 
 In Ruby, there are two extremely native looking keyword, which resemble the native language:
 
-    unless
-    until
+- unless
+- until
 
 Example:
 
