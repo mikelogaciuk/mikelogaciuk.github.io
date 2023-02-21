@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spin default users and database on fly in MongoDB using Docker Compose
+title: Spin default users and databases on the fly in MongoDB using Docker Compose
 date: 2022-12-01
 category: ["docker", "compose", "mongodb"]
 ---
