@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Go Notes Part One
+title: Go Notes - The Goofer Land
 date: 2023-02-21
 category: ["go", "golang", "handbook", "notes"]
 ---
@@ -8,25 +8,26 @@ category: ["go", "golang", "handbook", "notes"]
 ![gonotes_header](/img/GOPHER_SHARE.png)
 
 <!-- TOC -->
-* [About](#about)
-* [Setup](#setup)
-* [Starting a project](#starting-a-project)
-* [Standard libraries](#standard-libraries)
-* [CLI](#cli)
-* [Entry point and main package](#entry-point-and-main-package)
-* [Basics](#basics)
-  * [Variables declaration](#variables-declaration)
-  * [Data types](#data-types)
-  * [Type conversion](#type-conversion)
-  * [Zero values](#zero-values)
-  * [Variable printing](#variable-printing)
-* [Pointers](#pointers)
-* [Types declaration](#types-declaration)
-* [The flow](#the-flow)
-  * [If/else](#ifelse)
-  * [Switch](#switch)
-  * [For loops](#for-loops)
-<!-- TOC -->
+
+- [About](#about)
+- [Setup](#setup)
+- [Starting a project](#starting-a-project)
+- [Standard libraries](#standard-libraries)
+- [CLI](#cli)
+- [Entry point and main package](#entry-point-and-main-package)
+- [Basics](#basics)
+  - [Variables declaration](#variables-declaration)
+  - [Data types](#data-types)
+  - [Type conversion](#type-conversion)
+  - [Zero values](#zero-values)
+  - [Variable printing](#variable-printing)
+- [Pointers](#pointers)
+- [Types declaration](#types-declaration)
+- [The flow](#the-flow)
+  - [If/else](#ifelse)
+  - [Switch](#switch)
+  - [For loops](#for-loops)
+  <!-- TOC -->
 
 ## About
 
@@ -385,7 +386,7 @@ import "tempconversion"
 import "fmt"
 
 func main() {
-	
+
 }
 ```
 
@@ -451,8 +452,7 @@ func main() {
 }
 ```
 
-*Please note that there is no ternary operator in Go (e.g. like in Python: min = a if a < b else b)*
-
+_Please note that there is no ternary operator in Go (e.g. like in Python: min = a if a < b else b)_
 
 ### Switch
 
@@ -499,9 +499,32 @@ func main() {
 }
 ```
 
-*Please note the `fallthrough` keyword that is used to transfer control to the next case even though the current case might have matched.*
+_Please note the `fallthrough` keyword that is used to transfer control to the next case even though the current case might have matched._
 
 ### For loops
+
+Basic loop in `Go` looks like this:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+}
+```
+
+Keep in mind, that `basic loop` has three elements:
+
+- init statement
+- condition expression
+- post statement
+
+Taking loop above as an example, the first is `init statement` where we initiate starting point to `0`. Then we define `condition` where the loop iterates until `i` is below `10`.
+Third is `post statement` which says that we the loop has to increment `i` everytime it loops over it.
 
 Another example, are `for/range loops`:
 
@@ -518,7 +541,7 @@ func iterate(fw [4]int, fwx [5]int) {
 	for _, v := range fw {
 		fmt.Printf("%d\n", v)
 	}
-	
+
 	// Keys and values
     for i, v := range fwx {
         fmt.Printf("%d %d\n", i, v)
@@ -541,6 +564,10 @@ fmt.Printf("%q\n", runes) // "['H' 'i' ',' ' ' ' M' 'i' 'k' 'e']"
 ```
 
 ```go
+package main
+
+import "fmt"
+
 func equal(x, y map[string]int) bool {
     if len(x) != len(y) {
         return false
