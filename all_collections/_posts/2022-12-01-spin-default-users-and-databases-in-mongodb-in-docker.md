@@ -240,9 +240,4 @@ docker compose down -v
 
 ## Result
 
-If everything is okay, we should see something like this:
-
-
-![Screenshot](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wov4e4aqe5xcb0nibhzf.png)
-
-And be able to join our instance with user and password given in our `compose-file`.
+If everything is okay, you should able to join your newly created instance with user and password given in our `compose-file`.
