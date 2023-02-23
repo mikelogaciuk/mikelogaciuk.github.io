@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Go Notes - The Goofer Land
+title: GOpher Notes
 date: 2023-02-21
 category: ["go", "golang", "handbook", "notes"]
 ---
