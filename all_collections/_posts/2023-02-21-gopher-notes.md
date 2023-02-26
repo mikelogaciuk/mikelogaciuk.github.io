@@ -5,7 +5,7 @@ date: 2023-02-21
 category: ["go", "golang", "handbook", "notes"]
 ---
 
-![Gopher in the fire](./img/This_is_Fine_Gopher.png)
+![Gopher in the fire](/img/This_is_Fine_Gopher.png)
 
 ## Table of contents
 
@@ -453,7 +453,7 @@ func main() {
 }
 ```
 
-![gonotes_header](./img/GOPHER_SHARE.png)
+![gonotes_header](/img/GOPHER_SHARE.png)
 
 ## The flow
 
@@ -609,7 +609,7 @@ func equal(x, y map[string]int) bool {
 }
 ```
 
-![Hugging](img/Hugging_Gophers.png)
+![Hugging](/img/Hugging_Gophers.png)
 
 ## Functions
 
