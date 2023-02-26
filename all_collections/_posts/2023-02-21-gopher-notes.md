@@ -821,9 +821,9 @@ func main() {
 
 ### Exporting fields
 
-As I mentioned earlier, only fields/variables etc with name starting with capital letter are allowed to export.
+As I mentioned earlier, only fields/variables etc with name starting with capital letter can be exported.
 
-So in this case:
+So in this case below, struct named `Member` will be exported, but not the field `placeOfBirth`:
 
 ```go
 type Member struct {
@@ -832,8 +832,6 @@ type Member struct {
     placeOfBirth        string
 }
 ```
-
-Struct `Member` will be exported, but without a field `placeOfBirth`.
 
 ### Composition
 
