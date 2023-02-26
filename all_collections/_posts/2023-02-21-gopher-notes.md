@@ -737,7 +737,7 @@ func add(values ... int) int {
 func myFunction(p *int) {}
 ```
 
-[AzureBit](/img/Azure_Bit_Gopher.png)
+![AzureBit](/img/Azure_Bit_Gopher.png)
 
 ## Structs
 
