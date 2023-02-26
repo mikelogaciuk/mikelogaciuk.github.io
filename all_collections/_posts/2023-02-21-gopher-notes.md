@@ -852,7 +852,7 @@ type Locomotive struct {
 
 ### Tags
 
-In `Go` we can find term called `struct tags` which are often used encoding packages and `ORMS`:
+In `Go` we can find term called `struct tags` which are often used by `encoding packages` and `ORMS`:
 
 ```go
 type Animal struct {
