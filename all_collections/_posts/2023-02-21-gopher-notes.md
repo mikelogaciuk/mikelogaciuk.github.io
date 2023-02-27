@@ -741,11 +741,11 @@ func myFunction(p *int) {}
 
 ## Structs
 
-If are the one like me, coming from an object-oriented programming language, you can about structs as lightweight classes.
+If you are coming from an object-oriented programming language, you can think about structs as lightweight classes.
 
 `Structs` support composition, but do not support inheritance.
 
-We can define `struct` like this:
+We can define `structs` in a such way:
 
 ```go
 type Store struct {
@@ -757,7 +757,7 @@ Warehouse int
 
 We can initialize objects without giving its names, but this would create an empty object.
 
-To initialize the objects we use:
+In general - in order to create an object we type something like this:
 
 ```go
 func main() {
@@ -778,7 +778,7 @@ func main() {
 
 ### Fields access
 
-Accessing fields is quite similar to other languages:
+Fields access in `structs` is quite similar to any other languages:
 
 ```go
 type Warehouse struct {
@@ -821,9 +821,7 @@ func main() {
 
 ### Exporting fields
 
-As I mentioned earlier, only fields/variables etc with name starting with capital letter can be exported.
-
-So in this case below, struct named `Member` will be exported, but not the field `placeOfBirth`:
+Only fields with capital letters are exported, which means that in this example:
 
 ```go
 type Member struct {
@@ -832,6 +830,8 @@ type Member struct {
     placeOfBirth        string
 }
 ```
+
+Struct `Member` will be exported, but without a field `placeOfBirth`.
 
 ### Composition
 
@@ -852,11 +852,10 @@ type Locomotive struct {
 
 ### Tags
 
-In `Go` we can find term called `struct tags` which are often used by `encoding packages` and `ORMS`:
+In `Go` exists term called `struct tags`. Such tags are often used in various `encoding packages` and `ORMS`:
 
 ```go
 type Animal struct {
 	Name    string `json:"name"`
 	Age     int    `json:"age"`
 }
-```
