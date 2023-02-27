@@ -44,7 +44,7 @@ category: ["go", "golang", "handbook", "notes"]
 * [Structs](#structs)
   * [Fields access](#fields-access)
   * [Pointers and structs](#pointers-and-structs)
-  * [Exporting fields](#exporting-fields)
+  * [Fields visibility](#fields-visibility)
   * [Composition](#composition)
   * [Tags](#tags)
 <!-- TOC -->
@@ -819,7 +819,7 @@ func main() {
 }
 ```
 
-### Exporting fields
+### Fields visibility
 
 Only fields with capital letters are exported, which means that in this example:
 
