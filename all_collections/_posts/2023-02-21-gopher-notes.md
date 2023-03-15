@@ -47,6 +47,8 @@ category: ["go", "golang", "handbook", "notes"]
   * [Fields visibility](#fields-visibility)
   * [Composition](#composition)
   * [Tags](#tags)
+* [Methods](#methods)
+  * [Methods and Pointer receivers](#methods-and-pointer-receivers)
 <!-- TOC -->
 
 ## About
@@ -859,4 +861,116 @@ type Animal struct {
 	Name    string `json:"name"`
 	Age     int    `json:"age"`
 }
+```
+
+![BlueGopher](/img/BLUE_GOPHER.png)
+
+## Methods
+
+As you already know, Go is not an object-oriented language. While it has no classes, objects or inheritance, it `supports types and composition`, which means that we can define `methods` on types.
+
+In short, it is a function that has special so called `receiver argument`:
+
+```go
+func (variable Type) MethodName(params) (returnTypes) {}
+```
+
+For example, let's define a `Train`:
+
+```go
+type Engine struct {
+    Fuel   string
+    Power  float32
+    Torque float32
+}
+
+type Locomotive struct {
+    Engine Engine
+    Axis   int
+}
+
+type Train struct {
+    Traction     Locomotive
+    CoachesType  string
+    CoachesCount int
+    Destination  string
+}
+
+func (t Train) IsPassenger() bool {
+    return t.CoachesType == "passenger"
+}
+```
+
+Then we can call a method on our newly created `struct`:
+
+```go
+func main() {
+	myEngine := Engine{"Diesel", 3400.00, 9000.00}
+	myLocomotive := Locomotive{myEngine, 6}
+	myTrain := Train{myLocomotive, "passenger", 16, "Warsaw"}
+
+	fmt.Println("Is passenger: ", myTrain.IsPassenger())
+```
+
+### Methods and Pointer receivers
+
+Let's consider a method that updates `CoachesType`:
+
+```go
+func (t Train) UpdateCoachesType(name string) {
+	t.CoachesType = name
+}
+```
+
+Now let's try to run this:
+
+```go
+func main() {
+	myEngine := Engine{"Diesel", 3400.00, 9000.00}
+	myLocomotive := Locomotive{myEngine, 6}
+	myTrain := Train{myLocomotive, "passenger", 16, "Warsaw"}
+
+	fmt.Println("Is passenger: ", myTrain.IsPassenger())
+	
+	myTrain.UpdateCoachesType("freight")
+	fmt.Println(myTrain.CoachesType)
+}
+```
+
+This seems that something is not up, the `CoachesType` is not updated:
+
+```shell
+Is passenger:  true
+passenger
+```
+
+No worries, this is an expected language behavior since methods without pointer receivers do not update the values.
+
+But if we do this like this:
+
+```go
+func (t *Train) UpdateCoachesTypeProper(name string) {
+	t.CoachesType = name
+}
+
+func main() {
+	myEngine := Engine{"Diesel", 3400.00, 9000.00}
+	myLocomotive := Locomotive{myEngine, 6}
+	myTrain := Train{myLocomotive, "passenger", 16, "Warsaw"}
+
+	fmt.Println("Is passenger: ", myTrain.IsPassenger())
+	myTrain.UpdateCoachesType("freight")
+	fmt.Println(myTrain.CoachesType)
+
+	myTrain.UpdateCoachesTypeProper("freight")
+	fmt.Println(myTrain.CoachesType)
+}
+```
+
+We can notice that the value has changed:
+
+```shell
+Is passenger:  true
+passenger
+freight
 ```
