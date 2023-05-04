@@ -5,7 +5,7 @@ date: 2023-05-05
 category: ["devops", "debian", "handbook", "notes"]
 ---
 
-![Gopher in the fire](/img/devops.svg)
+![Devops](/img/devops.svg)
 
 ## Table of contents
 
