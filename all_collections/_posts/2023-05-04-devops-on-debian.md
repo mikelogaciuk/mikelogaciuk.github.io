@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DevOps on Debian
-date: 2023-05-05
+date: 2023-05-04
 category: ["devops", "debian", "handbook", "notes"]
 ---
 
