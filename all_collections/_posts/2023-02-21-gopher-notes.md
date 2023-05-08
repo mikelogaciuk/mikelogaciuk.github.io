@@ -776,7 +776,7 @@ func main() {
 }
 ```
 
-*Note: You need to provide all the values or compiler with fail.*
+*Note: You need to provide all the values or compiler will fail.*
 
 ### Fields access
 
