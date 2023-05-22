@@ -63,3 +63,116 @@ TBA
 ## Conclusion
 
 TBA
+
+## AI sh*t
+
+Crystal is a high-level, general-purpose, object-oriented programming language that combines the elegance and productivity of Ruby with the speed, efficiency, and type safety of a compiled language. It was designed and developed by Ary Borenszweig, Juan Wajnerman, Brian Cardiff and more than 400 contributors. In this blog post, we will explore some of the features and benefits of Crystal, as well as its future prospects and challenges.
+
+## Language history
+
+Crystal was born in June 2011, with the aim of merging the best aspects of Ruby and C. The initial name of the language was Joy, but it was soon changed to Crystal. The first version of the Crystal compiler was written in Ruby, but it was later rewritten in Crystal itself, becoming self-hosting in November 2013. The first official release of Crystal was in June 2014. Since then, Crystal has been steadily growing in popularity and adoption, reaching the TIOBE index in July 2016.
+
+## Language syntax
+
+Crystal's syntax is heavily inspired by Ruby's, so it feels natural to read and easy to write. It has the added benefit of a lower learning curve for experienced Ruby developers. 
+Here are some examples of Crystal code:
+
+crystal
+# A very basic HTTP server
+require "http/server"
+
+server = HTTP::Server.new do |context|
+context.response.content_type = "text/plain"
+context.response.print "Hello world, got #{context.request.path}!"
+end
+
+puts "Listening on http://127.0.0.1:8080"
+server.listen(8080)
+
+# A simple class definition
+class Person
+property name : String
+property age : Int32
+
+def initialize(@name, @age)
+end
+
+def greet
+puts "Hello, I'm #{name} and I'm #{age} years old."
+end
+end
+
+person = Person.new "Alice", 25
+person.greet
+
+# A macro that defines a method that returns its name
+macro def_name
+def name
+{{@type.name.stringify}}
+end
+end
+
+class Foo
+def_name
+end
+
+class Bar < Foo
+end
+
+foo = Foo.new
+bar = Bar.new
+puts foo.name # => Foo
+puts bar.name # => Bar
+```
+
+As you can see, Crystal code is concise, expressive, and readable. It also supports many features that make programming more enjoyable and productive, such as:
+
+- Blocks and lambdas
+- Multiple dispatch
+- Method overloading and overriding
+- Modules and mixins
+- Enums and structs
+- Generics and aliases
+- Exceptions and fibers
+- Metaprogramming and macros
+
+## Language speed
+
+One of the main goals of Crystal is to achieve high performance without sacrificing developer happiness. Crystal achieves this by being a compiled language with static type checking, but without requiring explicit type annotations. Crystal uses an advanced global type inference algorithm that can deduce the types of variables and method arguments from their usage. This way, the compiler can generate efficient native code using an LLVM backend, without losing the flexibility and expressiveness of a dynamic language.
+
+Crystal also supports concurrency through green threads called fibers. Fibers communicate with each other using channels, as in Go or Clojure, without having to resort to shared memory or locks. This makes concurrency easier to reason about and more scalable.
+
+To illustrate the speed of Crystal, let's compare it with Ruby and C using some simple benchmarks. We will use the following code snippets to measure the time it takes to calculate the sum of the squares of the first 10 million integers:
+
+```ruby
+# Ruby code
+sum = 0
+(1..10_000_000).each do |i|
+sum += i * i
+end
+puts sum
+```
+
+```crystal
+# Crystal code
+sum = 0
+(1..10_000_000).each do |i|
+sum += i * i
+end
+puts sum
+```
+
+```c
+// C code
+#include <stdio.h>
+
+int main() {
+long long sum = 0;
+for (int i = 1; i <= 10000000; i++) {
+sum += i * i;
+}
+printf("%lld\n", sum);
+}
+```
+
+so it feels natural to read and easy to write. It has the added benefit of a lower learning curve for experienced Ruby developers. 
