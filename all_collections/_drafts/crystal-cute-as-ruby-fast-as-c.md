@@ -11,15 +11,15 @@ TBA
 
 ## Ruby
 
-Imagine, to have programming language with a simplicity and cuteness of Ruby, while being still fast and typed.
-Sounds like a little bit too much of dream isn't it?
+Imagine, programming language with a simplicity and cuteness of Ruby, that is still fast as C and statically typed.
+Sounds like a little bit too much of dream isn't it? 
 
-Once I thought, that `Go` could be `that` language, but it didn't deliver what I wanted.
-Nevertheless `Go` is still great language, with a great idea of simplicity in mind, filled with great performance and cute syntax - but...?
-It's not that I wanted it to be - its syntax is not that simple and yet every time I see this `if err` clause scattered multiple times in code - I wanna jump from the roof.
-To be honest, once you spent some time in Ruby - you fell in love in its syntax and productivity and just want it more. 
+Don't get me wrong, once I thought, that `Go` would be `that` language, but it didn't.
+Of course `Go` is still great language, with a great idea of simplicity in mind, filled with great performance and interesting syntax - but it's not that... 
 
-Unfortunately, as if in real world, with cuteness, comes nightmare: `slow speed`. 
+It's not a secret that once you spent some time in Ruby - you simply fall in love in its syntax and productivity.
+
+Unfortunately, this has some of its night `slow speed`. 
 
 Every developer who works or worked with Ruby would say that is the most beautiful languages to work with, but: `It's sad that it's not that fast.`.
 The reason why Ruby looses against other languages is its nature, as an authors of language say:
