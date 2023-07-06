@@ -8,52 +8,62 @@ category: ["devops", "debian", "handbook", "notes"]
 ![Devops](/img/devops.svg)
 
 <!-- TOC -->
-* [Git](#git)
-* [Zsh](#zsh)
-* [Oh My Zsh](#oh-my-zsh)
-  * [Plugins](#plugins)
-* [Fonts](#fonts)
-* [Powerlevel10k](#powerlevel10k)
-* [Build essentials](#build-essentials)
-* [Snap](#snap)
-* [Flatpak](#flatpak)
-* [GlobalProtect OpenConnect](#globalprotect-openconnect)
-  * [Debian 12+](#debian-12)
-* [Homebrew](#homebrew)
-* [Docker](#docker)
-* [Setup](#setup)
-  * [Add Docker to sudoers](#add-docker-to-sudoers)
-  * [IP Range](#ip-range)
-  * [Nerdctl](#nerdctl)
-  * [Portainer](#portainer)
-* [Kubernetes](#kubernetes)
-  * [Kubectl](#kubectl)
-  * [VMware Tanzu](#vmware-tanzu)
-  * [Helm](#helm)
-  * [Argo](#argo)
-* [CLI's](#clis)
-  * [AWS CLI](#aws-cli)
-  * [EKSCTL](#eksctl)
-  * [Azure CLI](#azure-cli)
-* [Apps](#apps)
-  * [VSCode](#vscode)
-  * [JetBrains](#jetbrains)
-  * [Flameshot](#flameshot)
-* [Packages](#packages)
-  * [Kerberos](#kerberos)
-  * [Oracle Client](#oracle-client)
-  * [Microsoft SQL Server ODBC](#microsoft-sql-server-odbc)
-* [Languages](#languages)
-  * [Python](#python)
-  * [Ruby](#ruby)
-  * [Crystal](#crystal)
-  * [Go](#go)
-  * [Rust](#rust)
-  * [Nim](#nim)
-  * [Scala](#scala)
-  * [Elixir](#elixir)
-  * [Typescript](#typescript)
-<!-- TOC -->
+
+- [Git](#git)
+- [Zsh](#zsh)
+- [Oh My Zsh](#oh-my-zsh)
+  - [Plugins](#plugins)
+- [Fonts](#fonts)
+- [Powerlevel10k](#powerlevel10k)
+- [Build essentials](#build-essentials)
+- [Snap](#snap)
+- [Flatpak](#flatpak)
+- [GlobalProtect OpenConnect](#globalprotect-openconnect)
+  - [Debian 12+](#debian-12)
+- [Homebrew](#homebrew)
+- [Docker](#docker)
+- [Setup](#setup)
+  - [Add Docker to sudoers](#add-docker-to-sudoers)
+  - [IP Range](#ip-range)
+  - [Nerdctl](#nerdctl)
+  - [Portainer](#portainer)
+- [QEMU/KVM](#qemukvm)
+  - [Install QEMU/KVM](#install-qemukvm)
+  - [Test QEMU/KVM](#test-qemukvm)
+  - [Bridge network for VMs](#bridge-network-for-vms)
+- [Kubernetes](#kubernetes)
+  - [Kubectl](#kubectl)
+  - [VMware Tanzu](#vmware-tanzu)
+  - [Helm](#helm)
+  - [Argo](#argo)
+- [CLI's](#clis)
+  - [TERRAFORM](#terraform)
+  - [VAGRANT](#vagrant)
+  - [AWS CLI](#aws-cli)
+  - [EKSCTL](#eksctl)
+  - [Azure CLI](#azure-cli)
+- [Apps](#apps)
+  - [VSCode](#vscode)
+  - [JetBrains](#jetbrains)
+  - [Flameshot](#flameshot)
+  - [Github Desktop](#github-desktop)
+- [Packages](#packages)
+  - [Kerberos](#kerberos)
+  - [Oracle Client](#oracle-client)
+  - [Microsoft SQL Server ODBC](#microsoft-sql-server-odbc)
+- [Languages](#languages)
+  - [Python](#python)
+  - [Ruby](#ruby)
+  - [Crystal](#crystal)
+  - [Go](#go)
+  - [Rust](#rust)
+  - [Nim](#nim)
+  - [Scala](#scala)
+  - [Elixir](#elixir)
+  - [Typescript](#typescript)
+  - [Dart](#dart)
+  - [Flutter](#flutter)
+  - [Chrome](#chrome)
 
 ## Git
 
@@ -323,6 +333,64 @@ docker volume create portainer_data \
 
 Then visit: [https://localhost:9443/](https://localhost:9443/).
 
+## QEMU/KVM
+
+### Install QEMU/KVM
+
+For a `QEMU and KVM`, type:
+
+```shell
+sudo apt install -y qemu-kvm libvirt-daemon  bridge-utils virtinst libvirt-daemon-system
+sudo apt install -y virt-top libguestfs-tools libosinfo-bin  qemu-system virt-manager
+```
+
+### Test QEMU/KVM
+
+To test it out, type for example:
+
+```shell
+sudo virt-install \
+--name deb11 \
+--ram 2048 \
+--vcpus 2 \
+--disk path=/var/lib/libvirt/images/deb11-vm.qcow2,size=20 \
+--os-type linux \
+--os-variant debian9 \
+--network bridge=br1 \
+--graphics none \
+--console pty,target_type=serial \
+--location 'http://ftp.debian.org/debian/dists/bullseye/main/installer-amd64/' \
+--extra-args 'console=ttyS0,115200n8 serial'
+```
+
+### Bridge network for VMs
+
+In order to make your VM's talk to outside, you need to have Linux bridge:
+
+```shell
+sudo nano /etc/network/interfaces
+```
+
+And if your main interface is `enp8s0`, add something like this:
+
+```shell
+# Primary network interface
+auto enp8s0
+iface ens3 inet manual
+
+# Bridge definitions
+auto br1
+iface br1 inet static
+bridge_ports enp8s0
+bridge_stp off
+address 192.168.2.203
+network 192.168.2.1
+netmask 255.255.255.0
+broadcast 192.168.2.250
+gateway 192.168.2.101
+dns-nameservers 8.8.8.8
+```
+
 ## Kubernetes
 
 ### Kubectl
@@ -387,6 +455,44 @@ brew install argo argocd
 ```
 
 ## CLI's
+
+### TERRAFORM
+
+For `Terraform` instalation type:
+
+```shell
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+```
+
+And add it to your `.zshrc`:
+
+```shell
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+```
+
+### VAGRANT
+
+For `Vagrant` type:
+
+```shell
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install vagrant
+```
+
+In case of usage with KVM/QEMU, install this:
+
+```shell
+vagrant plugin install vagrant-libvirt && vagrant plugin install vagrant-mutate
+```
+
+`Note: That you need to have QEMU/KVM and libvrt installed`.
 
 ### AWS CLI
 
@@ -453,6 +559,16 @@ For screenshot app like `Lightshoot` on Windows, use this:
 
 ```shell
 sudo apt install flameshot
+```
+
+### Github Desktop
+
+For `Github Desktop`, please type:
+
+```shell
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+sudo apt update -y && sudo apt install github-desktop
 ```
 
 ## Packages
@@ -715,10 +831,22 @@ For Scala, type:
 curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
 ```
 
-And add to `.zshrc`:
+And install Java:
 
 ```shell
-echo "export JAVA_HOME=/usr/lib/jvm/default" >> ~/.zshrc
+sudo apt install default-jre && sudo apt install default-jdk
+```
+
+Then check installed builds:
+
+```shell
+sudo update-alternatives --config java && sudo update-alternatives --config javac
+```
+
+Add to `.zshrc`:
+
+```shell
+echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> ~/.zshrc
 ```
 
 ### Elixir
@@ -742,4 +870,48 @@ For Typescript, please type:
 ```shell
 sudo apt update
 sudo apt install nodejs npm yarn && npm install typescript -g
+```
+
+### Dart
+
+In order to isntall Flutter, type:
+
+```shell
+sudo apt update
+sudo apt  install apt-transport-https
+wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg
+echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list
+sudo apt update && sudo apt install dart
+```
+
+Then add it to your `.zshrc`:
+
+```shell
+export PATH="$PATH:/usr/lib/dart/bin"
+```
+
+### Flutter
+
+For Flutter use:
+
+```shell
+sudo apt update && sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+sudo snap install flutter --classic
+flutter sdk-path && flutter --disable-telemetry
+```
+
+### Chrome
+
+For Chrome, that it is needed for Dart/Flutter/Android SDK, type:
+
+```shell
+su -
+
+cat << EOF > /etc/apt/sources.list.d/google-chrome.list
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+EOF
+
+wget -O- https://dl.google.com/linux/linux_signing_key.pub |gpg --dearmor > /etc/apt/trusted.gpg.d/google.gpg
+
+sudo apt update && sudo apt install google-chrome-stable
 ```
