@@ -30,6 +30,7 @@ category: ["devops", "debian", "handbook", "notes"]
 - [QEMU/KVM](#qemukvm)
   - [Install QEMU/KVM](#install-qemukvm)
   - [Test QEMU/KVM](#test-qemukvm)
+  - [Setup Virsh](#setup-virsh)
   - [Bridge network for VMs](#bridge-network-for-vms)
 - [Kubernetes](#kubernetes)
   - [Kubectl](#kubectl)
@@ -349,6 +350,25 @@ sudo apt install -y virt-top libguestfs-tools libosinfo-bin  qemu-system virt-ma
 To test it out, type for example:
 
 ```shell
+❯ sudo systemctl status libvirtd.service
+○ libvirtd.service - Virtualization daemon
+     Loaded: loaded (/lib/systemd/system/libvirtd.service; enabled; preset: enabled)
+     Active: inactive (dead) since Thu 2023-07-06 20:57:55 CEST; 29min ago
+   Duration: 2min 116ms
+TriggeredBy: ● libvirtd-ro.socket
+             ● libvirtd.socket
+             ● libvirtd-admin.socket
+       Docs: man:libvirtd(8)
+             https://libvirt.org
+   Main PID: 68980 (code=exited, status=0/SUCCESS)
+        CPU: 112ms
+
+lip 06 20:55:55 hea-runnerw-03 systemd[1]: Starting libvirtd.service - Virtualization daemon...
+lip 06 20:55:55 hea-runnerw-03 systemd[1]: Started libvirtd.service - Virtualization daemon.
+lip 06 20:57:55 hea-runnerw-03 systemd[1]: libvirtd.service: Deactivated successfully.
+```
+
+```shell
 sudo virt-install \
 --name deb11 \
 --ram 2048 \
@@ -361,6 +381,19 @@ sudo virt-install \
 --console pty,target_type=serial \
 --location 'http://ftp.debian.org/debian/dists/bullseye/main/installer-amd64/' \
 --extra-args 'console=ttyS0,115200n8 serial'
+```
+
+### Setup Virsh
+
+For proper Virsh setup type:
+
+```shell
+sudo virsh net-autostart default
+sudo usermod -aG libvirt $USER
+sudo usermod -aG libvirt-qemu $USER
+sudo usermod -aG kvm $USER
+sudo usermod -aG input $USER
+sudo usermod -aG disk $USER
 ```
 
 ### Bridge network for VMs
