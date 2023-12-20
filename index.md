@@ -1,4 +1,4 @@
 ---
-title: Blog
+title: Running with code
 layout: blog
 ---
