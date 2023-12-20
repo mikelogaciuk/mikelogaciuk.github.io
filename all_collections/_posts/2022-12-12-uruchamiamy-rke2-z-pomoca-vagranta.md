@@ -1,19 +1,35 @@
 ---
 layout: post
-title: Uruchamiamy swoje własne K8S z Vagrantem
+title: Uruchamiamy RKE2 z pomocą Vagrant'a
 date: 2022-12-12
 category: ["sysops", "devops", "vagrant", "rke2"]
 ---
 
-![pic](/img/pripyat_43.jpg)
+![pic](/img/logo-horizontal-rke2.svg)
+
+- [Wstęp](#wstęp)
+- [Wymagania](#wymagania)
+- [Vagrantfile](#vagrantfile)
+- [Piszemy IaC](#piszemy-iac)
+- [Shell](#shell)
+- [Testy](#testy)
+- [Rake](#rake)
+- [Uwagi](#uwagi)
+- [Podsumowanie](#podsumowanie)
 
 ## Wstęp
 
-Aby uruchomić własne K8S przy pomocy Vagranta na potrzeby developerskie, generalnie nie potzebujemy doktoratu.
+Aby uruchomić własne RKE2 na potrzeby developerskie przy pomocy Vagranta, generalnie nie potzebujemy doktoratu.
+
+**Vagrant** to narzędzie do wirtualizacji, które pozwala na tworzenie i zarządzanie wirtualnymi maszynami na lokalnym komputerze. Vagrant wykorzystuje tzw. boxy, czyli gotowe obrazy wirtualnych maszyn, które można pobrać z internetu.
+
+**RKE2** to narzędzie do zarządzania klastrami Kubernetes. RKE2 umożliwia instalację i konfigurację klastrów Kubernetes w sposób szybki i łatwy.
+
+## Wymagania
 
 Ogólnie rzecz biorąc wystarczy abyśmy mieli zainstalowanego `Vagranta` (preferowany Linux np. Debian), oraz najlepiej `KVM`, `QEMU` oraz stosowne pluginy do Vagranta.
 
-Zapewne jesteś DevOps'em tak więc nad tym elementem rozwodził się nie będę, a w razie potrzeby wszystkie materiały potrzebne do instalacji powyższych znajdziesz w oficjalnej dokumentacji.
+Zapewne jesteś DevOps'em tak więc nad tym elementem rozwodził się nie będę, a w razie potrzeby wszystkie materiały potrzebne do instalacji powyższych znajdziesz w oficjalnej dokumentacji. Wszak, DevOps czy SysOps potrafi szukać czyż nie?
 
 ## Vagrantfile
 
@@ -343,3 +359,15 @@ Vagrant.configure("2") do |config|
     end
 end
 ```
+
+## Podsumowanie
+
+Zalety środowiska developerskiego RKE2 z wykorzystaniem Vagrant'a, w mej opinii są następujące:
+
+- Łatwość konfiguracji: Wystawienie PoC'owego / developerskiego RKE2 przy pomocy Vagranta jest banalnie proste. W przypadku 3 node'owych maszyn, trzeba trochę pokombinować jak przekazać z automatu tokeny. Niemniej jednak, wystawianie 3 node'ów na potrzeby developerskie jest delikatnym overkill'em. No chyba, że planujemy przećwiczyć upgrade'y do nowszych wersji Kubernetes. Czy sprawdzić jak zachować się klaster gdy 'popsujemy' jeden z node'ów.
+- Elastyczność: Vagrant umożliwia wybór dowolnych boxów, które można wykorzystać do utworzenia wirtualnych maszyn. Począwszy od Windowsów po niezliczoną ilość Linuxów. Choć prym wiodą dystrybucje Ubuntu, Debiana. Natomiast własna instancja RKE2 umożliwia dostosowanie konfiguracji klastra Kubernetes do własnych potrzeb w bezpiecznym wyizolowanym środowisku bez szkody dla produkcji.
+- Oszczędność kosztów: Vagrant i RKE2 pozwalają na tworzenie i zarządzanie klastrami Kubernetes na lokalnym komputerze, daje to Nam napewno oszczędność kosztów związanych np. z infrastrukturą chmurową.
+
+Jak widać utworzenie własnego klastra nie jest trudne. Oczywiście jest to nadal tylko instancja developerska. Raczej rzadkim jest praktyka wystawiania maszyny QEMU z poziomu Vagrant'a na produkcji. Z reguły, jeżeli ktoś używa kombinacji QEMU/KVM - to jako narzędzie infrastruktury jako kodu wybiera raczej `Terraforma`.
+
+Dodatkowo, instancje produkcyjne wymagają znacznie większej uwagi i konfiguracji. Począwszy od firewall'a (najlepiej software'owego oraz sprzętowego), po cały aspekt certyfikatów, doboru ingress'ów czy konfiguracji storage'u etc.
