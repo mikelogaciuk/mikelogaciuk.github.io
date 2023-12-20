@@ -291,8 +291,7 @@ namespace :config do
   task :original do
     %x(echo "export KUBECONFIG=#{kube_config_path}" >> ~/.bashrc)
     %x(echo "export KUBECONFIG=#{kube_config_path}" >> ~/.zshrc)
-    puts "Using RKE2 Kubeconfig. Type 'source ~/.bashrc' or '.zshrc' to apply changes."
-    puts "Using original Kubeconfig"
+    puts "Using original Kubeconfig. Type 'source ~/.bashrc' or '.zshrc' to apply changes."
   end
 end
 ```
