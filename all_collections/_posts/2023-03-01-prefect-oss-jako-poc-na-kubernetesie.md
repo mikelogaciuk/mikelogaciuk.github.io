@@ -364,7 +364,7 @@ W mojej opinii powyższa konfiguracja tłumaczy się sama. Oczywiście na potrz
 
 Następnie dobrze by było wystawić jeszcze agenty lub już bardziej workery dla Naszego Prefect'a, gdyż te możemy w razie potrzeby skalować.
 
-W teorii mozna je uruchomić wszędzie, może to być box w Vagrancie (na potrzeby PoC'a chyba idealny), dedykowana maszyna wirtualna, bate-metal czy zwykły kontener.
+W teorii mozna je uruchomić wszędzie, może to być box w Vagrancie (na potrzeby PoC'a chyba idealny), dedykowana maszyna wirtualna, bare-metal czy zwykły kontener.
 
 W tym przypadku użyjemy również Kubernetes'a:
 
