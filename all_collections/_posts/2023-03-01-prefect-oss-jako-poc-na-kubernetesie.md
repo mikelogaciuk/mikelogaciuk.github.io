@@ -31,20 +31,20 @@ category:
 
 Prefect to platforma do orkestracji zadań napisana w całości w Pythonie, która umożliwia Nam tworzenie, obserwowanie i reagowanie na potoki danych.
 
-Prefect można wykorzystać do budowania potoków danych do pozyskiwania, przekształcania i ładowania danych, a na upartego nawet do automatyzacji zadań, takich jak uruchamianie testów, wdrażanie oprogramowania i zarządzanie infrastrukturą oraz do budowania aplikacji opartych na sztucznej inteligencji, takich jak modele uczenia maszynowego i systemy rekomendacyjne.
+Po za powyższymi i kolokwialnie rzecz ujmując na upartego. Perfect może służyć nawet do automatyzacji zadań, takich jak uruchamianie testów, wdrażanie oprogramowania i zarządzanie infrastrukturą oraz do budowania aplikacji opartych na sztucznej inteligencji, takich jak modele uczenia maszynowego czy zwyczajne systemy rekomendacyjne.
 
 ## Wersje
 
 Prefect jest dostępny w dwóch wersjach:
 
-**Prefect Cloud**: Pełna wersja Prefect'a z funkcjonalnością niedostępną w wersji OSS n. RBAC czy OBSERVABILITY. Wersja cloud może pracować w konfiguracji hybrydowej (agenty we własnej infrastrukturze).
-**Prefect Open Source**: Jak nazwa wskazuje, edycja OSS z pewnymi ograniczeniami. W tym największa: niezablokowane UI bez możliwości natywnego schowania za ekranem logowania.
+- **Prefect Cloud**: Pełna i płatna wersja Prefect'a z funkcjonalnością niedostępną w wersji OSS np. RBAC. Wersja cloud może pracować w konfiguracji hybrydowej (w tym przypadku agenty uruchamiamy bezpośrednio we własnej infrastrukturze).
+- **Prefect Open Source**: Jak nazwa wskazuje, darmowa edycja opensource z pewnymi ograniczeniami. W tym całkowity brak kontroli użytkowników. Taki sam zabieg zresztą stosuje konkurent tj Dagster.
 
-Tym samym aby uruchomić Prefect'a na Naszym klastrze na potrzeby PoC'owe w trybie 'jakotako' należy zakryć UI ingressem i choćby logowaniem po stronie Nginxa.
+By uruchomić Prefect'a na Naszym klastrze na potrzeby PoC'owe w trybie 'jakotako' wypadało by chociaż ograniczyć dostęp do UI. To możemy zrobić z pomocą ingressa pod postacią Nginx'a.
 
 ## Dockerfile
 
-Na początek tworzymy `Dockerfile`, zwłaszcza, że będziemy chcieli przenosić zapewne dane np. z Oracle SQL do Microsoft SQL Server.
+Na początek tworzymy `Dockerfile`, zwłaszcza, że zapewne będziemy chcieli przenosi dane np. z Oracle SQL do Microsoft SQL Server. Więc warto za wczasu dodać sterowniki obydwu producentów.
 
 ```shell
 mkdir -p repos/prefect && cd prefect
@@ -53,7 +53,7 @@ bundle init
 code dockerfile
 ```
 
-Następnie edytujemy image np. jak poniżej:
+Następnie edytujemy image wedle własnego uznania lub np. jak poniżej:
 
 ```dockerfile
 FROM prefecthq/prefect:2.10.20-python3.10 AS build
@@ -104,11 +104,9 @@ RUN apt-get autoremove -yqq --purge \
 COPY config/krb5/krb5.conf /etc/
 ```
 
-W tym przypadku do obrazu dorzucam sterowniki ODBC dla SQL Servera oraz Oracle'a.
+**Uwaga**: Plik na potrzeby artykułu nie jest zoptymalizowany. Brak w nim choćby stagingu, przez sam w sobie ma spory rozmiar około jednego gigabajta.
 
-Dodatkowo wrzucamy do /etc plik konfiguracyjny dla Kerberosa (przyda Nam się do pracy z SQL Serverem).
-
-Następnie uzupełniamy compose'a na potrzeby budowania:
+Następnie uzupełniamy compose'a:
 
 ```yaml
 # For image building purposes only
@@ -125,7 +123,7 @@ services:
 
 ## Kerberos
 
-Uzupełniamy plik `krb5.conf` podmieniając wpisy dla 'company.local' na Nasze własne wpisy:
+Uzupełniamy plik `krb5.conf` podmieniając wpisy dla 'company.local' na Nasze własne wpisy, lub ignorujemy:
 
 ```conf
 [libdefaults]
@@ -154,7 +152,7 @@ Uzupełniamy plik `krb5.conf` podmieniając wpisy dla 'company.local' na Nasze w
 
 ## Postgres
 
-Zakładam, że już i tak masz wystawionego Postgres'a na Kubernetesie lub po za Nim. Tym samym część dot. jego wystawienia zupełnie pominę.
+Zakładam, że już i tak masz gdzieś wystawionego Postgres'a. Tym samym część dot. jego wystawienia zupełnie pominę.
 
 Potrzebujemy jedynie nowej bazy i użytkownika wraz z hasłem pod Nasze API.
 
@@ -317,15 +315,15 @@ spec:
                   number: 4200
 ```
 
-Taka konfiguracja spowoduje, że endpoint `/API` nie będzie z zewnątrz klastra ukryty za Nginx'em i bezproblemowo będziemy mogli obsługiwać API z poziomu CLI.
+Dzięki takiej konfiguracji endpoint `/API` nie jest zabezpieczony Nginx'em i jest dostępny z CLI dla każdego kto zna adres API oraz posiada klucz.
 
-Natomiast front zostanie zakryty NGINX'em, tym samym każde wejście na site będzie wymagało podania credentiali.
+Natomiast front zostaje ukryty za NGINX'em i staje się niedostępny dla osób postronnych.
 
-Optymalnym jest zakrycie front'u dodatkowym sidecarem z własnym mechanizmem logowania spiętym np. z domenoną, lecz dziś nie jest to elementem tego artykułu.
+Optymalnym jest zakrycie front'u dodatkowym sidecarem z własnym mechanizmem logowania, lecz dziś nie jest to obszar na potrzeby tego artykułu.
 
 ### Sekrety
 
-Do poprawnego działania mechanizmu potrzebujemy secretu dla Naszego PoC'owego usera, oraz konfiguracji dla klucz pod API oraz konfiguracji.
+Do poprawnego działania mechanizmu potrzebujemy secretu dla Naszego PoC'owego usera do frontu, oraz konfiguracji klucza pod API wraz z konfiguracją bazy:
 
 Otwieramy plik:
 
@@ -364,9 +362,11 @@ W mojej opinii powyższa konfiguracja tłumaczy się sama. Oczywiście na potrz
 
 ### Workery
 
-Następnie dobrze by było wystawić jeszcze agenty lub już bardziej workery dla Naszego Prefect'a, gdyż najlepiej job'y obsługiwać właśnie Nimi.
+Następnie dobrze by było wystawić jeszcze agenty lub już bardziej workery dla Naszego Prefect'a, gdyż te możemy w razie potrzeby skalować.
 
-W teorii możemy jest wystawić wszędzie, może to być box w Vagrancie (na potrzeby PoC'a chyba idealny), może to być kontener w Dockerze, natomiast skoro wystawiamy PoC'a na K8S to warto zrobić to także w Nim:
+W teorii mozna je uruchomić wszędzie, może to być box w Vagrancie (na potrzeby PoC'a chyba idealny), dedykowana maszyna wirtualna, bate-metal czy zwykły kontener.
+
+W tym przypadku użyjemy również Kubernetes'a:
 
 ```shell
 code prefect-agents.yml
@@ -447,13 +447,13 @@ spec:
                   key: api_url
 ```
 
-Agenty oczywiście powinny być osobnymi pod'ami z pojedynczymi kontenerami.
+Produkcyjnie najlepsza praktyką jest to by workery skonfigurować jako osobne pod'y.
 
-Aczkolwiek na potrzeby tego artykułu, nie ma co się nadmiernie rozdrabniać.
+Aczkolwiek na potrzeby developerskie, jeden pod z dwoma lub więcej kontenerami w zupełności Nam wystarczy.
 
 ## Zależności
 
-Dodatkowo musimy uzupełnić Nasze zależności, możemy użyć jako bazy np.
+Następnie uzupełniamy plik `requirements`:
 
 ```shell
 code requirements.txt
@@ -492,7 +492,7 @@ requests
 
 ## Rakefile
 
-W celu uproszczenia trochę pracy, tworzymy sobie Rakefile (Ruby) i uzupełniamy:
+Rakefile (Ruby) edytujemy wedle uznania lub jak poniżej:
 
 ```ruby
 desc "Build the image"
@@ -519,13 +519,13 @@ task :rollout do
 end
 ```
 
-Rake przyda Nam się na etapie PoC'a gdy będziemy często zmieniać składniki obrazu.
+Rake przyda Nam się na etapie PoC'a gdy będziemy dokonywać zmian w strukturze obrazu.
 
 ## Wdrożenie
 
 ### Secrety oraz API
 
-Na początek musimy wystawić API wraz konfiguracją, ale przed tym musimy zbudować obraz i go odesłać:
+Na początek musimy uruchomić API wraz konfiguracją, oraz zbudować obraz i umieścić go w repozytorium:
 
 ```shell
 docker compose build && docker push internal-cr:9999/prefect-core
@@ -537,7 +537,7 @@ kubectl -n prefect apply -f prefect-config -f prefect-api.yml
 
 ### CLI
 
-Musimy jeszcze skonfigurować CLI do pracy z wystawionym przez Nas API:
+Dodatkowo powinniśmy konfigurować CLI do pracy z wystawionym przez Nas API:
 
 ```shell
 virtualenv venv
@@ -546,7 +546,7 @@ prefect config set PREFECT_API_KEY= 'YOUR_KEY' && \
 prefect config set PREFECT_API_URL='https://prefect.internal.company/api'
 ```
 
-A także wystawić odpowiednią pule oraz kolejkę pod agenty:
+A także dodać work-poola oraz kolejkę pod workera:
 
 ```shell
 prefect work-pool create production && \
@@ -572,16 +572,16 @@ prefect-agents-0           7/7     Running   0             15s
 prefect-api-0              1/1     Running   0             15s
 ```
 
-Teraz możemy zalogować się do Naszego PoC'a przy pomocy zewnętrznego adresu i ustalonych przez Nas credentiali.
+Teraz możemy zalogować się do Naszego PoC'a przy pomocy zewnętrznego adresu oraz ustalonych przez Nas credentiali zacząć pracę z kodem.
 
 ## Produkcja
 
 Na potrzeby produkcji należy przedewszystkim zastąpić secrety w base64 czymś bardziej wyrafinowanym np. HashiCorp Vault'em.
 
-Dodatkowo root'a oraz inne pathy należy przekierować do sidecar'u, z wewnętrznym mechanizmem logowania i tam dopiero kierować dalej do niedostępnego z zewnątrz serwisu.
+Dodatkowo root'a oraz inne pathy należy przekierować do sidecar'u, z wewnętrznym mechanizmem logowania i z niego dopiero kierować ruch dalej - do niedostępnego z zewnątrz serwisu.
 
 ## Wnioski
 
-Jak widać da się całkowicie sprawnie wystawić Prefect'a do orkiestracji danych, z minimalnymi lecz nie produkcyjnymi zabezpieczeniami.
+Uruchomienie Prefect'a w całości w Kubernetesie,we własnej infrastrukturze wraz z dodatkową warstwą 'ukrywającą'. Wcale nie musi być trudne.
 
-Teraz nic tylko zakasać rekawy i zabawić się w inżyniera danych w `Pythonie`.
+Po spełnieniu warunków produkcyjnych, odpowiednim ustawieniu HPA. Możemy zyskać całkiem przyjemne środowisko orkiestracji przepływów danych.
