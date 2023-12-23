@@ -31,7 +31,7 @@ category:
 
 Prefect to platforma do orkestracji zadań napisana w całości w Pythonie, która umożliwia Nam tworzenie, obserwowanie i reagowanie na potoki danych.
 
-Po za powyższymi i kolokwialnie rzecz ujmując na upartego. Perfect może służyć nawet do automatyzacji zadań, takich jak uruchamianie testów, wdrażanie oprogramowania i zarządzanie infrastrukturą oraz do budowania aplikacji opartych na sztucznej inteligencji, takich jak modele uczenia maszynowego czy zwyczajne systemy rekomendacyjne.
+Po za powyższymi, Perfect może służyć nawet do automatyzacji zadań, takich jak uruchamianie testów, wdrażanie oprogramowania i zarządzanie infrastrukturą oraz do budowania aplikacji opartych na sztucznej inteligencji, takich jak modele uczenia maszynowego czy zwyczajne systemy rekomendacyjne.
 
 ## Wersje
 
@@ -44,7 +44,7 @@ By uruchomić Prefect'a na Naszym klastrze na potrzeby PoC'owe w trybie 'jakotak
 
 ## Dockerfile
 
-Na początek tworzymy `Dockerfile`, zwłaszcza, że zapewne będziemy chcieli przenosi dane np. z Oracle SQL do Microsoft SQL Server. Więc warto za wczasu dodać sterowniki obydwu producentów.
+Na początek tworzymy `Dockerfile`, zwłaszcza, że zapewne będziemy chcieli przenosić dane np. z Oracle SQL do Microsoft SQL Server. Więc warto za wczasu dodać sterowniki obydwu producentów.
 
 ```shell
 mkdir -p repos/prefect && cd prefect
@@ -104,7 +104,7 @@ RUN apt-get autoremove -yqq --purge \
 COPY config/krb5/krb5.conf /etc/
 ```
 
-**Uwaga**: Plik na potrzeby artykułu nie jest zoptymalizowany. Brak w nim choćby stagingu, przez sam w sobie ma spory rozmiar około jednego gigabajta.
+**Uwaga**: Plik na potrzeby artykułu nie jest zoptymalizowany. Brak w nim choćby stagingu, przez co jego rozmiar wynosi około jednego gigabajta.
 
 Następnie uzupełniamy compose'a:
 
