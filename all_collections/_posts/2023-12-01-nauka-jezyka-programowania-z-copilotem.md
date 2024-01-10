@@ -12,7 +12,7 @@ category:
 
 Artykuł nie jest raczej skierowany do osób, które na codzień korzystają z LLM'ów podczas kodowania, nauki.
 
-Tekst ma raczej zadanie pokazać młodszym adeptom programowania, lub tym którzy nie korzystają na codzień z LLM'ów - jak przydatne one mogą być nie w samej pracy, jak poszerzaniu wiedzy oraz w ogólnym tłumaczeniu kodu.
+Tekst ma raczej zadanie pokazać młodszym adeptom programowania, lub tym którzy nie korzystają na codzień z LLM'ów - jak przydatne one mogą być nie tylko w samej pracy, jak poszerzaniu wiedzy oraz w ogólnym tłumaczeniu kodu.
 
 Nie jestem także w żaden sposób powiązany z firmą **Microsoft** ani **Github'em** i artykuł został napisany jedynie w celach publicystycznych.
 
