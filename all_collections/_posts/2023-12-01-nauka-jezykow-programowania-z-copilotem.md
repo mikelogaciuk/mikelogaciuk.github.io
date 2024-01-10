@@ -430,17 +430,13 @@ W tym przypadku musimy znaleźc złoty środek, a najlepszym jest pisanie kodu s
 
 Osobiście, gdybym dziś miał jakieś 15 lat i był na początku swojej informatycznej drogi, a miał dostęp do takich możliwości jakie dają LLM'y.
 Zapewne uczyłbym się w ten sposób, wspomagając się książkami i zapewne dziś był znacznie bardziej doświadczony niż jestem obecnie.
-
 W młodości, niestety nie miałem możliwości pójścia na studia informatyczne, a nie miałem nikogo pod ręką, kto mógł by mi pomóc w nauce i wytłumaczyć niektóre kwestie jak prostemu człowiekowi.
-
 Próg wejścia do świata IT wydawał mi się tak duży, że po prostu się nie odważyłem wtedy uczyć samemu.
-
 Dopiero zrządzenie losu i rozpoczęcie pracy w IT, do którego trafiłem z tzw. niskiego szczebla tj zaczynając od Helpdesk'u. Dało mi na tyle sporego kopniaka motywującego, że znalazłem w sobie na tyle samozaparcia, by jednak tą wiedzę zgłębić. Dziś jestem tylko DevOps'em, programistą bym siebie nie nazwał, ale kto by pomyślał, że będę tu gdzie jestem?
+
+Dodatkowo, nie bez powodu wybrałem Rusta do tego artykułu. Gdyż, ten sam w sobie, wraz z jego inteligentnym kompilatorem, w akompaniamencie `rust-analyzera`, prowadzi Nas za rękę tłumacząć błędy.
+Natomiast w akompaniamencie `Copilota` staje się Naszym nauczycielem, kolegą z ławki, który podpowie trafnie, zawsze gdy mamy problem.
 
 Szczerze, zazdroszczę dzisiejszej młodzieży, która już na etapie szkoły średniej ma takie możliwości. Mieć wirtualnego asystenta, który wytłumaczy Ci praktycznie wszystko czego potrzebujesz. Zredaguje kod, podpowie, przyspieszy pracę czy przeszuka dokumentację.
 
-Korzystajcie z tego jak tylko się da, nie marnujcie możliwości, które Wam dano. Możecie wszystko!
-
-Dodatkowo, nie bez powodu wybrałem Rusta do tego artykułu. Gdyż, ten sam w sobie, wraz z jego inteligentnym kompilatorem, w akompaniamencie `rust-analyzera` oraz `Copilota` staje się Naszym nauczycielem, kolegą z ławki, interaktywną dokumentacją.
-
-Praca z kodem, chyba nigdy nie była tak przyjemna jak dziś.
+Korzystajcie z tego jak tylko się da, nie marnujcie możliwości, które Wam dano. Możecie wszystko! Praca z kodem, chyba nigdy nie była tak przyjemna jak dziś.
