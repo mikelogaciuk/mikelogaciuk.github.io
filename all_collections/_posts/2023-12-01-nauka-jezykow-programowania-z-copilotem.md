@@ -10,19 +10,19 @@ category:
 
 ## Uwaga
 
-Artykuł nie jest raczej skierowany do osób, które na codzień korzystają z LLM'ów podczas kodowania, nauki.
+Artykuł nie jest raczej skierowany do osób, które już korzystają z LLM'ów podczas kodowania, nauki.
 
-Tekst ma raczej zadanie pokazać młodszym adeptom programowania, lub tym którzy nie korzystają na codzień z LLM'ów - jak przydatne one mogą być nie tylko w samej pracy, jak poszerzaniu wiedzy oraz w ogólnym tłumaczeniu kodu.
+Tekst ma raczej zadanie pokazać młodszym adeptom programowania, lub tym którzy nie korzystają z LLM'ów - jak przydatne one mogą być nie tylko w samej pracy, jak poszerzaniu wiedzy oraz w ogólnym tłumaczeniu kodu.
 
 Nie jestem także w żaden sposób powiązany z firmą **Microsoft** ani **Github'em** i artykuł został napisany jedynie w celach publicystycznych.
 
 ## Nauka języków programowania kiedyś i dziś
 
-W przeszłości nauka programowania oraz poznawania nowych języków programowania wymagałą trochę większego reasearch’u niż obecnie. Dawniej, uczono się bezpośrednio z dokumentacji danego języka, postów na grupach mail'owych oraz dyskusyjnych czy po prostu z książek.
+W przeszłości nauka programowania oraz poznawania nowych języków programowania wymagała trochę większego zaangażowania niż obecnie. Dawniej, uczono się bezpośrednio z dokumentacji danego języka, postów na grupach mail'owych oraz dyskusyjnych czy po prostu z książek.
 
 Z czasem obszar ten ewoluował do stron dedykowanych programistom, gdzie tysiące developerów zaczęło dzielić się wiedzą.
 
-Następnie jak grzyby po deszczu zaczęły pojawiać się interaktywne strony z kursami (darmowymi jak i płatnymi) czy setki godzin nagrać wideo np. na YouTube'ie, a także chyba już nie kończąca się liczba szkoleń na Udemy.
+Następnie jak grzyby po deszczu zaczęły pojawiać się interaktywne strony z kursami (darmowymi jak i płatnymi) czy setki godzin nagrać wideo np. na YouTube'ie, a także chyba już nie kończąca się liczba szkoleń na **Udemy**.
 
 O ile nauka pierwszego języka bywa bolesna, gdyż musimy zrozumieć np. czym jest stos, a czym sterta. Czym jest bit, a czym bajt. Czym są funkcje, obiekty, zmienne, klasy, struktury, tabele, tablice, słowniki, wskaźniki i inne aspekty programowania.
 
@@ -31,19 +31,19 @@ O tyle nauka następnego z reguły jest sprawą dużo łatwiejszą i raczej przy
 Obecnie w dobie błyskawicznie rozwijających się modeli LLM, w teorii jesteśmy w stanie za prawie darmo, uczyć się bezpośrednio w edytorze kodu. Cena Copilot’a w porównaniu do książek czy kursów jest raczej na ogół niższa.
 
 > Oczywiście musimy mieć na uwadze, że i modele mogą się mylić. Trzeba do przykładów podchodzić z głową i rozwagą.
-> Z reguły kod może nie uwzgledniać jakichkolwiek dobrych wzorców. Jednakże napewno nie będzie to brutalny spaghetti-code.
+> Z reguły kod może nie uwzględniać jakichkolwiek dobrych wzorców. Mocno prawdopodobne, że nie będzie to brutalny spaghetti-code.
 
 A więc do dzieła, sprawdźmy wspólnie jak taka nauka może wyglądać na przykładzie **Rusta**.
 
 ## Czego potrzebujemy?
 
-By móc uczyć się w sposób zaproponowany w moim artykule, na pewno potrzebujemy **Rusta**, wraz z **Visual Studio Code** wraz z pluginami **Rust Analyzer** oraz **Github Copilot** i oczywiście konto na Githubie oraz wykupioną subskrypcję do usługi Copilot.
+By móc uczyć się w sposób zaproponowany w moim artykule, na pewno potrzebujemy **Rusta**, wraz z **Visual Studio Code** wraz z pluginami **Rust Analyzer** oraz **Github Copilot** i oczywiście konto na **Githubie** oraz wykupioną subskrypcję do usługi Copilot.
 
 Mają to wszystko, w lewym rogu programu VS Code, zauważyć będziemy mogli nową ikonę przypominającą czat. I to w dużej mierze z tego miejsca, poza oczywiście kodem będzie korzystać najwięcej.
 
 ## Geneza
 
-Kilka dni przed napisaniem tego artykułu, znalazłem zeszyt z czasów szkolnych ze swoimi notkatkami. Przeglądając go, pomyśłałem sobie jak wyglądać by mogła dziś moja nauka programowania, czy poznawania nowego języka mając możliwość korzystania z Copilot'a. Tym samym postanowiłem sprawdzić, jak mogłaby wyglądać taka nauka języka bez użycia książek jak i innych źródeł wiedzy. Zakładając przy tym, że jesteśmy totalnie zieloni w temacie języka spod znaku kraba - a mamy subskrypcję Copilot'a i nie wachamy się jej użyć.
+Kilka dni przed napisaniem tego artykułu, znalazłem zeszyt z czasów szkolnych ze swoimi notatkami. Przeglądając go, pomyślałem sobie jak wyglądać by mogła dziś moja nauka programowania, czy poznawania nowego języka mając możliwość korzystania z Copilot'a. Tym samym postanowiłem sprawdzić, jak mogłaby wyglądać taka nauka języka bez użycia książek jak i innych źródeł wiedzy. Zakładając przy tym, że jesteśmy totalnie zieloni w temacie języka spod znaku kraba - a mamy subskrypcję Copilot'a i nie wachamy się jej użyć.
 
 ![Starting point](/img/rusty2.jpeg)
 
@@ -191,16 +191,16 @@ let arr = [0; 10];
 
 Jak widać bezproblemowo otrzymaliśmy odpowiedź wraz z przykładami kodu. Wszak może i trywialnymi, ale od czegoś musimy zaczać.
 
-## To może cheatsheet?
+## To może cheat-sheet?
 
 Oczywiście w normalnych warunkach zapewne Nasza nauka wyglądała by w podobny sposób, gdzie kolejno zadawalibyśmy pytania Naszemu 'przyjacielowi' programisty.
 
-Z racji, że to nie jest (zakładam) Nasz pierwszy język, na początek warto po prosić mechanizm o wygenerowanie cheatsheet'u, a potem zadając pytania możemy te informacje poskładać do choćby pliku .markdown z notatkami.
+Z racji, że to nie jest (zakładam) Nasz pierwszy język, na początek warto po prosić mechanizm o wygenerowanie cheat-sheet'u, a potem zadając pytania możemy te informacje poskładać do choćby pliku .markdown z notatkami.
 
-Jeśli chodzi o generowanie takich 'ściągawek' to LLM nie ma z tym raczej wiekszego problemu. Prosta o prośba o wygenerowanie takiego tekstu, kończy się mniejwięcej tak:
+Jeśli chodzi o generowanie takich 'ściągawek' to LLM nie ma z tym raczej wiekszego problemu. Prosta o prośba o wygenerowanie takiego tekstu, kończy się mniej więcej tak:
 
 ```rust
-// Rust Cheatsheet
+// Rust Cheat-sheet
 
 // Zmienne i typy danych
 
@@ -254,7 +254,7 @@ Oczywiście na początku, zwykły Copilot Chat będzie Naszym podstawowym przyja
 
 ## Nauka 3w1
 
-Skoro, już wiemy, jak min definiować struktury - to może czas coś napisać i sprawdzić jak kombinacja Naszego kodu, autokompletacji oraz asystenta sprawuje się w boju?
+Skoro, już wiemy, jak min definiować struktury - to może czas coś napisać i sprawdzić jak kombinacja Naszego kodu, kompletacji oraz asystenta sprawuje się w boju?
 
 ### Kod
 
@@ -288,7 +288,7 @@ fn main() {
 
 By skompilować kod, wystarcz w folderze Naszego 'naukowego' projektu wpisać `cargo run`.
 
-Aczkolwiek z racji, że mamy aktywowanego `rust-analyzer'a` to już za wczasu widzimy, że coś z Naszym kodem jest nie tak:
+Aczkolwiek z racji, że mamy aktywowanego `rust-analyzer'a` to już za czasu widzimy, że coś z Naszym kodem jest nie tak:
 
 ![Broken code](/img/rusty-broken-code.png)
 
@@ -321,7 +321,7 @@ Teraz mam wszystko w jednym oknie i do momentu przypuszczenia, że LLM lunatykuj
 
 Mamy lokomotywę, ale brakuje Nam silnika. Jak wiemy lokomotywy mogą być różne: spalinowe, wodorowe, parowe, elektryczne.
 
-W Ruście, nie mamy typowej obiektowości w postaci klas i dziedziczenia, ale mam kompozycję oraz interfejsy.
+W Ruście, nie mamy typowego OOP w postaci klas i dziedziczenia, ale mamy za to kompozycję oraz interfejsy.
 
 Na potrzeby artykułu, do struktury lokomotywy dodajmy dodatkowe pole o nazwie `engine` oraz typie `Engine`, a następnie dodajmy strukturę `Engine`:
 
@@ -348,7 +348,7 @@ struct Engine {
     }
 ```
 
-Oraz trywialną metodę do printowania (normalnie zapewne użył bym `serde` i `json'a`):
+Oraz trywialną metodę do `print'u` (normalnie zapewne użył bym `serde` i `json'a`):
 
 ```rust
 fn print_locomotive(locomotive: &Locomotive) {
@@ -369,7 +369,7 @@ fn print_locomotive(locomotive: &Locomotive) {
 }
 ```
 
-Mając to wszystko spróbujmy wyprintować obiekt:
+Mając to wszystko spróbujmy `wyprintować` obiekt:
 
 ```rust
 print_locomotive(su45);
@@ -378,7 +378,7 @@ print_locomotive(su45);
 Znów ostrzeżenie, tym razem:
 
 ```shell
-expected &Locomotive, found Locomotiverust-analyzer E0308
+expected &Locomotive, found Locomotive  rust-analyzer E0308
 let su45: Locomotive // size = 136 (0x88), align = 0x8
 ```
 
@@ -417,7 +417,7 @@ print_locomotive(&su45);
 >
 > In the context of the `print_locomotive` function, the `&Locomotive` type in the function signature means that the function takes an immutable reference to a `Locomotive`. Inside the function, you can access the fields of the `Locomotive` using the dot notation, like `locomotive.name`.
 
-Ponownie, Copilot wytłumaczył Nam kolejne nuanse języka bez wychodzenia z edytoru kodu.
+Ponownie, Copilot wytłumaczył Nam kolejne niuanse języka bez wychodzenia z IDE.
 
 ## Podsumowanie
 
@@ -426,7 +426,7 @@ Jak widać, choćby na podstawie tej bądź co bądź biednej demonstracji formy
 Gdyż nie tylko jest w stanie odpowiadać na Nasze pytania, dawać przykłady kodu czy generować testy, ale także refaktoryzować kod, poprawiać, podpowiadać (czasem zepsuć).
 Choć z tym podpowiadaniem to bym delikatnie uważał, gdyż nie nauczymy się tak samo dobrze języka na pamięć, gdy będziemy pozwalać Copilotowi wypełniać za Nas całe połacie kodu.
 
-W tym przypadku musimy znaleźc złoty środek, a najlepszym jest pisanie kodu samemu bez patrzenia nadmiernie na ten podpowiadany i ew. dopytywanie się o informacje w czacie.
+W tym przypadku musimy znaleźć złoty środek, a najlepszym jest pisanie kodu samemu bez patrzenia nadmiernie na ten podpowiadany i ew. dopytywanie się o informacje w czacie.
 
 Osobiście, gdybym dziś miał jakieś 15 lat i był na początku swojej informatycznej drogi, a miał dostęp do takich możliwości jakie dają LLM'y.
 Zapewne uczyłbym się w ten sposób, wspomagając się książkami i zapewne dziś był znacznie bardziej doświadczony niż jestem obecnie.
@@ -434,7 +434,7 @@ W młodości, niestety nie miałem możliwości pójścia na studia informatyczn
 Próg wejścia do świata IT wydawał mi się tak duży, że po prostu się nie odważyłem wtedy uczyć samemu.
 Dopiero zrządzenie losu i rozpoczęcie pracy w IT, do którego trafiłem z tzw. niskiego szczebla tj zaczynając od Helpdesk'u. Dało mi na tyle sporego kopniaka motywującego, że znalazłem w sobie na tyle samozaparcia, by jednak tą wiedzę zgłębić. Dziś jestem tylko DevOps'em, programistą bym siebie nie nazwał, ale kto by pomyślał, że będę tu gdzie jestem?
 
-Dodatkowo, nie bez powodu wybrałem Rusta do tego artykułu. Gdyż, ten sam w sobie, wraz z jego inteligentnym kompilatorem, w akompaniamencie `rust-analyzera`, prowadzi Nas za rękę tłumacząć błędy.
+Dodatkowo, nie bez powodu wybrałem Rusta do tego artykułu. Gdyż, ten sam w sobie, wraz z jego inteligentnym kompilatorem, w akompaniamencie `rust-analyzera`, prowadzi Nas za rękę tłumacząc błędy.
 Natomiast w akompaniamencie `Copilota` staje się Naszym nauczycielem, kolegą z ławki, który podpowie trafnie, zawsze gdy mamy problem.
 
 Szczerze, zazdroszczę dzisiejszej młodzieży, która już na etapie szkoły średniej ma takie możliwości. Mieć wirtualnego asystenta, który wytłumaczy Ci praktycznie wszystko czego potrzebujesz. Zredaguje kod, podpowie, przyspieszy pracę czy przeszuka dokumentację.
