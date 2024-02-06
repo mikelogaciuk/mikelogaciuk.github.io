@@ -339,7 +339,7 @@ Wynik dostaję bezpośrednio w edytorze, używam kodu, który otrzymałem stosuj
 
 Crystal to język programowania, który ma na celu połączenie wydajności języka C z wygodą składni Ruby.
 
-Język ten jest statycznie typowany, co oznacza, że typy są sprawdzane w czasie kompilacji, a nie w czasie wykonania, co przyczynia się do zwiększenia wydajności. Fakt, żę Crystal jest kompilowany do kodu maszynowego, czyni go znacznie szybszym od Ruby.
+Język ten jest statycznie typowany, co oznacza, że typy są sprawdzane w czasie kompilacji, a nie w czasie wykonania, co przyczynia się do zwiększenia wydajności. Fakt, że Crystal jest kompilowany do kodu maszynowego, czyni go znacznie szybszym od Ruby.
 
 Język ten ma wiele cech, które są podobne do Ruby:
 
