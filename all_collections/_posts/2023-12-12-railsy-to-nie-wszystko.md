@@ -21,7 +21,7 @@ category:
 - [No dobra, a co z tymi Railsami?](#no-dobra-a-co-z-tymi-railsami)
 - [To co po za Railsami?](#to-co-po-za-railsami)
 - [Może maila?](#może-maila)
-- [Potrzebujesz schedule?](#potrzebujesz-schedule)
+- [Potrzebujesz scheduler'a?](#potrzebujesz-schedulera)
 - [Testy](#testy)
 - [Maszyny wirtualne w formie infrastruktury jako kodu](#maszyny-wirtualne-w-formie-infrastruktury-jako-kodu)
 - [CLI](#cli)
@@ -184,7 +184,7 @@ Pony.mail(:to => 'john.doe@gmail.com',
           })
 ```
 
-## Potrzebujesz schedule?
+## Potrzebujesz scheduler'a?
 
 Użyj **whenever** albo **sidekiq'a**:
 
