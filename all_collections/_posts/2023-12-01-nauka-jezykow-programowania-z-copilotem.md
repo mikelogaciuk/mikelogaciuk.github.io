@@ -8,9 +8,18 @@ category:
 
 ![Header](/img/rusty1.jpeg)
 
-## Uwaga
-
-Nie jestem także w żaden sposób powiązany z firmą **Microsoft** ani **Github'em** i artykuł został napisany jedynie w celach publicystycznych.
+- [Nauka języków programowania kiedyś i dziś](#nauka-języków-programowania-kiedyśi-dziś)
+- [Czego potrzebujemy?](#czego-potrzebujemy)
+- [Wstęp do nauki](#wstęp-do-nauki)
+- [Zapytajmy o struktury danych w Ruście](#zapytajmy-o-struktury-danych-w-ruście)
+- [Uczymy się sortować w Ruście](#uczymy-sięsortować-w-ruście)
+- [Przykład z języka Ruby](#przykład-z-języka-ruby)
+- [Przykład Crystal'a](#przykład-crystala)
+  - [Kilka słów o Crystalu](#kilka-słów-o-crystalu)
+  - [Nauka Crystala](#nauka-crystala)
+  - [Brniemy dalej](#brniemy-dalej)
+  - [Generujemy testy](#generujemy-testy)
+- [Podsumowanie](#podsumowanie)
 
 ## Nauka języków programowania kiedyś i dziś
 
