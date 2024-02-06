@@ -10,40 +10,30 @@ category:
 
 ## Uwaga
 
-Artykuł nie jest raczej skierowany do osób, które już korzystają z LLM'ów podczas kodowania, nauki.
-
-Tekst ma raczej zadanie pokazać młodszym adeptom programowania, lub tym którzy nie korzystają z LLM'ów - jak przydatne one mogą być nie tylko w samej pracy, jak poszerzaniu wiedzy oraz w ogólnym tłumaczeniu kodu.
-
 Nie jestem także w żaden sposób powiązany z firmą **Microsoft** ani **Github'em** i artykuł został napisany jedynie w celach publicystycznych.
 
 ## Nauka języków programowania kiedyś i dziś
 
 W przeszłości nauka programowania oraz poznawania nowych języków programowania wymagała trochę większego zaangażowania niż obecnie. Dawniej, uczono się bezpośrednio z dokumentacji danego języka, postów na grupach mail'owych oraz dyskusyjnych czy po prostu z książek.
 
-Z czasem obszar ten ewoluował do stron dedykowanych programistom, gdzie tysiące developerów zaczęło dzielić się wiedzą.
+Z czasem obszar ten ewoluował do niezliczonych blogów programistycznych, a jak grzyby po deszczu zaczęły pojawiać się interaktywne strony z kursami (darmowymi jak i płatnymi) czy setki godzin nagrać wideo np. na YouTube'ie.
 
-Następnie jak grzyby po deszczu zaczęły pojawiać się interaktywne strony z kursami (darmowymi jak i płatnymi) czy setki godzin nagrać wideo np. na YouTube'ie, a także chyba już nie kończąca się liczba szkoleń na **Udemy**.
+Nauka pierwszego języka bywa bolesna, gdyż musimy zrozumieć np. czym jest stos, a czym sterta. Czym jest bit, a czym bajt. Czym są funkcje, obiekty, zmienne, klasy, struktury, tabele, tablice, słowniki, wskaźniki i inne aspekty programowania.
 
-O ile nauka pierwszego języka bywa bolesna, gdyż musimy zrozumieć np. czym jest stos, a czym sterta. Czym jest bit, a czym bajt. Czym są funkcje, obiekty, zmienne, klasy, struktury, tabele, tablice, słowniki, wskaźniki i inne aspekty programowania.
-
-O tyle nauka następnego z reguły jest sprawą dużo łatwiejszą i raczej przyjemniejszą, dodatkowo poszerzającą już Nasze horyzonty meandrów programowania.
-
-Obecnie w dobie błyskawicznie rozwijających się modeli LLM, w teorii jesteśmy w stanie za prawie darmo, uczyć się bezpośrednio w edytorze kodu. Cena Copilot’a w porównaniu do książek czy kursów jest raczej na ogół niższa.
+Obecnie w dobie błyskawicznie rozwijających się modeli LLM, jesteśmy w stanie za prawie darmo, uczyć się bezpośrednio w edytorze kodu. Cena Copilot’a w porównaniu do stosu książek czy kursów zwyczajnie niska.
 
 > Oczywiście musimy mieć na uwadze, że i modele mogą się mylić. Trzeba do przykładów podchodzić z głową i rozwagą.
-> Z reguły kod może nie uwzględniać jakichkolwiek dobrych wzorców. Mocno prawdopodobne, że nie będzie to brutalny spaghetti-code.
+> Z reguły kod może nie uwzględniać pewnych aspektów security, ale za to jest mało prawdopodobnym, że będzie to brutalny spaghetti-code.
 
-A więc do dzieła, sprawdźmy wspólnie jak taka nauka może wyglądać na przykładzie **Rusta**.
+Kilka dni przed napisaniem tego artykułu, znalazłem zeszyt z czasów szkolnych ze swoimi notatkami. Przeglądając go, pomyślałem sobie jak wyglądać by mogła dziś moja nauka programowania, czy poznawania nowego języka mając możliwość korzystania z Copilot'a.
+
+Oczywiście zakładając, że jednak przeczytaliśmy chociaż jakikolwiek wstęp do **Computer Science** oraz umiemy programować w jakimkolwiek innym języku np. **Pythonie** - sprawdźmy jak taka nauka może wyglądać na przykładzie **Rusta**, ale i **Ruby** oraz **Crystala**.
 
 ## Czego potrzebujemy?
 
-By móc uczyć się w sposób zaproponowany w moim artykule, na pewno potrzebujemy **Rusta**, wraz z **Visual Studio Code** wraz z pluginami **Rust Analyzer** oraz **Github Copilot** i oczywiście konto na **Githubie** oraz wykupioną subskrypcję do usługi Copilot.
+By móc uczyć się w sposób zaproponowany w moim artykule, na pewno potrzebujemy **Rusta**, **Ruby** oraz **Crystala** , wraz z **Visual Studio Code** i pluginami: **Rust Analyzer**, **Ruby** od Shopify wraz LSP oraz plugin do **Crystala** z LSP (**Crystaline**) oraz **Github Copilot** i aktywną subskrypcję usługi Github Copilot.
 
-Mają to wszystko, w lewym rogu programu VS Code, zauważyć będziemy mogli nową ikonę przypominającą czat. I to w dużej mierze z tego miejsca, poza oczywiście kodem będzie korzystać najwięcej.
-
-## Geneza
-
-Kilka dni przed napisaniem tego artykułu, znalazłem zeszyt z czasów szkolnych ze swoimi notatkami. Przeglądając go, pomyślałem sobie jak wyglądać by mogła dziś moja nauka programowania, czy poznawania nowego języka mając możliwość korzystania z Copilot'a. Tym samym postanowiłem sprawdzić, jak mogłaby wyglądać taka nauka języka bez użycia książek jak i innych źródeł wiedzy. Zakładając przy tym, że jesteśmy totalnie zieloni w temacie języka spod znaku kraba - a mamy subskrypcję Copilot'a i nie wachamy się jej użyć.
+Mając spełnione wymagania, w VSCode zauważymy nową ikonę przypominającą czat. I to w dużej mierze z tego miejsca, poza oczywiście kodem będzie korzystać najwięcej.
 
 ![Starting point](/img/rusty2.jpeg)
 
@@ -74,21 +64,23 @@ Z racji, że udajemy, że nie wiemy czym jest Rust - powinniśmy pierw zapytać 
 
 _Czym jest język Rust?_
 
-> Rust to nowoczesny język programowania skoncentrowany na wydajności i bezpieczeństwie, szczególnie bezpiecznym równoległym programowaniu. Rust oferuje kontrolę na niskim poziomie nad systemem w sposób podobny do języka C++, ale z dodatkowymi narzędziami i ochroną przed błędami, które pomagają uniknąć powszechnych problemów związanych z pamięcią, takich jak wyścigi danych, wycieki pamięci i niezdefiniowane zachowanie.
-
-No, a owe Cargo, którego przed chwilą użyliśmy? Co to takiego?
+> Rust to nowoczesny język programowania skoncentrowany na wydajności i bezpieczeństwie, szczególnie bezpiecznym równoległym programowaniu.
+> Rust oferuje kontrolę na niskim poziomie nad systemem w sposób podobny do języka C++, ale z dodatkowymi narzędziami i ochroną przed błędami, które pomagają uniknąć powszechnych problemów związanych z pamięcią, takich jak wyścigi danych, wycieki pamięci i niezdefiniowane zachowanie.
 
 _Czym jest Cargo w języku Rust?_
 
-> Cargo to system zarządzania pakietami i narzędziem do budowania projektów w języku Rust. Umożliwia tworzenie nowych projektów, zarządzanie zależnościami, kompilację kodu, uruchamianie testów i wiele innych zadań związanych z rozwojem oprogramowania w Rust.
+> Cargo to system zarządzania pakietami i narzędziem do budowania projektów w języku Rust.
+> Umożliwia tworzenie nowych projektów, zarządzanie zależnościami, kompilację kodu, uruchamianie testów i wiele innych zadań związanych z rozwojem oprogramowania w Rust.
 >
-> Komenda `cargo init --name rustypusty` tworzy nowy projekt Rust o nazwie "rustypusty". Tworzy ona katalog o tej nazwie, jeśli jeszcze nie istnieje, a w nim pliki konfiguracyjne i źródłowe potrzebne do rozpoczęcia pracy nad projektem.
+> Komenda `cargo init --name rustypusty` tworzy nowy projekt Rust o nazwie "rustypusty".
+> Tworzy ona katalog o tej nazwie, jeśli jeszcze nie istnieje, a w nim pliki konfiguracyjne i źródłowe potrzebne do rozpoczęcia pracy nad projektem.
 
 _Jak można zarządzać zależnościami w projekcie Rust przy użyciu Cargo?_
 
 > Zarządzanie zależnościami w projekcie Rust za pomocą Cargo jest proste i odbywa się głównie za pomocą pliku `Cargo.toml`, który jest plikiem konfiguracyjnym dla twojego projektu.
 >
-> Aby dodać zależność, musisz dodać jej nazwę i wersję do sekcji `[dependencies]` w pliku `Cargo.toml`. Na przykład, aby dodać zależność od biblioteki `serde`, która jest używana do serializacji i deserializacji danych, możesz zrobić to w następujący sposób:
+> Aby dodać zależność, musisz dodać jej nazwę i wersję do sekcji `[dependencies]` w pliku `Cargo.toml`.
+> Na przykład, aby dodać zależność od biblioteki `serde`, która jest używana do serializacji i deserializacji danych, możesz zrobić to w następujący sposób:
 
 ```toml
 [dependencies]
@@ -100,16 +92,9 @@ serde = "1.0"
 > Możesz również zaktualizować zależności za pomocą `cargo update`, co spowoduje, że Cargo sprawdzi, czy istnieją nowsze wersje zależności, i jeśli tak, zaktualizuje plik `Cargo.lock`, który śledzi dokładne wersje zależności używane w twoim projekcie.
 
 Jak widać model całkiem sprawnie i jasno odpowiada na Nasze pytania. Gdzie jak zresztą wiemy, ten nie przejmuje się tym, aby 'książka' była na tyle długa by spełnić wymogi wydawcy.
+Tym samym odpowiedzi są zwięzłe, precyzyjne i nie odbiegają od omawianego zagadnienia.
 
-Tym samym odpowiedzi są zwięzłe, precyzyjne. Niemniej jednak z tyłu głowy zawsze musimy mieć świadomość, że ten czasem może się mylić i w przypadku nieścisłości powinniśmy odpowiednio umieć zauważyć, że odpowiedź może być błędna.
-
-## Składnia
-
-No dobrze! Skoro coś wiemy już o języku, bez zbędnego oczekiwania - spytajmy go o podstawowe elementy języka.
-
-Oczywiście na potrzeby artykułu nie zbombardowałem chat'a pytaniami dot. samego języka per se, skupmy się bardziej na składni niżeli jego historii.
-
-## Zapytajmy o struktury danych
+## Zapytajmy o struktury danych w Ruście
 
 Na początek zadajmy mu pytanie o typy i struktury danych:
 
@@ -153,7 +138,7 @@ _Jakie struktury danych możemy znaleźć w języku Rust?_
 >
 > 3. **Vectors (Wektory)**: Wektory są podobne do tablic, ale mogą zmieniać swoją wielkość. Są one jednym z najczęściej używanych typów sekwencyjnych w Rust.
 >
-> 4. **Structs (Struktury)**: Struktury są niemutowalnymi zbiorem pól, które mogą zawierać różne typy danych. Są one podobne do klas w innych językach programowania, ale bez metod.
+> 4. **Structs (Struktury)**: Struktury są niemutowalnym zbiorem pól, które mogą zawierać różne typy danych. Są one podobne do klas w innych językach programowania, ale bez metod.
 >
 > 5. **HashMaps (Mapy hashujące)**: HashMapy są kolekcjami klucz-wartość, które przechowują dane w sposób, który umożliwia szybkie wyszukiwanie na podstawie klucza.
 >
@@ -163,280 +148,359 @@ _Jakie struktury danych możemy znaleźć w języku Rust?_
 >
 > 8. **Stacks and Queues (Stosy i kolejki)**: Stosy i kolejki to specjalne typy kolekcji, które oferują operacje dodawania i usuwania elementów w określonym porządku.
 
-_Jak można zadeklarować i zainicjalizować tablicę w języku Rust?_
+Jak widać bezproblemowo otrzymaliśmy odpowiedź opisującą typy i struktury danych.
 
-> W języku Rust tablicę można zadeklarować i zainicjalizować na kilka sposobów. Oto najprostszy przykład:
+## Uczymy się sortować w Ruście
 
-```rust
-let arr = [1, 2, 3, 4, 5];
-```
+Zakładając, że mamy nieposortowany **vector** i chcemy go posortować, zaczynamy od pisania własnej funkcji sortujacej, ale nie pamiętamy definicji **sortowania bąbelkowego**, tak więc pytamy Copilota i otrzymujemy:
 
-> W tym przypadku `arr` to tablica pięciu liczb całkowitych. Rust automatycznie wnioskuje typ i rozmiar tablicy na podstawie kontekstu.
+> Sortowanie bąbelkowe to prosty algorytm sortujący, który wielokrotnie przechodzi przez listę, porównuje sąsiednie elementy i zamienia je, jeśli są w złej kolejności. Proces ten jest powtarzany, aż do momentu, gdy nie są już potrzebne żadne zamiany, co oznacza, że lista jest posortowana.
 >
-> Jeśli chcesz jawnie określić typ i rozmiar tablicy, możesz to zrobić w następujący sposób:
+> Pseudokod dla sortowania bąbelkowego może wyglądać tak:
 
 ```rust
-let arr: [i32; 5] = [1, 2, 3, 4, 5];
+dla i od 0 do N-1
+  dla j od 0 do N-i-1
+    jeśli lista[j] > lista[j+1]
+      zamień lista[j] i lista[j+1]
 ```
 
-> W tym przypadku `arr` to tablica pięciu liczb całkowitych typu `i32`.
->
-> Jeśli chcesz zainicjalizować tablicę o określonym rozmiarze jedną wartością, możesz to zrobić tak:
+> Gdzie `N` to liczba elementów na liście. W każdej iteracji zewnętrznej pętli (i), największy element "bąbelkuje" do końca listy. > Wewnętrzna pętla (j) przechodzi przez listę od początku do końca, porównując i zamieniając sąsiednie elementy, jeśli są w złej kolejności.
+
+Mając powyższą informację tworzymy **vector**:
 
 ```rust
-let arr = [0; 10];
+let arr: Vec<i32> = vec![5555, 1, 23, 512, 4, 66, 89, 999];
 ```
 
-> W tym przypadku `arr` to tablica dziesięciu liczb całkowitych, wszystkie zainicjalizowane wartością `0`.
-
-Jak widać bezproblemowo otrzymaliśmy odpowiedź wraz z przykładami kodu. Wszak może i trywialnymi, ale od czegoś musimy zaczać.
-
-## To może cheat-sheet?
-
-Oczywiście w normalnych warunkach zapewne Nasza nauka wyglądała by w podobny sposób, gdzie kolejno zadawalibyśmy pytania Naszemu 'przyjacielowi' programisty.
-
-Z racji, że to nie jest (zakładam) Nasz pierwszy język, na początek warto po prosić mechanizm o wygenerowanie cheat-sheet'u, a potem zadając pytania możemy te informacje poskładać do choćby pliku .markdown z notatkami.
-
-Jeśli chodzi o generowanie takich 'ściągawek' to LLM nie ma z tym raczej wiekszego problemu. Prosta o prośba o wygenerowanie takiego tekstu, kończy się mniej więcej tak:
+Następnie potrzebujemy funkcji, która przyjmie nieposortowaną tablicę jako argument i zwróci Nam poprawny wynik, po chwili pisania otrzymujemy poniższe:
 
 ```rust
-// Rust Cheat-sheet
-
-// Zmienne i typy danych
-
-let x = 5; // Zmienna niemutowalna
-let mut y = 5; // Zmienna mutowalna
-let z: i32 = 5; // Zmienna z określonym typem
-
-// If-Else
-if x < 5 {
-    println!("x is less than 5");
-} else {
-    println!("x is not less than 5");
-}
-
-// Pętla for
-for i in 0..5 {
-    println!("{}", i);
-}
-
-// Pętla while
-while x < 10 {
-    x += 1;
-}
-
-(...)
-
-// Definicja struktury
-struct Point {
-    x: i32,
-    y: i32,
-}
-
-// Utworzenie instancji struktury
-let p = Point { x: 0, y: 0 };
-
-// Definicja enuma
-enum Direction {
-    Up,
-    Down,
-    Left,
-    Right,
-}
-
-// Utworzenie instancji enuma
-let dir = Direction::Up;
-```
-
-W teorii w tego typu nauce ogranicza Nas tylko Nasza wyobraźnia, już posiadana wiedza i chęć jej pogłębiania.
-
-Oczywiście na początku, zwykły Copilot Chat będzie Naszym podstawowym przyjacielem. Natomiast gdy uznamy, że już coś rozumiemy. Warto zwyczajnie usiąść do kodu.
-
-## Nauka 3w1
-
-Skoro, już wiemy, jak min definiować struktury - to może czas coś napisać i sprawdzić jak kombinacja Naszego kodu, kompletacji oraz asystenta sprawuje się w boju?
-
-### Kod
-
-Na początek w pliku `src/main.rs` zadeklarujmy strukturę - np. lokomotywy (tak tak, takiej która może być parowa bądź elektryczna)?
-
-```rust
-struct Locomotive {
-    name: String,
-    brand: String,
-    model: String,
-    year: u32,
-    weight_kg: f64,
-    length_m: f64,
-}
-```
-
-Skoro mamy już zarys obiektu, spróbujmy go stworzyć:
-
-```rust
-fn main() {
-    let su45 = Locomotive {
-        name: "SU45",
-        brand: "Pafawag",
-        model: "SU45",
-        year: 1967,
-        weight_kg: 120000.0,
-        length_m: 16.0,
+fn srt(arr: Vec<i32>) {
+    for i in arr.len() - 1 {
+        for j in 0..arr.len() - i - 1 {
+            if arr[j] > arr[j + 1] {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
     }
 }
 ```
 
-By skompilować kod, wystarcz w folderze Naszego 'naukowego' projektu wpisać `cargo run`.
+Niby napisaliśmy, ale Rust podświetla cały kod na czerwono niczym pulpit kierowcy w popsutym aucie:
 
-Aczkolwiek z racji, że mamy aktywowanego `rust-analyzer'a` to już za czasu widzimy, że coś z Naszym kodem jest nie tak:
+> rustc
+> no method named `len` found for type `i32` in the current scope
+> method not found in `i32`rustcClick for full compiler diagnostic
 
-![Broken code](/img/rusty-broken-code.png)
+Zaznaczamy cały kod, klikamy prawym klawiszem na `Copilot -> Wyjaśnij to` i po lewej w oknie ukazuje Nam się odpowiedź:
 
-Klikając w `Quick Fix...` i dalej w `Explain using Copilot`, Naszym oczom ukaże się odpowiedź:
-
-> Wydaje się, że masz problem z typami łańcuchów znaków w Rust. W strukturze `Locomotive` pola `name`, `brand` i `model` są typu `String`, ale podczas tworzenia instancji `Locomotive` próbujesz przypisać do nich literały łańcuchów znaków (`&str`), co powoduje błąd.
+> Wygląda na to, że próbujesz użyć metody `len` na typie `i32`, który jest typem liczby całkowitej w Rust. Metoda `len` jest dostępna dla typów kolekcji, takich jak wektory i ciągi znaków, ale nie dla typów liczbowych.
 >
-> Aby to naprawić, musisz przekształcić literały łańcuchów znaków (`&str`) na `String`. Możesz to zrobić za pomocą metody `to_string()`. Oto poprawiony kod:
+> Ponadto, próbujesz zmienić elementy wektora `arr` w miejscu, ale `arr` jest niemutowalny. Musisz zadeklarować `arr` jako mutowalny, używając słowa kluczowego `mut`.
+>
+> Oto poprawiona wersja twojego kodu:
+
+```rust
+fn srt(mut arr: Vec<i32>) {
+    let len = arr.len();
+    for i in 0..len {
+        for j in 0..len - i - 1 {
+            if arr[j] > arr[j + 1] {
+                arr.swap(j, j + 1);
+            }
+        }
+    }
+}
+```
+
+> W tym kodzie, używamy metody `len` na wektorze `arr` do pobrania jego długości, a następnie używamy tej długości do iteracji przez elementy wektora. Używamy również metody `swap` do zamiany elementów wektora.
+
+Fakt! O tym zapomnieliśmy, że Rust w domyśle wszystkie wartości ma niemutowalne, a gdy chcemy je zmienić to albo podczas deklaracji używamy keywordu **mut**.
+
+Spróbujmy przypisać wynik posortowanego vectora do zmiennej:
 
 ```rust
 fn main() {
-    let su45 = Locomotive {
-        name: "SU45".to_string(),
-        brand: "Pafawag".to_string(),
-        model: "SU45".to_string(),
-        year: 1967,
-        weight_kg: 120000.0,
-        length_m: 16.0,
-    };
+    let arr: Vec<i32> = vec![5555, 1, 23, 512, 4, 66, 89, 999];
+    let sorted_arr: Vec<i32> = srt(arr);
+
+    println!("{:?}", sorted_arr);
 }
 ```
 
-> Pamiętaj, że w Rust `String` i `&str` to dwa różne typy. `String` to typ, który przechowuje łańcuch znaków w pamięci i może być modyfikowany, podczas gdy `&str` to odwołanie do łańcucha znaków, które nie może być modyfikowane.
-
-Czy to nie jest piękne i zarazem wygodne? W przeszłości po ostrzeżeniu o błędach, musiałbym wejść do dokumentacji np. `rustup docs --book` i wyszukać wytłumaczenia problemu.
-
-Teraz mam wszystko w jednym oknie i do momentu przypuszczenia, że LLM lunatykuje - nie muszę odrywać ekranu od edytora kodu nawet na sekundę.
-
-### Brakuje Nam silnika
-
-Mamy lokomotywę, ale brakuje Nam silnika. Jak wiemy lokomotywy mogą być różne: spalinowe, wodorowe, parowe, elektryczne.
-
-W Ruście, nie mamy typowego OOP w postaci klas i dziedziczenia, ale mamy za to kompozycję oraz interfejsy.
-
-Na potrzeby artykułu, do struktury lokomotywy dodajmy dodatkowe pole o nazwie `engine` oraz typie `Engine`, a następnie dodajmy strukturę `Engine`:
+No, ale nie działa, bo chyba zapomnieliśmy zwrócić tablicę? Woops, przecież aktualizujemy oryginalną tablicę, tym samym w teorii powinniśmy zrobić to tak:
 
 ```rust
-struct Engine {
-    fuel: String,
-    cylinders: u8,
-    displacement_cm3: u32,
-    power_hp: u32,
-    rpm_max: u32,
+    print!("Vector oryginalny: {:?}", arr);
+
+    print!("Vector posortowany: {:?}", srt(arr));
+```
+
+Jednakże posortowany vector jest pusty, pytamy Copilota co zrobiliśmy źle:
+
+> Problem polega na tym, że funkcja `srt` nie zwraca posortowanego wektora. W Rust, jeśli nie ma wyrażenia `return` ani średnika na końcu bloku funkcji, zwracany jest ostatni wyrażenie. W twoim przypadku, funkcja `srt` nie zwraca nic, ponieważ blok funkcji kończy się pętlą `for`, a nie wyrażeniem.
+>
+> Aby naprawić ten problem, musisz dodać `arr` na końcu funkcji `srt`, aby zwrócić posortowany wektor. Oto poprawiony kod:
+
+```rust
+fn main() {
+    let arr: Vec<i32> = vec![5555, 1, 23, 512, 4, 66, 89, 999];
+
+    println!("Vector oryginalny: {:?}", arr);
+
+    println!("Vector posortowany: {:?}", srt(arr));
 }
 
-(...)
-
-    let su45 = Locomotive {
-        (...)
-        engine: Engine {
-            fuel: "Diesel".to_string(),
-            cylinders: 16,
-            displacement_cm3: 16000,
-            power_hp: 3000,
-            rpm_max: 1000,
-        },
+fn srt(mut arr: Vec<i32>) -> Vec<i32> {
+    let len = arr.len();
+    for i in 0..len {
+        for j in 0..len - i - 1 {
+            if arr[j] > arr[j + 1] {
+                arr.swap(j, j + 1);
+            }
+        }
     }
-```
-
-Oraz trywialną metodę do `print'u` (normalnie zapewne użył bym `serde` i `json'a`):
-
-```rust
-fn print_locomotive(locomotive: &Locomotive) {
-    println!("Name: {}", locomotive.name);
-    println!("Brand: {}", locomotive.brand);
-    println!("Model: {}", locomotive.model);
-    println!("Year: {}", locomotive.year);
-    println!("Weight (kg): {}", locomotive.weight_kg);
-    println!("Length (m): {}", locomotive.length_m);
-    println!("Engine Fuel: {}", locomotive.engine.fuel);
-    println!("Engine Cylinders: {}", locomotive.engine.cylinders);
-    println!(
-        "Engine Displacement (cm3): {}",
-        locomotive.engine.displacement_cm3
-    );
-    println!("Engine Power (hp): {}", locomotive.engine.power_hp);
-    println!("Engine Max RPM: {}", locomotive.engine.rpm_max);
+    arr
 }
 ```
 
-Mając to wszystko spróbujmy `wyprintować` obiekt:
+> Zauważ, że dodałem również typ zwracany `-> Vec<i32>` do definicji funkcji `srt`, co jest dobrym zwyczajem w Rust, aby jasno określić, co funkcja zwraca.
 
-```rust
-print_locomotive(su45);
-```
-
-Znów ostrzeżenie, tym razem:
+No i pięknie, teraz otrzymaliśmy to co chcieliśmy:
 
 ```shell
-expected &Locomotive, found Locomotive  rust-analyzer E0308
-let su45: Locomotive // size = 136 (0x88), align = 0x8
+Vector oryginalny: [5555, 1, 23, 512, 4, 66, 89, 999]
+Vector posortowany: [1, 4, 23, 66, 89, 512, 999, 5555]
 ```
 
-Znów wybieramy explain i otrzymujemy:
+Owszem, przykład jest trywialny, ale wymyślenie scenariusza, który ukaże możliwości nauki jak i pracy z chatem, chwilę mi zajął. Wszak zajmuję się eliminowaniem i wykrywaniem błędów, a nie ich wymyślaniem.
 
-> The error message "expected &Locomotive, found Locomotive" means that a function or method is expecting a reference to a `Locomotive` (i.e., `&Locomotive`), but it received an owned `Locomotive` instead.
+W tym przypadku, Nasz sztuczny przyjaciel kodu poradził sobie świetnie. Poprawił kod, wspomniał o dobrych praktykach, wytłumaczył algorytm.
+
+## Przykład z języka Ruby
+
+Powiedzmy, że mamy proste API napisane w Sinatrze i chcemy, aby API na podstawie otrzymanego komunikatu, wysyłało Nam alert do innego zainteresowanych.
+
+Jesteśmy leniwi, nie chce Nam się przeglądać RubyGems w poszukiwaniu biblioteki, więc zadajemy pytanie Copilotowi:
+
+_Jakiej biblioteki Ruby byś użył w frameworku Sinatra aby wysłać przeparsowany alert w postaci maila do określonej listy zainteresowanych? Zależy mi tylko na bibliotece do wysyłania maili._
+
+> Jeśli używasz Sinatry i szukasz lżejszej biblioteki do wysyłania e-maili, to polecam bibliotekę `mail`. Jest to bardzo popularna i wszechstronna biblioteka do obsługi e-maili w Ruby.
 >
-> In your code, the `print_locomotive` function is defined to take a reference to a `Locomotive`:
+> Poniżej znajduje się przykładowy kod, który pokazuje, jak można użyć biblioteki `mail` do wysyłania e-maili.
 
-```rust
-fn print_locomotive(locomotive: &Locomotive) {
-    // ...
+```ruby
+require 'mail'
+
+options = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => 'your.host.name',
+  :user_name            => '<username>',
+  :password             => '<password>',
+  :authentication       => 'plain',
+  :enable_starttls_auto => true
 }
+
+Mail.defaults do
+  delivery_method :smtp, options
+end
+
+Mail.deliver do
+  to 'mikel@test.lindsaar.net'
+  from 'sender@test.lindsaar.net'
+  subject 'Here is the image you wanted'
+  body File.read('body.txt')
+  add_file :filename => 'somefile.png', :content => File.read('/somefile.png')
+end
 ```
 
-> However, in your `main` function, you're passing an owned `Locomotive` to `print_locomotive`:
+> Pamiętaj, że musisz dostosować opcje SMTP do swojego dostawcy poczty e-mail. Powyższy przykład pokazuje konfigurację dla Gmaila.
 
-```rust
-print_locomotive(su45);
+Perfekcyjnie! Nie muszę przeszukiwać **gem'ów** ani tematów na StackOverflow, ani książek ani dokumentacji języka.
+
+Wynik dostaję bezpośrednio w edytorze, używam kodu, który otrzymałem stosując odpowiednie zmiany osadzając dane wrażliwe w zmiennych i opracowuję parser.
+
+## Przykład Crystal'a
+
+### Kilka słów o Crystalu
+
+Crystal to język programowania, który ma na celu połączenie wydajności języka C z wygodą składni Ruby.
+
+Język ten jest statycznie typowany, co oznacza, że typy są sprawdzane w czasie kompilacji, a nie w czasie wykonania, co przyczynia się do zwiększenia wydajności. Fakt, żę Crystal jest kompilowany do kodu maszynowego, czyni go znacznie szybszym od Ruby.
+
+Język ten ma wiele cech, które są podobne do Ruby:
+
+- Składnia: Crystal ma składnię bardzo podobną do Ruby i generalnie 90% czystego kodu Ruby będzie powinno działać w Crystalu.
+- Obiektowość: Wszystko w Crystal jest obiektem, podobnie jak w Ruby.
+- Wyjątki: Crystal obsługuje wyjątki i ma podobny mechanizm obsługi błędów jak Ruby.
+
+Fani Crystala zwykli mówić:
+
+> Piękny jak Ruby, szybki jak C.
+
+### Nauka Crystala
+
+Przypuśćmy, że nieco przespaliśmy lekcje informatyki, a i Nasze lenistwo uniemożliwia Nam sprawdzenie oficjalnej dokumentacji.
+
+Widzimy w edytorze kodu, że linter podpowiada Nam nie tylko tworzenie klas, ale i struktur.
+
+Zadajemy pytanie do Copilot'a celem sprawdzenia, czym się one różnią:
+
+_Wytłumacz mi różnicę między 'class', a 'struct' w języku Crystal._
+
+> W języku Crystal, `class` i `struct` są dwoma różnymi typami definiowania typów niestandardowych, ale mają kilka istotnych różnic.
+>
+> `class` w Crystal jest podobne do klasy w innych językach programowania. Jest to referencyjny typ danych, co oznacza, że kiedy przekazujesz obiekt klasy do funkcji lub metody, przekazujesz referencję do tego obiektu, a nie sam obiekt. To oznacza, że jeśli zmienisz obiekt w funkcji, zmiana ta będzie widoczna poza funkcją.
+
+```crystal
+class MyClass
+  property :value
+
+  def initialize(@value : Int32)
+  end
+end
+
+def modify(obj : MyClass)
+  obj.value = 42
+end
+
+obj = MyClass.new(0)
+modify(obj)
+puts obj.value # Wypisze "42", ponieważ obiekt został zmieniony w funkcji
 ```
 
-> To fix this, you should pass a reference to `su45` to `print_locomotive`, like this:
+> Z drugiej strony, `struct` w Crystal jest typem wartościowym. Kiedy przekazujesz obiekt `struct` do funkcji, przekazujesz kopię tego obiektu. To oznacza, że jeśli zmienisz obiekt w funkcji, zmiana ta nie będzie widoczna poza funkcją.
 
-```rust
-print_locomotive(&su45);
+```crystal
+struct MyStruct
+  property :value
+
+  def initialize(@value : Int32)
+  end
+end
+
+def modify(obj : MyStruct)
+  obj.value = 42
+end
+
+obj = MyStruct.new(0)
+modify(obj)
+puts obj.value # Wypisze "0", ponieważ obiekt nie został zmieniony w funkcji
 ```
 
-> The `&` operator is used to create a reference to `su45`. This allows `print_locomotive` to borrow `su45` for the duration of the function call, rather than taking ownership of it.
-> The `&` symbol is used to create a reference to the `su45` variable. This is a common pattern in Rust, known as borrowing.
->
-> The `print_locomotive` function is defined to take a reference to a `Locomotive` as an argument (`locomotive: &Locomotive`). By passing a reference, you allow the function to read the data in `su45`, but not modify it. This is known as immutable borrowing.
->
-> The benefit of this approach is that it avoids data copying, which can be expensive for large data structures. Instead, a reference (which is a kind of pointer) to the data is passed, which is much cheaper.
->
-> In Rust, references are a way to access data without taking ownership, which is a key part of Rust's system for managing memory and other resources safely and efficiently.
->
-> In the context of the `print_locomotive` function, the `&Locomotive` type in the function signature means that the function takes an immutable reference to a `Locomotive`. Inside the function, you can access the fields of the `Locomotive` using the dot notation, like `locomotive.name`.
+> Inną różnicą jest to, że `struct` nie może być dziedziczony, podczas gdy `class` może.
 
-Ponownie, Copilot wytłumaczył Nam kolejne niuanse języka bez wychodzenia z IDE.
+No i pięknie! Kolejny raz dostajemy bardzo dobre wytłumaczenie do pytania zadanego w sprawie konkretnego języka.
+
+Języka, który na tą chwilę ma może z trzy oficjalne książki ([jedną](https://helion.pl/ksiazki/crystal-programming-a-project-based-introduction-to-building-efficient-safe-and-readable-web-and-george-dietrich-guilherme-bernal,e_2t79.htm#format/e) kupiłem i polecam!).
+
+### Brniemy dalej
+
+No dobrze, ale może jednak nie przespaliśmy tak do końca informatyki i mamy wrażenie, że za faktem rozdzielenia możliwości tworzenia obiektów przy pomocy struktur i klas, stoi uzasadnienie w kwestii optymalizacji pamięci?
+
+Zadajemy kolejne pytanie, dot. języka który mimo wersji 1.11, nadal jest bardzo młodym językiem:
+
+_Czy w Crystalu, obiekty zdefiniowane z pomocą 'struct' trafiają na stos, a te z 'class' na stertę?_
+
+> Tak, to jest jedna z kluczowych różnic między `struct` a `class` w Crystal.
+>
+> Obiekty `struct` są przechowywane na stosie, co oznacza, że są one zazwyczaj szybsze do tworzenia i niszczenia, ale mają ograniczoną wielkość. Ponieważ są przechowywane na stosie, obiekty `struct` są przekazywane przez wartość, co oznacza, że kiedy przekazujesz `struct` do funkcji, tworzona jest jego kopia.
+>
+> Z drugiej strony, obiekty `class` są przechowywane na stercie. Sterta ma znacznie większą pojemność niż stos, więc obiekty `class` mogą być znacznie większe. Jednak tworzenie i niszczenie obiektów na stercie jest zazwyczaj wolniejsze. Ponieważ obiekty `class` są przechowywane na stercie, są one przekazywane przez referencję, co oznacza, że kiedy przekazujesz `class` do funkcji, przekazujesz referencję do obiektu, a nie sam obiekt.
+
+Jak widać nawet dla tak młodego języka, Copilot miał odpowiedź. Wyobraźmy sobie teraz ile informacji jest w stanie zwrócić w przypadku języków takich jak C, C++, Ada, Python, Java czy JavaScript.
+
+Kolejny raz jestem pod wrażeniem, gdyż ani na chwilę nie opuściłem edytora kodu.
+
+### Generujemy testy
+
+Po utworzeniu prostego projektu, dodajemy kod:
+
+```crystal
+module Store
+  VERSION = "0.1.0"
+
+  class Store
+    def initialize
+      @store = Hash(String, String).new
+    end
+
+    def set(key, value)
+      @store[key] = value
+    end
+
+    def get(key)
+      @store[key]
+    end
+
+    def delete(key)
+      @store.delete(key)
+    end
+
+    def clear
+      @store.clear
+    end
+  end
+end
+```
+
+Zaznaczamy kod i pod prawym klawiszem w sekcji `Copilot` zaznaczamy `Generuj testy`.
+
+W przypadku testów, doszło jednak do błędnego wystawienia kodu i testy nie przechodzą:
+
+```shell
+$ crystal spec
+
+FF..EEE
+
+Failures:
+
+  1) Store works
+     Failure/Error: false.should eq(true)
+
+       Expected: true
+            got: false
+
+     # spec/store_spec.cr:7
+
+  2) Store works
+     Failure/Error: false.should eq(true)
+
+       Expected: true
+            got: false
+
+     # spec/store_spec.cr:15
+
+  3) Store #get returns nil if the key does not exist
+
+  4) Store #delete deletes the value for a given key
+
+  5) Store #clear clears all key-value pairs in the store
+```
+
+I to jest pierwszy raz, kiedy Copilot poległ.
+
+Tu akurat biorę poprawkę na fakt, że jest to młody język i Copilot może mylić składnię z **rspec'em** z Ruby.
 
 ## Podsumowanie
 
-Jak widać, choćby na podstawie tej bądź co bądź biednej demonstracji formy uczenia się w oparciu o pomoc LLM'ów. Można zaobserwować jak wiele możliwości ona daje.
+Jak widać, choćby na podstawie tej bądź co bądź - biednej demonstracji uczenia sie i zgłębiania wiedzy oparciu o pomoc LLM'ów.
 
-Gdyż nie tylko jest w stanie odpowiadać na Nasze pytania, dawać przykłady kodu czy generować testy, ale także refaktoryzować kod, poprawiać, podpowiadać (czasem zepsuć).
-Choć z tym podpowiadaniem to bym delikatnie uważał, gdyż nie nauczymy się tak samo dobrze języka na pamięć, gdy będziemy pozwalać Copilotowi wypełniać za Nas całe połacie kodu.
-
-W tym przypadku musimy znaleźć złoty środek, a najlepszym jest pisanie kodu samemu bez patrzenia nadmiernie na ten podpowiadany i ew. dopytywanie się o informacje w czacie.
+Można zaobserwować jak wiele możliwości ona daje, gdyż nie tylko jest w stanie odpowiadać na Nasze pytania, dawać przykłady kodu czy generować testy, ale także refaktoryzować go i podpowiadać dobre praktyki.
 
 Osobiście, gdybym dziś miał jakieś 15 lat i był na początku swojej informatycznej drogi, a miał dostęp do takich możliwości jakie dają LLM'y.
-Zapewne uczyłbym się w ten sposób, wspomagając się książkami i zapewne dziś był znacznie bardziej doświadczony niż jestem obecnie.
-W młodości, niestety nie miałem możliwości pójścia na studia informatyczne, a nie miałem nikogo pod ręką, kto mógł by mi pomóc w nauce i wytłumaczyć niektóre kwestie jak prostemu człowiekowi.
-Próg wejścia do świata IT wydawał mi się tak duży, że po prostu się nie odważyłem wtedy uczyć samemu.
-Dopiero zrządzenie losu i rozpoczęcie pracy w IT, do którego trafiłem z tzw. niskiego szczebla tj zaczynając od Helpdesk'u. Dało mi na tyle sporego kopniaka motywującego, że znalazłem w sobie na tyle samozaparcia, by jednak tą wiedzę zgłębić. Dziś jestem tylko DevOps'em, programistą bym siebie nie nazwał, ale kto by pomyślał, że będę tu gdzie jestem?
+Zapewne uczyłbym się w ten sposób, wspomagając się książkami i zapewne dziś był bym znacznie bardziej doświadczony niż jestem obecnie.
 
-Dodatkowo, nie bez powodu wybrałem Rusta do tego artykułu. Gdyż, ten sam w sobie, wraz z jego inteligentnym kompilatorem, w akompaniamencie `rust-analyzera`, prowadzi Nas za rękę tłumacząc błędy.
-Natomiast w akompaniamencie `Copilota` staje się Naszym nauczycielem, kolegą z ławki, który podpowie trafnie, zawsze gdy mamy problem.
+W młodości, niestety nie miałem możliwości pójścia na studia informatyczne, a nie miałem nikogo pod ręką, kto mógł by mi pomóc w nauce i wytłumaczyć niektóre kwestie jak prostemu człowiekowi. Próg wejścia do świata IT wyższego rzędu (development, DevOps) wydawał mi się tak duży, że po prostu się nie odważyłem wtedy uczyć samemu.
 
-Szczerze, zazdroszczę dzisiejszej młodzieży, która już na etapie szkoły średniej ma takie możliwości. Mieć wirtualnego asystenta, który wytłumaczy Ci praktycznie wszystko czego potrzebujesz. Zredaguje kod, podpowie, przyspieszy pracę czy przeszuka dokumentację.
+Dopiero zrządzenie losu i rozpoczęcie pracy w IT, do którego trafiłem z tzw. niskiego szczebla tj zaczynając od Helpdesk'u. Dało mi na tyle sporego motywacyjnego kopniaka, że znalazłem w sobie na tyle samozaparcia, by jednak tą wiedzę zgłębić.
+
+Dziś jestem tylko DevOps'em, oraz Data Engineer'em i Back-end Developerem, ale kto by pomyślał, że będę tu gdzie jestem dziś?
+
+Szczerze, zazdroszczę dzisiejszej młodzieży, która już na etapie szkoły średniej ma takie możliwości. Mieć wirtualnego asystenta, który wytłumaczy praktycznie wszystko czego potrzebujesz. Zredaguje kod, podpowie, przyspieszy pracę czy przeszuka dokumentację.
 
 Korzystajcie z tego jak tylko się da, nie marnujcie możliwości, które Wam dano. Możecie wszystko! Praca z kodem, chyba nigdy nie była tak przyjemna jak dziś.
