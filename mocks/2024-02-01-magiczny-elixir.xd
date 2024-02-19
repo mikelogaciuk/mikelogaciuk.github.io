@@ -1,0 +1,63 @@
+---
+layout: post
+title: Magiczny Elixir
+date: 2024-02-01
+category: ["learning", "programming", "languages", "elixir", "ex", "erlang"]
+---
+
+![Header](/img/xxxx.png)
+
+## Elixir?
+
+**Elixir** to dynamiczny, funkcjonalny język programowania, stworzony z myślą o budowanie wysoce skalowalnych aplikacji.
+
+Język wykorzystuje wszystkie zalety maszyny wirtualnej języka **Erlang** (`Beam VM`), która jest znana z obsługi systemów o niskiej latencji, rozproszonych i odpornych na awarie.
+
+Kluczowymi cechami `Elixir'a` są min.:
+
+- Współbieżność: Kod Elixira działa w lekkich wątkach (zwanych procesami), które są izolowane i wymieniają informacje za pomocą wiadomości.
+- Odporność na awarie: Elixir posiada nadzorców, którzy opisują, jak ponownie uruchomić części systemu w przypadku problemów, wracając do znanego stanu początkowego, który działa.
+- Dystrybucja: Elixir pozwala na uruchamianie systemów na wielu hostach, które można łatwo ze sobą połączyć.
+- Aktualizacje kodu na żywo: Możesz aktualizować swój system bez jego zatrzymywania lub przerywania działania.
+- Metaprogramowanie: Elixir umożliwia metaprogramowanie, co pozwala pisać kod, który sam generuje kod, ułatwiając rozszerzanie języka do konkretnych dziedzin.
+- Wbudowane narzędzia: Elixir dostarcza zestaw narzędzi ułatwiających rozwój, w tym narzędzie do budowy, menedżer pakietów, framework testowy i wiele innych.
+
+## Ecosystem
+
+In addition to web frameworks, Elixir has several other popular frameworks for various purposes. Here are a few:
+
+### Web
+
+Elixir has several popular web frameworks that are widely used for building web applications. Here are a few:
+
+1. **Phoenix**: Phoenix is the most popular web framework in Elixir. It provides the best of both worlds: high developer productivity and high application performance. It also has a strong focus on real-time communication.
+
+2. **Plug**: Plug is a specification for composable modules in web applications. It's not a web framework per se, but it's used by Phoenix and other web frameworks as the underlying HTTP abstraction.
+
+3. **Nerves**: While not strictly a web framework, Nerves is worth mentioning. It's a framework for building embedded software in Elixir. It's often used to build "Internet of Things" devices.
+
+4. **Scenic**: Scenic is a client application library, similar to a game engine but for general purpose applications. It's used to build rich, interactive, and portable graphical user interfaces.
+
+5. **Cowboy**: Cowboy is a small, fast, and modular HTTP server directly available in Elixir.
+
+### Outside web
+
+1. **Ecto**: Ecto is a database wrapper and query generator. It's used for interacting with databases, like PostgreSQL and MySQL. It provides a DSL for writing queries and handling data.
+
+2. **Nerves**: Nerves is a framework for building embedded software in Elixir. It's often used to build "Internet of Things" devices.
+
+3. **Broadway**: Broadway is a concurrent and multi-stage data processing with Elixir. It's designed to help developers build concurrent, multi-stage data ingestion and data processing pipelines.
+
+4. **ExUnit**: ExUnit is a test framework that ships with Elixir itself. It's lightweight, annotative, and able to catch errors and failures.
+
+5. **Flow**: Flow is a library for computation parallelism and data processing. It allows you to build and run computational pipelines with Elixir.
+
+6. **GenStage**: GenStage is a specification for exchanging events between Elixir processes. It's used for creating architectures based on the producer-consumer pattern.
+
+7. **Absinthe**: Absinthe is a GraphQL toolkit for Elixir. It's used for creating GraphQL APIs in Elixir.
+
+8. **Credo**: Credo is a static code analysis tool for the Elixir language with a focus on teaching and code consistency.
+
+9. **Oban**: Oban is a job processing library that uses Postgres for storage, providing reliability and compliance with native Elixir and Erlang types.
+
+10. **LiveView**: Part of the Phoenix project, LiveView enables rich, real-time user experiences with server-rendered HTML. It's not a web framework, but a way to build interactive, real-time modules within a Phoenix application.
