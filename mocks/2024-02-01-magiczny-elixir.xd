@@ -9,55 +9,130 @@ category: ["learning", "programming", "languages", "elixir", "ex", "erlang"]
 
 ## Elixir?
 
-**Elixir** to dynamiczny, funkcjonalny język programowania, stworzony z myślą o budowanie wysoce skalowalnych aplikacji.
+**Elixir** to dynamiczny, funkcjonalny i wysoce skalowalny język programowania stworzony przez **José Valim'a** w 2012 roku.
 
-Język wykorzystuje wszystkie zalety maszyny wirtualnej języka **Erlang** (`Beam VM`), która jest znana z obsługi systemów o niskiej latencji, rozproszonych i odpornych na awarie.
+Język stworzony w ramach działalności naukowej w Plataformatec, inspirowany językami Ruby, Erlang i Closure który wykorzystuje wszystkie zalety maszyny wirtualnej **BEAM** (`Erlang VM`), która jest znana z obsługi systemów o niskiej latencji, rozproszonych i odpornych na awarie (procesy w skrócie są w stanie same się uzdrawiać tj restartować w przypadku awarii).
 
 Kluczowymi cechami `Elixir'a` są min.:
 
-- Współbieżność: Kod Elixira działa w lekkich wątkach (zwanych procesami), które są izolowane i wymieniają informacje za pomocą wiadomości.
-- Odporność na awarie: Elixir posiada nadzorców, którzy opisują, jak ponownie uruchomić części systemu w przypadku problemów, wracając do znanego stanu początkowego, który działa.
-- Dystrybucja: Elixir pozwala na uruchamianie systemów na wielu hostach, które można łatwo ze sobą połączyć.
-- Aktualizacje kodu na żywo: Możesz aktualizować swój system bez jego zatrzymywania lub przerywania działania.
-- Metaprogramowanie: Elixir umożliwia metaprogramowanie, co pozwala pisać kod, który sam generuje kod, ułatwiając rozszerzanie języka do konkretnych dziedzin.
-- Wbudowane narzędzia: Elixir dostarcza zestaw narzędzi ułatwiających rozwój, w tym narzędzie do budowy, menedżer pakietów, framework testowy i wiele innych.
+- Współbieżność: Kod Elixira działa w lekkich wątkach (zwanych procesami tudzież aktorami), które są izolowane i wymieniają informacje za pomocą wiadomości.
+- Odporność na awarie: Jka już wspomniałem, Elixir potrafi ponownie uruchomić części systemu w przypadku problemów, wracając do znanego stanu początkowego, który działa.
+- Dystrybucja: Elixir pozwala na uruchamianie systemów na wielu hostach, które można łatwo ze sobą łączyć tworząc wysoce skalowalne aplikacje.
+- Aktualizacje kodu na żywo: Elixir posiada możliwość zmiany kodu na żywo, bez potrzeby jego zatrzymywania lub przerywania.
+- Meta-programowanie: Elixir umożliwia meta-programowanie, co pozwala pisać kod, który sam generuje kod, ułatwiając rozszerzanie języka do konkretnych dziedzin lub do tworzenia własnych DSL'i.
 
-## Ecosystem
+## Ekosystem
 
-In addition to web frameworks, Elixir has several other popular frameworks for various purposes. Here are a few:
+Elixir posiada bogaty ekosystem framework'ów:
 
-### Web
+1. **Phoenix**: Najpopularniejszy ze wszystkich framework'ów Elixira, który łączy w sobie wysoką produktywność i wydajność.
 
-Elixir has several popular web frameworks that are widely used for building web applications. Here are a few:
+2. **Plug**: Plug to framework żywany przez Phoenix i inne framework'i internetowe jako podstawowa abstrakcja HTTP.
 
-1. **Phoenix**: Phoenix is the most popular web framework in Elixir. It provides the best of both worlds: high developer productivity and high application performance. It also has a strong focus on real-time communication.
+3. **Nerves**: Jest to framework do budowania oprogramowania wbudowanego dla urządzeń **IoT**.
 
-2. **Plug**: Plug is a specification for composable modules in web applications. It's not a web framework per se, but it's used by Phoenix and other web frameworks as the underlying HTTP abstraction.
+4. **Scenic**: Scenic to biblioteka podobna do silnika gier, ale przeznaczona raczej do aplikacji o ogólnym przeznaczeniu. Często używany do budowania bogatych, interaktywnych i przenośnych interfejsów graficznych użytkownika.
 
-3. **Nerves**: While not strictly a web framework, Nerves is worth mentioning. It's a framework for building embedded software in Elixir. It's often used to build "Internet of Things" devices.
+5. **Cowboy**: Cowboy to mały, szybki i modularny serwer HTTP dostępny bezpośrednio w Elixir.
 
-4. **Scenic**: Scenic is a client application library, similar to a game engine but for general purpose applications. It's used to build rich, interactive, and portable graphical user interfaces.
+6. **Ecto**: Ecto to najpopularniejszy ORM w ekosystemie Elixira. Używany do interakcji z bazami danych przy pomocy własnego DSL'a.
 
-5. **Cowboy**: Cowboy is a small, fast, and modular HTTP server directly available in Elixir.
+7. **Broadway**: Framework ułatwiajacy tworzenie równoległych wieloetapowych łańcuchów przetwarzania danych.
 
-### Outside web
+8. **Flow**: Bibliotek używana obliczeń i przetwarzania danych w potokach.
 
-1. **Ecto**: Ecto is a database wrapper and query generator. It's used for interacting with databases, like PostgreSQL and MySQL. It provides a DSL for writing queries and handling data.
+9. **ExUnit**: ExUnit to framework testowy, który jest dostarczany razem z Elixirem.
 
-2. **Nerves**: Nerves is a framework for building embedded software in Elixir. It's often used to build "Internet of Things" devices.
+10. **GenStage**: GenStage to biblioteka ułatwiajaca proces wymiany zdarzeń między procesami Elixir. Jest używany do tworzenia architektur opartych na wzorcu producent-konsument.
 
-3. **Broadway**: Broadway is a concurrent and multi-stage data processing with Elixir. It's designed to help developers build concurrent, multi-stage data ingestion and data processing pipelines.
+11. **Absinthe**: Absinthe to zestaw narzędzi GraphQL dla Elixir. Jest używany do tworzenia API GraphQL w Elixir.
 
-4. **ExUnit**: ExUnit is a test framework that ships with Elixir itself. It's lightweight, annotative, and able to catch errors and failures.
+12. **Oban**: Oban to biblioteka do przetwarzania zadań, która używa Postgresa do przechowywania, zapewniając niezawodność i zgodność z natywnymi typami Elixir i Erlang.
 
-5. **Flow**: Flow is a library for computation parallelism and data processing. It allows you to build and run computational pipelines with Elixir.
+13. **Live Book**: Interaktywne notebook'i wzorowane na Jupyterze, ale osadzone w ekosystemie Erl/Exc.
 
-6. **GenStage**: GenStage is a specification for exchanging events between Elixir processes. It's used for creating architectures based on the producer-consumer pattern.
+## Wstęp do języka
 
-7. **Absinthe**: Absinthe is a GraphQL toolkit for Elixir. It's used for creating GraphQL APIs in Elixir.
+### Typy danych
 
-8. **Credo**: Credo is a static code analysis tool for the Elixir language with a focus on teaching and code consistency.
+Nie będę tu się rozpisywał czym są string'i a czym float'y.
 
-9. **Oban**: Oban is a job processing library that uses Postgres for storage, providing reliability and compliance with native Elixir and Erlang types.
+Jedną z rzeczy, którą należy wspomnieć to **atomy**, które są odpowiednikami **symboli** w **Ruby**. Tj są zmiennymi, których nazwa jest równocześnie wartością:
 
-10. **LiveView**: Part of the Phoenix project, LiveView enables rich, real-time user experiences with server-rendered HTML. It's not a web framework, but a way to build interactive, real-time modules within a Phoenix application.
+```elixir
+iex> :name
+iex> :name == :surname
+false
+```
+
+Dodatkową kwestią jest fakt, że integery nie mają rozmiaru jak int8, int16 w **Go** etc. Ich rozmiar jest dynamiczny tj do tzw. nieskończoności (tak jak w **Pythonie**.).
+
+### Operatory
+
+Tu także klasycznie, w stylu **Ruby**:
+
+```elixir
+-99 || true
+false || 15
+!15
+!false
+!true
+false or true
+true and 42
+22 == 0
+1 === 0
+```
+
+### Interpolacja stringów
+
+Identycznie jak w Ruby:
+
+```elixir
+name = "Mike"
+IO.puts "Hello #{Mike}"
+```
+
+### Zmienne (pattern matching)
+
+Zmienne 'tworzymy' klasycznie, tak jak w Ruby:
+
+```elixir
+car = "Vaxhuall Astra"
+magic_number = 1234
+
+(...)
+```
+
+Aczkolwiek trzeba mieć na uwadze, że operator `=` jest tak naprawdę operatorem dopasowania, porównywalnym do znaku równości w algebrze. Pisanie go zamienia całe wyrażenie w równanie i sprawia, że Elixir dopasowuje wartości po lewej stronie do wartości po prawej stronie. Jeśli dopasowanie się powiedzie, zwraca wartość równania.
+
+Przykładowo, jeśli mamy zmienną `x` i przypiszemy jej wartość `1` (`x = 1`), to `x` przyjmuje wartość `1`¹. Następnie, jeśli spróbujemy dopasować `1` do `x` (`1 = x`), to dopasowanie się powiedzie, ponieważ obie wartości są równe `1`¹. Jeśli jednak spróbujemy dopasować `2` do `x` (`2 = x`), to dopasowanie nie powiedzie się, ponieważ wartość `x` to `1`, a nie `2`.
+
+Pattern matching działa również z listami i krotkami¹. Na przykład, jeśli mamy listę `[1, 2, 3]` i próbujemy dopasować ją do zmiennej `list` (`[1, 2, 3] = list`), to dopasowanie się powiedzie, jeśli `list` ma wartość `[1, 2, 3]`¹.
+
+W Elixirze istnieje również operator `^`, zwany operatorem pin. Kiedy używamy operatora pin, dopasowujemy do istniejącej wartości, a nie przypisujemy nowej. Na przykład, jeśli mamy zmienną `x` o wartości `1` i próbujemy dopasować `2` do `^x` (`^x = 2`), to dopasowanie nie powiedzie się, ponieważ `x` ma wartość `1`, a nie `2`.
+
+Przykład użycia operatora '=' jako operatora dopasowania
+
+```elixir
+
+iex> x = 1
+1
+iex> 1 = x
+1
+iex> 2 = x
+** (MatchError) no match of right hand side value: 1
+```
+
+```elixir
+iex> [q, w, e, r] = [6, 5, 4]
+** (MatchError) no match of right hand side value: [6, 5, 4]
+```
+
+Przykład użycia operatora '^' (pin)
+
+```elixir
+iex> x = 1
+1
+iex> ^x = 2
+** (MatchError) no match of right hand side value: 2
+```
