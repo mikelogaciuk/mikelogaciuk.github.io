@@ -7,11 +7,8 @@ category: ["go", "golang", "handbook", "notes"]
 
 ![Gopher in the fire](/img/This_is_Fine_Gopher.png)
 
-## Table of contents
-
 <!-- TOC -->
 
-- [Table of contents](#table-of-contents)
 - [Wstęp](#wstęp)
 - [Instalacja](#instalacja)
 - [Inicjacja projektu](#inicjacja-projektu)
