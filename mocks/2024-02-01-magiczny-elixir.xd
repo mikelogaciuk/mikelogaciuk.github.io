@@ -5,7 +5,7 @@ date: 2024-02-01
 category: ["learning", "programming", "languages", "elixir", "ex", "erlang"]
 ---
 
-![Header](/img/xxxx.png)
+![Header](/img/elixir_014.jpeg)
 
 ## Elixir?
 
@@ -51,6 +51,12 @@ Elixir posiada bogaty ekosystem framework'ów:
 
 13. **Live Book**: Interaktywne notebook'i wzorowane na Jupyterze, ale osadzone w ekosystemie Erl/Exc.
 
+### Interoperacyjność z Erlangiem
+
+Kolejnym pozytywnym aspektem języka **Elixir**, jest fakt jego interoperacyjności z innymi językami uruchamianymi na maszynie BEAM.
+
+Tym samym, możemy w Naszym kodzie używać bezpośrednio zarówno bibliotek z samego **Erlanga**, jak i innych języków z rodziny **BEAM** np. **Gleam**.
+
 ## Wstęp do języka
 
 ### Typy danych
@@ -67,9 +73,9 @@ false
 
 Dodatkową kwestią jest fakt, że integery nie mają rozmiaru jak int8, int16 w **Go** etc. Ich rozmiar jest dynamiczny tj do tzw. nieskończoności (tak jak w **Pythonie**.).
 
-### Operatory
+### Operatorzy
 
-Tu także klasycznie, w stylu **Ruby**:
+Tu także jest całkiem klasyczni i w stylu **Ruby**:
 
 ```elixir
 -99 || true
@@ -94,7 +100,9 @@ IO.puts "Hello #{Mike}"
 
 ### Zmienne (pattern matching)
 
-Zmienne 'tworzymy' klasycznie, tak jak w Ruby:
+Zmienne 'tworzymy' tak jak wszędzie - no może nie do końca...
+
+Przykład:
 
 ```elixir
 car = "Vaxhuall Astra"
@@ -103,7 +111,7 @@ magic_number = 1234
 (...)
 ```
 
-Aczkolwiek trzeba mieć na uwadze, że operator `=` jest tak naprawdę operatorem dopasowania, porównywalnym do znaku równości w algebrze. Pisanie go zamienia całe wyrażenie w równanie i sprawia, że Elixir dopasowuje wartości po lewej stronie do wartości po prawej stronie. Jeśli dopasowanie się powiedzie, zwraca wartość równania.
+Trzeba mieć na uwadze, że operator `=` jest tak naprawdę operatorem dopasowania, porównywalnym do znaku równości w algebrze. Pisanie go zamienia całe wyrażenie w równanie i sprawia, że Elixir dopasowuje wartości po lewej stronie do wartości po prawej stronie. Jeśli dopasowanie się powiedzie, zwraca wartość równania.
 
 Przykładowo, jeśli mamy zmienną `x` i przypiszemy jej wartość `1` (`x = 1`), to `x` przyjmuje wartość `1`¹. Następnie, jeśli spróbujemy dopasować `1` do `x` (`1 = x`), to dopasowanie się powiedzie, ponieważ obie wartości są równe `1`¹. Jeśli jednak spróbujemy dopasować `2` do `x` (`2 = x`), to dopasowanie nie powiedzie się, ponieważ wartość `x` to `1`, a nie `2`.
 
