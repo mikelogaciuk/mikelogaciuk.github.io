@@ -144,3 +144,24 @@ iex> x = 1
 iex> ^x = 2
 ** (MatchError) no match of right hand side value: 2
 ```
+
+### Niezmienność danych
+
+W Pythonie, od którego w sumie zaczynałem swoją historię z programowaniem (a mogło być to C), obiekty są mutowalne.
+
+Zmienne można nadpisać, zmienić - co w przypadku sporych behemotów, może prowadzić do bolesnego debugowania wcześniej napisanego przez Nas kodu i szukania przyczyny problemu.
+
+Elixir rozwiązuje ten problem, gdyż wszystkie dane są **niezmienne**:
+
+```elixir
+iex> last_name = "logaciuk"
+"logaciuk"
+iex> capitalized = String.capitalize name
+"Logaciuk"
+iex> last_name
+"logaciuk"
+```
+
+W skrócie, Elixir kopiuje oryginał nie dotykając referencji do źródła.
+
+Jeśli chodzi o wydajność, to w przypadku gdy np. utworzymy listę z wartościami 1, 2, 3. Następnie dodamy ich kolejne 97, mechanizm stworzy listę złożoną z head'a pierwszego zbioru, dołączając tail z drugiego - ponieważ dane w pierwszym zbiorze i tak się nie zmienią.
