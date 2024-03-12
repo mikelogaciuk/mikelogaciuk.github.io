@@ -267,12 +267,12 @@ Możemy do tego użyć kombinacji w postaci d**ry/cli** oraz **sequel'a** i **ta
 
 ```ruby
 #!/usr/bin/env ruby
-require "bundler/setup"
-require "dry/cli"
-require "sequel"
-require "json"
-require "yaml"
-require "tiny_tds"
+require 'bundler/setup'
+require 'dry/cli'
+require 'sequel'
+require 'json'
+require 'yaml'
+require 'tiny_tds'
 
 module Valctl
   module CLI
@@ -280,22 +280,22 @@ module Valctl
       extend Dry::CLI::Registry
 
       class Version < Dry::CLI::Command
-        desc "Print version"
+        desc 'Print version'
 
         def call(*)
-          puts "0.6.0"
+          puts '0.6.0'
         end
       end
 
       class Get < Dry::CLI::Command
-        desc "Query the database"
+        desc 'Query the database'
 
-        argument :server, required: true, desc: "The server to connect to"
-        argument :database, required: true, desc: "The database to connect to"
-        argument :query, required: true, desc: "The query to run"
-        option :format, default: "table", values: %w[json table], desc: "The output format"
+        argument :server, required: true, desc: 'The server to connect to'
+        argument :database, required: true, desc: 'The database to connect to'
+        argument :query, required: true, desc: 'The query to run'
+        option :format, default: 'table', values: %w[json table], desc: 'The output format'
 
-        def call(server:, database:, query:, format: "table", **)
+        def call(server:, database:, query:, format: 'table', **)
           db = Sequel.connect(
             adapter: 'tinytds',
             host: server,
@@ -304,10 +304,10 @@ module Valctl
             password: ''
           )
 
-          forbidden = ["delete", "drop", "truncate", "update", "*"]
+          forbidden = %w[delete drop truncate update]
 
           if forbidden.any? { |word| query.downcase.include?(word) }
-            (puts "Error: Forbidden query")
+            (puts 'Error: Forbidden query')
           else
             (
               begin
@@ -315,9 +315,7 @@ module Valctl
 
                 temp = db[query].all do |row|
                   row.each do |key, value|
-                    if value.is_a?(BigDecimal)
-                      row[key] = value.to_f
-                    end
+                    row[key] = value.to_f if value.is_a?(BigDecimal)
                   end
 
                   result << row
@@ -326,14 +324,14 @@ module Valctl
                 db.disconnect
 
                 case format
-                when "json"
+                when 'json'
                   puts JSON.pretty_generate(result)
-                when "table"
-                  require "table_print"
+                when 'table'
+                  require 'table_print'
                   tp result
                 end
 
-              rescue Exception => e
+              rescue StandardError => e
                 puts "Error: #{e.message}"
 
                 db.disconnect
@@ -346,8 +344,8 @@ module Valctl
         end
       end
 
-      register "version", Version, aliases: %w["v", "-v", "--version"]
-      register "get", Get, aliases: %w["q", "-g", "--get"]
+      register 'version', Version, aliases: %w[v -v --version]
+      register 'get', Get, aliases: %w[q -g --get]
 
     end
   end
