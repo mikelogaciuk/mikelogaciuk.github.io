@@ -299,7 +299,7 @@ module Valctl
           db = Sequel.connect(
             adapter: 'tinytds',
             host: server,
-            database: database,
+            database:,
             user: '',
             password: ''
           )
@@ -313,7 +313,7 @@ module Valctl
               begin
                 result = []
 
-                temp = db[query].all do |row|
+                db[query].all do |row|
                   row.each do |key, value|
                     row[key] = value.to_f if value.is_a?(BigDecimal)
                   end
@@ -330,12 +330,10 @@ module Valctl
                   require 'table_print'
                   tp result
                 end
-
               rescue StandardError => e
                 puts "Error: #{e.message}"
 
                 db.disconnect
-
               ensure
                 db.disconnect
               end)
@@ -346,7 +344,6 @@ module Valctl
 
       register 'version', Version, aliases: %w[v -v --version]
       register 'get', Get, aliases: %w[q -g --get]
-
     end
   end
 end
