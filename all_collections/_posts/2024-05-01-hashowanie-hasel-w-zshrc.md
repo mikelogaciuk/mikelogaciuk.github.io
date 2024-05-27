@@ -7,6 +7,14 @@ category: ["linux", "passwords", "good", "practises"]
 
 ![raccoons](</img/OIG2%20(1).jpeg>)
 
+- [Wstęp](#wstęp)
+- [Zależności](#zależności)
+- [GPG](#gpg)
+- [Pass](#pass)
+- [Dodawanie haseł](#dodawanie-haseł)
+- [Odczyt haseł](#odczyt-haseł)
+- [Ładowanie haseł do zmiennych](#ładowanie-haseł-do-zmiennych)
+
 ## Wstęp
 
 Jeszcze do niedawna, jednym z sugerowanych rozwiązań na przechowywanie haseł w Linuxie w postaci np. kluczy do API - było używane czystego tekstu w `.zshrc`.
@@ -109,3 +117,7 @@ echo $Foo
 ```
 
 I użyć go do np. uruchomienia aplikacji, kontenera etc.
+
+Oczywiście są inne rozwiązania jak `Vault (od Hashicorp)` czy `Bitwarden`, lecz czy dla takich celów jest sens?
+
+Haseł bez znajomości klucza do `credentials store'u` i tak nikt nie podejrzy.
