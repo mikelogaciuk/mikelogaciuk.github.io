@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Hash'owanie zmiennych w Linux'sie
+title: Hashowanie zmiennych w Linux'sie
 date: 2024-05-01
-category: ["linux", "passwords", "good", "practises"]
+category: ["linux", "passwords", "good", "practises", "unix"]
 ---
 
-![raccoons](</img/OIG2%20(1).jpeg>)
+![logo](/img/rusty_passty.jpeg)
 
 - [Wstęp](#wstęp)
 - [Zależności](#zależności)
