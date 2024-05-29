@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hashowanie zmiennych w Linux'sie
+title: Hashowanie zmiennych w Linuksie
 date: 2024-05-01
 category: ["linux", "passwords", "good", "practises", "unix"]
 ---
