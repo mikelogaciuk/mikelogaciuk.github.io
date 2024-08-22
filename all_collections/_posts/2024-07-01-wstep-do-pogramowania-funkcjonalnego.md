@@ -247,9 +247,9 @@ Te funkcje albo przyjmują inne funkcje jako argumenty, albo zwracają je jako w
 
    ```elixir
    defmodule Math do
-       def adder(n) do
-           fn x -> x + n end
-       end
+    def adder(n) do
+        fn x -> x + n end
+    end
    end
 
    add_five = Math.adder(5)
@@ -260,12 +260,12 @@ Te funkcje albo przyjmują inne funkcje jako argumenty, albo zwracają je jako w
 
    ```elixir
    defmodule StringManipulation do
-   def exclaim(string) do
-       string
-       |> String.trim()
-       |> String.capitalize()
-       |> Kernel.<>("!")
-   end
+    def exclaim(string) do
+        string
+        |> String.trim()
+        |> String.capitalize()
+        |> Kernel.<>("!")
+    end
    end
 
    IO.inspect(StringManipulation.exclaim(" hello world ")) # Wynik: "Hello world!"
