@@ -2,10 +2,10 @@
 layout: post
 title: Wstęp do programowania funkcjonalnego
 date: 2024-07-01
-category: ["programowanie", "funkcjonalne" "elixir"]
+category: ["programowanie", "funkcjonalne", "elixir"]
 ---
 
-![](/img/exr_cr_rust_17.jpeg)
+![header](/img/exr_cr_rust_17.jpeg)
 
 ## Spis treści
 
