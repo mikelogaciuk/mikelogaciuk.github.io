@@ -33,14 +33,9 @@ category: ["programowanie", "funkcjonalne", "elixir"]
 
 Programowanie funkcjonalne (lub funkcyjne), w skrócie FP, to paradygmat programowania, który koncentruje się na traktowaniu obliczeń jako ewaluacji funkcji matematycznych.
 
-    Wikipedia:
+Wikipedia:
 
-    Podstawą teoretyczną programowania funkcyjnego jest rachunek lambda (a dokładnie rachunek lambda z typami).
-    Został on opracowany w latach 30. XX wieku przez Alonzo Churcha.
-
-    Nazwa paradygmatu po raz pierwszy pojawiła się w pracy Johna Backusa:
-    "Can Programming Be Liberated From the von Neumann Style? A Functional Style and Its Algebra of Programs"
-    w roku 1977, dzięki której Backus dostał nagrodę Turinga, mimo że programowanie funkcyjne było znane już wcześniej.
+_Podstawą teoretyczną programowania funkcyjnego jest rachunek lambda (a dokładnie rachunek lambda z typami). Został on opracowany w latach 30. XX wieku przez Alonzo Churcha. Nazwa paradygmatu po raz pierwszy pojawiła się w pracy Johna Backusa: "Can Programming Be Liberated From the von Neumann Style? A Functional Style and Its Algebra of Programs" w roku 1977, dzięki której Backus dostał nagrodę Turinga, mimo że programowanie funkcyjne było znane już wcześniej._
 
 Popularne języki programowania funkcjonalnego to `Haskell`, `Scala`, `Clojure`, `Erlang`, `Elixir` czy `F#`.
 
@@ -283,21 +278,9 @@ Podsumowując, funkcje wyższego rzędu dają następujące korzyści:
 
 **Domknięcie** (ang. **Closure**) to funkcja, która przechwytuje powiązania wolnych zmiennych w swoim kontekście leksykalnym. Oznacza to, że funkcja zachowuje dostęp do tych zmiennych, nawet gdy jest wykonywana poza ich pierwotnym zakresem.
 
-    Wikipedia:
+Wikipedia:
 
-    Domknięcie – w metodach realizacji języków programowania jest to obiekt wiążący funkcję
-    lub referencję do funkcji oraz środowisko mające wpływ
-    na tę funkcję w momencie jej definiowania.
-
-    Środowisko przechowuje wszystkie nielokalne obiekty
-    wykorzystywane przez funkcję.
-    Realizacja domknięcia jest zdeterminowana przez język,
-    jak również przez kompilator.
-
-    Domknięcia występują głównie w językach funkcyjnych,
-    w których funkcje mogą zwracać inne funkcje (tzw. funkcje wyższego rzędu),
-    wykorzystujące zmienne utworzone lokalnie.
-    Aby funkcje tego typu były możliwe, muszą one być typem pierwszoklasowym.
+_Domknięcie – w metodach realizacji języków programowania jest to obiekt wiążący funkcję lub referencję do funkcji oraz środowisko mające wpływ na tę funkcję w momencie jej definiowania. Środowisko przechowuje wszystkie nielokalne obiekty wykorzystywane przez funkcję. Realizacja domknięcia jest zdeterminowana przez język, jak również przez kompilator. Domknięcia występują głównie w językach funkcyjnych, w których funkcje mogą zwracać inne funkcje (tzw. funkcje wyższego rzędu), wykorzystujące zmienne utworzone lokalnie. Aby funkcje tego typu były możliwe, muszą one być typem pierwszoklasowym._
 
 Przykład domknięcia w Elixirze:
 
