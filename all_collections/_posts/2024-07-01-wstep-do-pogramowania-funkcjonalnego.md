@@ -28,6 +28,7 @@ category: ["programowanie", "funkcjonalne", "elixir"]
   - [Częściowa aplikacja](#częściowa-aplikacja)
 - [Wartościowanie](#wartościowanie)
 - [Podsumowanie](#podsumowanie)
+- [Żródła](#żródła)
 
 ## Czym jest programowanie funkcyjne?
 
@@ -402,3 +403,13 @@ Niemniej jednak mam nadzieję, że na moim kolejnym etapie drogi przez świat pr
 Oraz, że wraz z nauką tego języka jak i całego jego ekosystem'u, nie przyprawi mnie o depresję.
 
 Gdy jednak już jej na serio zapragnę, po prostu otworzę książkę Haskell'em.
+
+## Żródła
+
+Lista źródeł:
+
+- [Wikipedia](https://wikipedia.org)
+- [Learn Haskell for Great Good](https://learnyouahaskell.github.io/)
+- [From Ruby to Elixir](https://pragprog.com/titles/sbelixir/from-ruby-to-elixir/)
+- [Learn Functional Programming with Elixir](https://www.oreilly.com/library/view/learn-functional-programming/9781680505757/)
+- [Programming Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
