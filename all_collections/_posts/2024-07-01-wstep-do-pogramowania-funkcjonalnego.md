@@ -103,7 +103,7 @@ W tym przykładzie, funkcja `log_message/1` ma efekt uboczny (wydruk w konsoli).
 
 ## Dopasowywanie wzorców
 
-**Dopasowywanie wzoróców** (ang. **pattern matching**) jest techniką w programowaniu funkcyjnym, która pozwala na sprawdzanie wartości względem określonego wzorca i, jeśli wartość pasuje do wzorca, wyodrębnianie z niej informacji. Jest to elastyczny i wyrazisty sposób podejmowania decyzji na podstawie struktury danych. Innymi słowy można przyrównać to do sprawdzania wartości prawej do lewej.
+**Dopasowywanie wzorców** (ang. **pattern matching**) jest techniką w programowaniu funkcyjnym, która pozwala na sprawdzanie wartości względem określonego wzorca i, jeśli wartość pasuje do wzorca, wyodrębnianie z niej informacji. Jest to elastyczny i wyrazisty sposób podejmowania decyzji na podstawie struktury danych. Innymi słowy można przyrównać to do sprawdzania wartości prawej do lewej.
 
 Jest to bardzo trafnie omówione w książce **Learn Functional Programming with Elixir** autorstwa **Ulisses Almeida'y**, bazując na przykładzie kodu:
 
@@ -114,9 +114,9 @@ Jest to bardzo trafnie omówione w książce **Learn Functional Programming with
 
 1 = 2 # Wynik: ** (MatchError) no match of right hand side value: 2
 
-iex> x = 1 # Wynik:
+x = 1 # Wynik: 1
 
-iex> 1 = x # Wynik: 1
+1 = x # Wynik: 1
 ```
 
     1 = 1 matches, but 2 = 1 and 1 = 2 don’t because they’re different numbers.
