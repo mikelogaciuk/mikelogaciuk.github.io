@@ -2,8 +2,7 @@
 layout: post
 title: Nauka języków programowania z Copilotem
 date: 2023-07-07
-category:
-  ["learning", "programming", "languages", "Copilot", "llm", "ai", "rust"]
+category: ["nauka", "programowanie", "Copilot", "llm", "ai", "rust"]
 ---
 
 ![Header](/img/rusty1.jpeg)

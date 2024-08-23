@@ -2,7 +2,7 @@
 layout: post
 title: Notatki z Go
 date: 2023-02-21
-category: ["go", "golang", "handbook", "notes"]
+category: ["go", "golang", "notatki", "cheatsheet"]
 ---
 
 ![Gopher in the fire](/img/This_is_Fine_Gopher.png)
