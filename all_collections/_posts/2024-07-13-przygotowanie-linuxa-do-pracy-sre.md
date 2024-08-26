@@ -1119,9 +1119,7 @@ Lub:
 
 ### Gleam
 
-`Gleam`'a musimy skompilować (potrzebny do tego jest Nam Rust).
-
-Robimy to dosyć prosto:
+`Gleam`'a musimy skompilować (potrzebny do tego jest Nam Rust) i robi to się dosyć prosto:
 
 ```shell
 cd /tmp
@@ -1147,6 +1145,8 @@ cd compiler-cli && cargo install --path . --force --locked
 $ gleam -V
 gleam 1.4.1
 ```
+
+PS. Należy pamiętać o tym, że Gleam kompiluje się do Erlang'a (BEAM) więc i go potrzebujemy.
 
 ### Scala
 
