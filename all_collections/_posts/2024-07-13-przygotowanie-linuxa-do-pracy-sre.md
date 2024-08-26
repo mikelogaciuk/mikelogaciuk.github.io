@@ -76,14 +76,15 @@ W tym przypadku instrukcje dostosowane są do systemów z rodziny Debiana (aktua
 - [Languages](#languages)
   - [Python](#python)
   - [Ruby](#ruby)
-  - [Wersje z YJIT](#wersje-z-yjit)
-  - [Bundler](#bundler)
-  - [Ruby Kernel dla Jupytera](#ruby-kernel-dla-jupytera)
-  - [TruffleRuby GraalVM](#truffleruby-graalvm)
+    - [YJIT](#yjit)
+    - [Bundler](#bundler)
+    - [Ruby Kernel dla Jupytera](#ruby-kernel-dla-jupytera)
+    - [TruffleRuby GraalVM](#truffleruby-graalvm)
   - [Crystal](#crystal)
   - [Go](#go)
   - [Rust](#rust)
   - [Nim](#nim)
+  - [Gleam](#gleam)
   - [Scala](#scala)
   - [Erlang](#erlang)
   - [Elixir](#elixir)
@@ -924,7 +925,7 @@ rbenv local 3.2.2    # Set the Ruby version for this directory
 rbenv uninstall 3.1.2
 ```
 
-### Wersje z YJIT
+#### YJIT
 
 By zainstalować YJIT potrzebujemy wykonać instalacje w taki sposób (wymagany jest Rust na maszynie):
 
@@ -932,13 +933,13 @@ By zainstalować YJIT potrzebujemy wykonać instalacje w taki sposób (wymagany
 RUBY_CONFIGURE_OPTS="--enable-yjit" rbenv install 3.3.1
 ```
 
-### Bundler
+#### Bundler
 
 ```bash
 gem install bundler
 ```
 
-### Ruby Kernel dla Jupytera
+#### Ruby Kernel dla Jupytera
 
 Wykonujemy:
 
@@ -949,7 +950,7 @@ $ iruby register --force
 
 I przeładowujemy shella.
 
-### TruffleRuby GraalVM
+#### TruffleRuby GraalVM
 
 By zainstalować TruffleRuby (z GraalVM) wykonujemy:
 
@@ -1114,6 +1115,37 @@ Lub:
 
 ```bash
 /home/${USER}/.nimble/bin/nimble install nimlangserver --accept
+```
+
+### Gleam
+
+`Gleam`'a musimy skompilować (potrzebny do tego jest Nam Rust).
+
+Robimy to dosyć prosto:
+
+```shell
+cd /tmp
+git clone https://github.com/gleam-lang/gleam.git
+cd gleam
+```
+
+```shell
+$ make install
+
+cd compiler-cli && cargo install --path . --force --locked
+  Installing gleam v1.4.1 (/tmp/gleam/compiler-cli)
+    Updating crates.io index
+  Downloaded base16 v0.2.1
+  Downloaded askama v0.12.1
+  Downloaded askama_escape v0.10.3
+  (...)
+   Compiling same-file v1.0.6
+   Compiling askama_escape v0.10.3
+```
+
+```shell
+$ gleam -V
+gleam 1.4.1
 ```
 
 ### Scala
