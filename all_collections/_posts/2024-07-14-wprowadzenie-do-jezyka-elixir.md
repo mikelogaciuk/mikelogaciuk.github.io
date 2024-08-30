@@ -264,8 +264,6 @@ Innym przykładami pattern-matching'u są choćby poniższe.
 ```elixir
 {:ok, value} = {:ok, 42}  # Wynik => value = 42
 {:ok, value} = {:error, "failed"}  # Wynik => Otrzymujemy MatchError
-
-{{:ok, result}, status} = {{:ok, 100}, :success}  # Wynik => result = 100, status = :success
 ```
 
 ### Porównywanie map
