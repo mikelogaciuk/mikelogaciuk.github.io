@@ -41,8 +41,8 @@ category:
   - [Wyrażenia listowe](#wyrażenia-listowe)
   - [Guardy (funkcje warunkowe)](#guardy-funkcje-warunkowe)
   - [Moduły](#moduły)
-    - [Zagnieżdżone Moduły](#zagnieżdżone-moduły)
-    - [Atrybuty Modułów](#atrybuty-modułów)
+    - [Zagnieżdżone moduły](#zagnieżdżone-moduły)
+    - [Atrybuty](#atrybuty)
     - [Importowanie, używanie i aliasy modułów](#importowanie-używanie-i-aliasy-modułów)
   - [Struktury](#struktury)
 - [Pozostałe elementy składni](#pozostałe-elementy-składni)
@@ -550,7 +550,7 @@ IO.puts(Math.add(2, 3))  # Wynik => 5
 # IO.puts(Math.multiply(2, 3))  # Błąd kompilacji
 ```
 
-#### Zagnieżdżone Moduły
+#### Zagnieżdżone moduły
 
 Moduły mogą być zagnieżdżane, co pozwala na jeszcze lepszą organizację kodu. Zagnieżdżone moduły są definiowane wewnątrz innych modułów.
 
@@ -566,7 +566,7 @@ end
 IO.puts(Outer.Inner.greet())  # Wynik => "Hello from the inner module!"
 ```
 
-#### Atrybuty Modułów
+#### Atrybuty
 
 Moduły mogą zawierać atrybuty, które są używane do przechowywania metadanych. Najczęściej używanym atrybutem jest `@doc`, który służy do dokumentowania funkcji.
 
