@@ -988,7 +988,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$OPENSSL_PREFIX"
 
 `Crystal` - to taki kompilowalny kuzyn Ruby.
 
-Instalujemy go poprzez:
+Instalujemy go przez:
 
 - skrypt .sh
 - lub `apt`.
