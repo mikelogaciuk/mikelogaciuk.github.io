@@ -933,6 +933,14 @@ By zainstalować YJIT potrzebujemy wykonać instalacje w taki sposób (wymagany
 RUBY_CONFIGURE_OPTS="--enable-yjit" rbenv install 3.3.1
 ```
 
+Dla Debiana z doinstalowanym OpenSSL z `brew`:
+
+```bash
+RUBY_CONFIGURE_OPTS="--enable-yjit --with-openssl-dir=$OPENSSL_PREFIX" rbenv install 3.3.1
+```
+
+Dodatkowe flagi do eksportu znajdują się w sekcji dot. [TruffleRuby na GraalVM](#truffleruby-graalvm).
+
 #### Bundler
 
 ```bash
@@ -955,7 +963,7 @@ I przeładowujemy shella.
 By zainstalować TruffleRuby (z GraalVM) wykonujemy:
 
 ```bash
-rbenv install truffleruby+graalvm-22.1.0
+rbenv install truffleruby+graalvm-24.0.2
 ```
 
 Czasem możemy potrzebować `OpenSSL v1.1`, więc wykonujemny:
