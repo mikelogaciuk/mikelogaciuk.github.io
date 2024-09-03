@@ -1046,12 +1046,12 @@ Następnie w pliku `~/.config/nvim/lua/config/lazy.lua` dodajemy:
 
 ### Go
 
-W momencie pisania tekstu, najnowszym build'em było `1.22.0`:
+W momencie pisania tekstu, najnowszym build'em było `1.23.0`:
 
 ```bash
 cd ~/Downloads
-wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
 mkdir -p ~/.go
 ```
 
@@ -1067,7 +1067,7 @@ Sprawdzamy:
 
 ```bash
 $ go version
-go version go1.20.3 linux/amd64
+go version go1.23.0 linux/amd64
 ```
 
 ### Rust
