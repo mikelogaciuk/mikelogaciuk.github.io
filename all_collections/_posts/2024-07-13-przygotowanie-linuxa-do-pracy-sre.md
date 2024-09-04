@@ -925,6 +925,14 @@ rbenv local 3.2.2    # Set the Ruby version for this directory
 rbenv uninstall 3.1.2
 ```
 
+### LSP
+
+Language server protocol dla Ruby instalujemy, tak:
+
+```bash
+gem install bundler solargraph ruby-lsp rubocop rubocop-packaging rubocop-performance rubocop-rspec rubocop-shopify rubocop-thread_safety 
+```
+
 #### YJIT
 
 By zainstalować YJIT potrzebujemy wykonać instalacje w taki sposób (wymagany jest Rust na maszynie):
