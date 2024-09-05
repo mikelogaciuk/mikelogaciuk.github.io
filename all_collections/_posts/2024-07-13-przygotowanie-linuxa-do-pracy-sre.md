@@ -882,7 +882,7 @@ sudo apt install python3-virtualenv python3-poetry
 Dla Ruby, najlepiej zainstalować `Rbenv` w celu kontroli wersji, które posiadamy w systemie:
 
 ```bash
-sudo apt update && sudo apt install rbenv libyaml-dev
+sudo apt update && sudo apt install rbenv libyaml-dev libffi-dev
 echo 'eval "$(/usr/bin/rbenv init - zsh)"' >> ~/.zshrc
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 ```
