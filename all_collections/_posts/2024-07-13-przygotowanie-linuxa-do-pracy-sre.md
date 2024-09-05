@@ -882,7 +882,7 @@ sudo apt install python3-virtualenv python3-poetry
 Dla Ruby, najlepiej zainstalować `Rbenv` w celu kontroli wersji, które posiadamy w systemie:
 
 ```bash
-sudo apt update && sudo apt install rbenv
+sudo apt update && sudo apt install rbenv libyaml-dev
 echo 'eval "$(/usr/bin/rbenv init - zsh)"' >> ~/.zshrc
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 ```
@@ -892,14 +892,14 @@ Sprawdzanie wersji dostępnych na ten moment do instalacji:
 ```bash
 # List latest stable versions:
 $ rbenv install --list
-3.0.6
-3.1.4
-3.2.2
-jruby-9.4.5.0
-mruby-3.2.0
+3.1.6
+3.2.5
+3.3.5
+jruby-9.4.8.0
+mruby-3.3.0
 picoruby-3.0.0
-truffleruby-23.1.1
-truffleruby+graalvm-23.1.1
+truffleruby-24.0.2
+truffleruby+graalvm-24.0.2
 ```
 
 Wersje lokalne sprawdzamy tak:
@@ -914,24 +914,15 @@ $ rbenv versions
 Konkretną wersję instalujemy tak:
 
 ```shell
-rbenv install 3.1.2
-```
-
-And you should see something like this:
-
-```bash
-Downloading ruby-3.2.2.tar.gz...
--> https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.2.tar.gz
-Installing ruby-3.2.2...
-Installed ruby-3.2.2 to /home/USER/.rbenv/versions/3.2.2
+rbenv install 3.3.5
 ```
 
 Buildy konfigurujemy tak:
 
 ```bash
-rbenv global 3.2.2   # Set the default Ruby version for this machine
+rbenv global 3.3.5   # Set the default Ruby version for this machine
 
-rbenv local 3.2.2    # Set the Ruby version for this directory
+rbenv local 3.3.5    # Set the Ruby version for this directory
 
 rbenv uninstall 3.1.2
 ```
@@ -946,25 +937,19 @@ gem install bundler solargraph ruby-lsp rubocop rubocop-packaging rubocop-perfor
 
 #### YJIT
 
-By zainstalować YJIT potrzebujemy wykonać instalacje w taki sposób (wymagany jest Rust na maszynie):
+By zainstalować YJIT potrzebujemy wykonać instalacje w taki sposób (Rust jest wymagany):
 
 ```bash
-RUBY_CONFIGURE_OPTS="--enable-yjit" rbenv install 3.3.1
+RUBY_CONFIGURE_OPTS="--enable-yjit" rbenv install 3.3.5
 ```
 
 Dla Debiana z doinstalowanym OpenSSL z `brew`:
 
 ```bash
-RUBY_CONFIGURE_OPTS="--enable-yjit --with-openssl-dir=$OPENSSL_PREFIX" rbenv install 3.3.1
+RUBY_CONFIGURE_OPTS="--enable-yjit --with-openssl-dir=$OPENSSL_PREFIX" rbenv install 3.3.5
 ```
 
 Dodatkowe flagi do eksportu znajdują się w sekcji dot. [TruffleRuby na GraalVM](#truffleruby-graalvm).
-
-#### Bundler
-
-```bash
-gem install bundler
-```
 
 #### Ruby Kernel dla Jupytera
 
