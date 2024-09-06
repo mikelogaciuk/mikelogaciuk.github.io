@@ -76,8 +76,8 @@ W tym przypadku instrukcje dostosowane są do systemów z rodziny Debiana (aktua
 - [Languages](#languages)
   - [Python](#python)
   - [Ruby](#ruby)
+  - [LSP](#lsp)
     - [YJIT](#yjit)
-    - [Bundler](#bundler)
     - [Ruby Kernel dla Jupytera](#ruby-kernel-dla-jupytera)
     - [TruffleRuby GraalVM](#truffleruby-graalvm)
   - [Crystal](#crystal)
@@ -102,8 +102,7 @@ W celu instalacji **Git'a**, wykonujemy:
 
 ```bash
 sudo apt install git && git config --global credential.helper store
-git config --global user.name "your username"
-git config --global user.password "your password"
+git config --global user.name "John Doe"  && git config --global user.email johndoe@example.com
 ```
 
 ## Zsh
@@ -932,7 +931,7 @@ rbenv uninstall 3.1.2
 Language server protocol dla Ruby instalujemy, tak:
 
 ```bash
-gem install bundler solargraph ruby-lsp rubocop rubocop-packaging rubocop-performance rubocop-rspec rubocop-shopify rubocop-thread_safety 
+gem install bundler solargraph ruby-lsp rubocop rubocop-packaging rubocop-performance rubocop-rspec rubocop-shopify rubocop-thread_safety
 ```
 
 #### YJIT
