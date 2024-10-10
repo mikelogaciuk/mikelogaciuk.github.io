@@ -10,3 +10,13 @@ gem "jekyll-feed", "~> 0.15.1"
 gem "sassc", "~> 2.1.0"
 gem "webrick"
 gem "public_suffix", "4.0.7"
+
+group :lsp do
+  gem 'rubocop'
+  gem 'rubocop-packaging'
+  gem 'rubocop-performance'
+  gem 'rubocop-rspec'
+  gem 'rubocop-shopify'
+  gem 'rubocop-thread_safety'
+  gem 'ruby-lsp'
+end
