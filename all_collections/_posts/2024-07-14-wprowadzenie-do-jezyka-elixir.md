@@ -505,7 +505,7 @@ Loop.countdown(3)
 
 ### Wyrażenia listowe
 
-Elixir wspiera wyrażenia zrozumienia, które umożliwiają tworzenie nowych list na podstawie istniejących kolekcji:
+Elixir wspiera wyrażenia listowe, które umożliwiają tworzenie nowych list na podstawie istniejących kolekcji:
 
 ```elixir
 for n <- 1..4, do: n * n  # Wynik => [1, 4, 9, 16]
