@@ -825,9 +825,11 @@ cd /opt/oracle/
 sudo wget -P /opt/oracle https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
 sudo wget -P /opt/oracle https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip
 sudo wget -P /opt/oracle https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sdk-linux.x64-19.8.0.0.0dbru.zip
+sudo wget -P /opt/oracle https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-odbc-linux.x64-19.8.0.0.0dbru.zip
 sudo unzip instantclient-basic-linux.x64-19.8.0.0.0dbru.zip -d /opt/oracle
 sudo unzip instantclient-sqlplus-linux.x64-19.8.0.0.0dbru.zip -d /opt/oracle
 sudo unzip instantclient-sdk-linux.x64-19.8.0.0.0dbru.zip -d /opt/oracle
+sudo unzip instantclient-odbc-linux.x64-19.8.0.0.0dbru.zip -d /opt/oracle
 export PATH="$PATH:/opt/oracle/instantclient_19_8"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/oracle/instantclient_19_8"
 sudo ldconfig
