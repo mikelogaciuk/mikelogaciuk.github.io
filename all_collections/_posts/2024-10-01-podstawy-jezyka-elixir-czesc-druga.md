@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Podstawy języka Elixir (część pierwsza)
+title: Podstawy języka Elixir (część druga)
 date: 2024-10-01
 category:
   ["elixir", "programowanie", "funkcjonalne", "funkcyjne", "fp", "erlang"]
