@@ -6,7 +6,7 @@ category:
   ["elixir", "programowanie", "funkcjonalne", "funkcyjne", "fp", "erlang"]
 ---
 
-![header](./img/_elixirw_014.jpeg)
+![header](/img/elixir_019.jpeg)
 
 ## Spis treści
 
