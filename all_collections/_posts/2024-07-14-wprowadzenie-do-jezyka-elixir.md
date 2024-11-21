@@ -631,7 +631,7 @@ IO.inspect(car)  # Wynik => %Car{make: "Ford", model: "Mustang", year: 2021, eng
 
 ## Pozostałe elementy składni
 
-Składnię jezyka Elixir w bardziej rozwiniętej formie, omówię w kolejnej serii artykułów.
+Składnię jezyka Elixir w bardziej rozwiniętej formie, możecie znaleźć pod [tym](https://mikelogaciuk.github.io/posts/podstawy-jezyka-elixir-czesc-pierwsza/) adresem.
 
 ## Referencje
 
