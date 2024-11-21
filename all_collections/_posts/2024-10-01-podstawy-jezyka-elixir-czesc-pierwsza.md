@@ -43,7 +43,7 @@ category:
 - [Przekazywanie (pipe)](#przekazywanie-pipe)
 - [Enumeratory i strumienie](#enumeratory-i-strumienie)
   - [Enumeratory](#enumeratory)
-- [Uwagi](#uwagi)
+- [Druga część artykułu](#druga-część-artykułu)
 - [Referencje](#referencje)
 
 ## Małe przypomnienie
@@ -696,9 +696,9 @@ ex_stream = Stream.cycle([666..999])
 Enum.take(ex_stream, 5)
 ```
 
-## Uwagi
+## Druga część artykułu
 
-Dalsza część artykułu, znajdzie się tu w późniejszym terminie.
+Dalsza część artykułu, znajduje się [tutaj](https://mikelogaciuk.github.io/posts/podstawy-jezyka-elixir-czesc-druga/).
 
 ## Referencje
 
