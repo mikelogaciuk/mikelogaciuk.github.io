@@ -46,7 +46,6 @@ category:
     - [Importowanie, używanie i aliasy modułów](#importowanie-używanie-i-aliasy-modułów)
   - [Struktury](#struktury)
 - [Pozostałe elementy składni](#pozostałe-elementy-składni)
-- [Co dalej?](#co-dalej)
 - [Referencje](#referencje)
 
 ## Wstęp
@@ -632,19 +631,7 @@ IO.inspect(car)  # Wynik => %Car{make: "Ford", model: "Mustang", year: 2021, eng
 
 ## Pozostałe elementy składni
 
-Długo się zastanawiałem, czy brnąć dalej w kolejne elementy składowe Elixirowej składni, jednak po dłuższym namyśle uznałem, że ponowne odkrywanie wielokrotnie opisanego już "koła", nie ma zbytnio sensu.
-
-Same elementy składni znajdziemy w niezliczonej ilości artykułów przedstawiających składnie Elixira, cheat-sheet'ach czy samej dokumentacji języka oraz sporej już ilości naprawdę profesjonalnych książek.
-
-I zaprawdę, pisanie znów czegoś co napisano setki razy, jest po prostu bezsensu. Szanujmy mój i Wasz czas, a jeżeli kogoś ów artykuł zainteresował to najzwyczajniej w świecie odsyłam do referencji i książek wymienionych na końcu artykułu.
-
-## Co dalej?
-
-Czas zaoszczędzony na pisaniu kolejnych elaboratów na temat składni Elixira, mogę poświęcić na faktyczną prezentację tego języka.
-
-Zapewne na pierwszy rzut pójdzie tzw `key-value store`, wspomagany `cli`, w następnych _odcinkach_, postaram skupić się na prototypowaniu choćby `pub-sub`'ów i tego jak prosto w Elixirze możemy pisać wielowątkowy kod oraz wiele wiele innych.
-
-Elixir jest wysoce wszechstronnym i przyszłościowym językiem, który moim zdaniem po prostu należy zgłębić...
+Składnię jezyka Elixir w bardziej rozwiniętej formie, omówię w kolejnej serii artykułów.
 
 ## Referencje
 
