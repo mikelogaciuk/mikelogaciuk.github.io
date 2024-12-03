@@ -451,7 +451,7 @@ Jak widać Elixir to język, który da się lubić i który potrafi zaskoczyć c
 
 Mimo faktu bycia językiem funkcjonalnym, posiada jednak ciekawe elementy, umożliwiające pisanie choćby `polimorfistycznego` kodu.
 
-Kontynuacja podstaw, znajdzie się w kolejnym artykule.
+Następna część znajduje się [tutaj](https://mikelogaciuk.github.io/posts/podstawy-jezyka-elixir-czesc-trzecia/).
 
 ## Referencje
 
