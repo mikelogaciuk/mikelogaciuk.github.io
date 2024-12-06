@@ -29,6 +29,9 @@ category:
 - [Funkcje anonimowe](#funkcje-anonimowe)
 - [Arność funkcji](#arność-funkcji)
 - [Wyrażenia listowe](#wyrażenia-listowe)
+- [Wyrażenia logiczne](#wyrażenia-logiczne)
+  - [Case](#case)
+  - [If/unless](#ifunless)
 - [Moduły, funkcje imienne, warunkowe oraz rekurencja](#moduły-funkcje-imienne-warunkowe-oraz-rekurencja)
   - [Rekurencja](#rekurencja)
   - [Moduły](#moduły)
@@ -456,6 +459,112 @@ envs = [prod: :storify, prod: :prefect, staging: :walld,
 
 ```elixir
 for {:staging, val} <- envs, do: val
+```
+
+## Wyrażenia logiczne
+
+W języku Elixir mamy takie wyrażenia logiczne jak:
+
+- `case`
+- `cond`
+- `if`
+- `unless`
+
+### Case
+
+Wyrażenie `case` pozwala nam porównywać wartość z wieloma wzorcami, dopóki nie znajdziemy pasującego:
+
+```elixir
+case {333, 666, 999} do
+  {1, 2, 3} -> "This will not work...."
+  {a, 666, 999} -> "Will match and bind 'a' to 333"
+  _ -> "Will match any value"
+end
+```
+
+```elixir
+#case_ex_val = params[:environment]
+case_ex_val = :dev
+
+case case_ex_val do
+  case_ex_val when case_ex_val == :prod -> "Running on prod..."
+  _ -> "Undefined environment..."
+end
+```
+
+Inny przykład z użyciem modułu oraz funkcji prywatnej oraz publicznej:
+
+```elixir
+defmodule Example.Case.In.Func do
+  defp convert_binary_to_string(binary) do
+    binary
+    |> :binary.bin_to_list()
+    |> Enum.filter(&(&1 != 0))
+    |> List.to_string()
+  end
+
+  def binary_to_string(value) do
+    case value do
+      value when is_binary(value) == true -> convert_binary_to_string(value)
+      _ -> value
+    end
+  end
+end
+
+case_bin_example = <<83, 0, 48, 0, 48, 0, 49, 0>>
+
+Example.Case.In.Func.binary_to_string(case_bin_example)
+```
+
+W tym przypadku funkcja konwertuje wszystko co ma typ `binarny` na `string`, resztę pozostawiając taką jaką jest.
+
+Więcej o modułach i funkcjach, w następnym rozdziale.
+
+### If/unless
+
+W przypadku Elixira, `if/2` oraz `unless/2` to makra (o których później) i raczej nie muszę ich tłumaczyć, po za `unless`, które dla osób z poza świata `Ruby` jest odwrotnością `if`.
+
+Przykłady:
+
+```elixir
+envs = [environment: :staging]
+
+if envs[:environment] == :staging do
+  "Running on staging"
+end
+```
+
+```elixir
+if envs[:environment] == :staging do
+  "Running on staging as it should"
+else
+  raise "ErlangError"
+end
+```
+
+```elixir
+unless false do
+  "Error"
+end
+```
+
+Jeśli chodzi o `unless` to często jest nazywany jako: _Evil twin brother (if)._ Jest spora grupa programistów z poza świata `Ruby` skuszonych Elixirem, która niecierpi tego makra.
+
+W przypadku gdybyście chceli użyć zagnieżdzonych `if` czy `unless` - lepszym wyborem zapewne będzie `cond`:
+
+```elixir
+temp = -21
+
+cond do
+  temp < -60 -> "Vodka is starting to froze..."
+  temp == -33 -> "Could be better"
+  temp < -20 -> "Not great not terrible"
+  temp < -5 -> "It's warm..."
+  temp == 0 -> "It's okay."
+  temp in 5..20 -> "Global warming..."
+  temp >= 21 -> "We are going to die!"
+  true -> "Err"
+end
 ```
 
 ## Moduły, funkcje imienne, warunkowe oraz rekurencja
