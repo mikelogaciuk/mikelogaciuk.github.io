@@ -145,12 +145,7 @@ ProducerConsumerExample.run()
 
 Bardzo rzadko jednak, używamy procesów w takiej jak powyżej formie - no chyba, że chcemy aby coś się wykonało w tle i aby ew. błąd osiągnięty tam, nie miał jakiegokolwiek wpływu na to co robi Nasz główny kod.
 
-Jeżeli chcemy aby błąd w jednym procesie miał wpływ na następny - powinniśmy je zlinkować z pomocą `spawn_link/1`:
-
-```elixir
-# spawn_link(fn -> raise "Error!" end)
-# -> Evaluation process terminated - {%RuntimeError{message: "Error!"}, []}
-```
+Jeżeli chcemy aby błąd w jednym procesie miał wpływ na następny - powinniśmy je zlinkować z pomocą `spawn_link/1`.
 
 ### Task
 
