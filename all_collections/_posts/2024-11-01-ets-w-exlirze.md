@@ -18,6 +18,7 @@ category:
   - [Usuwanie tabel](#usuwanie-tabel)
 - [Alternatywne podejście](#alternatywne-podejście)
 - [Podsumowanie](#podsumowanie)
+- [Referencje](#referencje)
 
 ## Wstęp
 
@@ -129,3 +130,7 @@ ETS jest idealnym narzędziem dla scenariuszy, w których potrzebujemy procesowa
 Oczywiście należy pamiętać, że jest to procesowanie w pamięci i w razie potrzeby należy sięgnąć po `:dts`'a.
 
 Należy także mieć na uwadze, że ETS ograniczony jest pamięcią samej maszyny wirtualnej `BEAM VM`, oraz, że tabele nie są synchronizowane między procesami, więc sami musimy zadbać o poprawną obsługę danych.
+
+## Referencje
+
+- [Elixir v17.2](https://hexdocs.pm/elixir/1.17.2/Kernel.html)

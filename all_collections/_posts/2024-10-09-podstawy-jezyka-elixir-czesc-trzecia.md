@@ -181,4 +181,3 @@ To by było na tyle w tej części (krótszej niż pozostałe), kontynuacja oczy
 - [From Ruby to Elixir](https://pragprog.com/titles/sbelixir/from-ruby-to-elixir/)
 - [Learn Functional Programming with Elixir](https://www.oreilly.com/library/view/learn-functional-programming/9781680505757/)
 - [Programming Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
-- [Caching with Elixir and ETS](https://blog.appsignal.com/2019/11/12/caching-with-elixir-and-ets.html)
