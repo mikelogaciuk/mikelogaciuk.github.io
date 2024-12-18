@@ -838,6 +838,14 @@ export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
 sudo ldconfig
 ```
 
+Dodatkowo do `/etc/odbcinst.ini`, można dodać:
+
+```ini
+[Oracle19]
+Description     = Oracle ODBC driver for Oracle 19c
+Driver          = /opt/oracle/instantclient_19_8/libsqora.so.19.1
+```
+
 ### Microsoft SQL Server ODBC
 
 Klienta `MSSQL` instalujemy jak poniżej:
