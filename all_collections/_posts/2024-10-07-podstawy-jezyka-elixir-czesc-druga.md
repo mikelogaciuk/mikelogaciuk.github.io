@@ -17,14 +17,22 @@ category:
   - [Wymagane klucze](#wymagane-klucze)
   - [Derive](#derive)
 - [Protokoły](#protokoły)
-  - [Definiowanie protokołu](#definiowanie-protokołu)
-  - [Implementacja protokołu dla różnych typów produktów](#implementacja-protokołu-dla-różnych-typów-produktów)
-    - [Produkt fizyczny](#produkt-fizyczny)
-    - [Produkt cyfrowy](#produkt-cyfrowy)
-    - [Subskrypcja](#subskrypcja)
-  - [Użycie protokołu](#użycie-protokołu)
-  - [Uwagi](#uwagi)
-  - [Inne przykłady](#inne-przykłady)
+    - [Definiowanie protokołu](#definiowanie-protokołu)
+    - [Implementacja protokołu dla różnych typów produktów](#implementacja-protokołu-dla-różnych-typów-produktów)
+      - [Produkt fizyczny](#produkt-fizyczny)
+    - [](#)
+      - [Produkt cyfrowy](#produkt-cyfrowy)
+      - [Subskrypcja](#subskrypcja)
+    - [Użycie protokołu](#użycie-protokołu)
+    - [Podsumowanie](#podsumowanie)
+    - [Inny przykłady](#inny-przykłady)
+- [Zachowania (interfejsy)](#zachowania-interfejsy)
+  - [Przykład](#przykład)
+    - [Wątpliwości](#wątpliwości)
+- [Protokoły kontra zachowania](#protokoły-kontra-zachowania)
+  - [Protokoły (Protocols)](#protokoły-protocols)
+  - [Zachowania (Behaviours)](#zachowania-behaviours)
+  - [Podsumowanie](#podsumowanie-1)
 - [Typowanie (adnotacje typu)](#typowanie-adnotacje-typu)
   - [Typowanie funkcji za pomocą `@spec`](#typowanie-funkcji-za-pomocą-spec)
     - [Przykład prostej funkcji z adnotacją typu](#przykład-prostej-funkcji-z-adnotacją-typu)
@@ -36,12 +44,7 @@ category:
   - [Przykład użycia Dialyzera](#przykład-użycia-dialyzera)
     - [Kroki do użycia Dialyzera](#kroki-do-użycia-dialyzera)
   - [Dodatkowe informacje](#dodatkowe-informacje)
-- [Zachowania (interfejsy)](#zachowania-interfejsy)
-  - [Przykład](#przykład)
-- [Protokoły kontra zachowania](#protokoły-kontra-zachowania)
-  - [Protokoły (Protocols)](#protokoły-protocols)
-  - [Zachowania (Behaviours)](#zachowania-behaviours)
-- [Podsumowanie](#podsumowanie)
+- [Podsumowanie](#podsumowanie-2)
 - [Referencje](#referencje)
 
 ## Wstęp
@@ -149,7 +152,7 @@ Protokoły w Elixirze pozwalają na definiowanie wspólnego interfejsu dla róż
 
 Możemy zobrazować użycie protokołów w kontekście sklepu internetowego, gdzie mamy różne typy produktów, a każdy z nich może być wyceniony w inny sposób.
 
-### Definiowanie protokołu
+#### Definiowanie protokołu
 
 Najpierw zdefiniujemy protokół `Pricable`, który będzie miał funkcję `price/1` do obliczania ceny produktu.
 
@@ -160,11 +163,11 @@ defprotocol Pricable do
 end
 ```
 
-### Implementacja protokołu dla różnych typów produktów
+#### Implementacja protokołu dla różnych typów produktów
 
 Następnie zdefiniujemy różne typy produktów i zaimplementujemy dla nich protokół `Pricable`.
 
-#### Produkt fizyczny
+##### Produkt fizyczny
 
 ```elixir
 defmodule PhysicalProduct do
@@ -178,7 +181,9 @@ defmodule PhysicalProduct do
 end
 ```
 
-#### Produkt cyfrowy
+####
+
+##### Produkt cyfrowy
 
 ```elixir
 defmodule DigitalProduct do
@@ -192,7 +197,7 @@ defmodule DigitalProduct do
 end
 ```
 
-#### Subskrypcja
+##### Subskrypcja
 
 ```elixir
 defmodule Subscription do
@@ -206,7 +211,7 @@ defmodule Subscription do
 end
 ```
 
-### Użycie protokołu
+#### Użycie protokołu
 
 Teraz możemy używać protokołu `Pricable` do obliczania cen różnych produktów:
 
@@ -222,15 +227,207 @@ IO.puts("Price of digital product: $#{Pricable.price(digital_product)}")
 IO.puts("Price of subscription: $#{Pricable.price(subscription)}")
 ```
 
-### Uwagi
+#### Podsumowanie
 
 Protokoły w Elixirze pozwalają na definiowanie wspólnego interfejsu dla różnych typów danych, co umożliwia elastyczne i rozszerzalne projektowanie systemów.
 
 W powyższym przykładzie protokół `Pricable` umożliwia obliczanie cen różnych typów produktów w sklepie internetowym, niezależnie od ich specyficznych właściwości.
 
-### Inne przykłady
+#### Inny przykłady
 
-Kilka innych ciekawych przykładów można znaleźć w oficjalnej dokumentacji pod [tym](https://hexdocs.pm/elixir/protocols.html) linkiem.
+Innym ciekawy przykładem może być protokół `Printable`, który definiuje funkcję `print/1`, a następnie implementujemy ten protokół dla `Receipt` oraz `Invoice`:
+
+```elixir
+defprotocol Printable do
+  @doc "Prints the document"
+  def print(document)
+end
+```
+
+```elixir
+defmodule Receipt do
+  defstruct [:number, :total]
+
+  def new(number, total) do
+    %Receipt{number: number, total: total}
+  end
+end
+
+defimpl Printable, for: Receipt do
+  def print(%Receipt{number: number, total: total}) do
+    IO.puts("Receipt Number: #{number}")
+    IO.puts("Total: #{total}")
+  end
+end
+```
+
+```elixir
+defmodule Invoice do
+  defstruct [:number, :total, :tax]
+
+  def new(number, total, tax) do
+    %Invoice{number: number, total: total, tax: tax}
+  end
+end
+
+defimpl Printable, for: Invoice do
+  def print(%Invoice{number: number, total: total, tax: tax}) do
+    IO.puts("Invoice Number: #{number}")
+    IO.puts("Total: #{total}")
+    IO.puts("Tax: #{tax}")
+  end
+end
+```
+
+```elixir
+receipt = Receipt.new("R-1234", 100.0)
+invoice = Invoice.new("I-5678", 100.0, 23.0)
+
+Printable.print(receipt)
+Printable.print(invoice)
+```
+
+## Zachowania (interfejsy)
+
+W Elixirze `zachowania` (ang. `behaviours`) są mechanizmem podobnym do interfejsów w innych językach programowania. Pozwalają one definiować zestaw funkcji, które muszą być zaimplementowane przez moduł, który deklaruje, że implementuje dany behaviour.
+
+1. **Definiowanie zachowań:**
+
+```elixir
+defmodule MyBehaviour do
+  @callback my_function(arg :: any) :: any
+end
+```
+
+1. **Implementowanie zachowań:**
+
+```elixir
+defmodule MyImplementation do
+  @behaviour MyBehaviour
+
+  @impl MyBehaviour
+  def my_function(arg) do
+    # Implementacja funkcji
+    arg
+  end
+end
+```
+
+1. **Sprawdzanie implementacji:**
+
+Elixir sprawdza, czy moduł implementujący behaviour rzeczywiście definiuje wszystkie wymagane funkcje. Jeśli nie, kompilator zgłosi błąd.
+
+### Przykład
+
+Załóżmy, że chcemy zdefiniować behaviour dla dokumentów sprzedaży, który będzie miał wspólne funkcje dla faktur i paragonów:
+
+```elixir
+defmodule Examples.SalesDocument do
+  @callback generate_number() :: String.t()
+  @callback calculate_total() :: float()
+  @callback print() :: :ok
+end
+```
+
+```elixir
+defmodule Examples.Receipt do
+  @behaviour Examples.SalesDocument
+
+  @impl true
+  def generate_number do
+    "R-" <> :crypto.strong_rand_bytes(4) |> Base.encode16()
+  end
+
+  @impl true
+  def calculate_total do
+    # Przykładowa logika obliczania sumy
+    100.0
+  end
+
+  @impl true
+  def print do
+    IO.puts("Printing receipt...")
+    :ok
+  end
+end
+```
+
+```elixir
+defmodule Examples.Invoice do
+  @behaviour Examples.SalesDocument
+
+  @impl true
+  def generate_number do
+    "I-" <> :crypto.strong_rand_bytes(4) |> Base.encode16()
+  end
+
+  @impl true
+  def calculate_total do
+    # Przykładowa logika obliczania sumy z podatkiem
+    100.0 * 1.23
+  end
+
+  @impl true
+  def print do
+    IO.puts("Printing invoice...")
+    :ok
+  end
+end
+```
+
+#### Wątpliwości
+
+Używanie interfejsów w Elixirze, na pierwszy rzut oka może się wydawać dodatkową pracą, ale przynosi kilka istotnych korzyści, szczególnie w większych projektach.
+
+1. **Czytelność oraz dokumentacja**
+
+   Interfejsy pomagają w dokumentowaniu kodu, dzięki czemu łatwiej zrozumieć, jakie funckje muszą zostać zaimplementowane pod dany moduł.
+
+2. **Wymuszanie implementacji**
+
+   Kompilator sprawdza, czy wszystkie funkcje zdefiowane w interfejsie są zaimplementowane w module, który deklaruje, że implementuje ten interfejs. W przypadku nie wykrycia, kompilator zgłosi wyjątek/błąd. Unikamy dzięki temu niepełnych implementacji.
+
+3. **Bezpieczeństwo typów**
+
+   Adnotacja `@impl true` zapewnia, że funkcje są zgodne z definicją interfejsu. Jeśli sygnatura nie pasuje do definicji, otrzymamy błąd.
+
+4. **Łatwiejsze testy**
+
+   Łatwo można tworzyć mock'i lub stub'y dla modułów implementujących interfejs.
+
+5. **Modularność i rozszerzalność**
+
+   Interfejsy promują modularność, można łatwiej dodawać nowe moduły implementujące ten sam interfejs bez potrzeby modifkacji istniejącego już kodu.
+
+Behaviours w Elixirze są potężnym narzędziem do tworzenia elastycznych i modularnych aplikacji, umożliwiającym definiowanie i egzekwowanie kontraktów między różnymi częściami systemu.
+
+## Protokoły kontra zachowania
+
+W języku Elixir zarówno `protokoły` (ang. `protocols`), jak i `zachowania` (ang. `behaviours`) są mechanizmami, które wspierają polimorfizm, ale używane są w różnych kontekstach i mają różne zastosowania.
+
+### Protokoły (Protocols)
+
+1. **Cel**: Protokoły w Elixirze są używane do definiowania wspólnego interfejsu dla różnych typów danych. Dzięki nim można stworzyć zestaw funkcji, które różne typy danych mogą implementować w różny sposób.
+
+2. **Polimorfizm ad hoc**: Protokoły umożliwiają polimorfizm ad hoc, co oznacza, że można definiować, jak dana funkcja powinna działać dla różnych typów danych bez konieczności modyfikowania samych typów.
+
+3. **Jak działają**: Aby użyć protokołów, najpierw definiuje się protokół za pomocą `defprotocol`, a następnie implementuje się go dla różnych typów za pomocą `defimpl`.
+
+4. **Przykład**: Można zdefiniować protokół `String.Chars` do konwersji różnych typów danych na łańcuchy znaków.
+
+### Zachowania (Behaviours)
+
+1. **Cel**: Behaviours są używane do definiowania zestawu funkcji, które moduł musi zaimplementować. Często stosowane są do tworzenia abstrakcji, które będą implementowane przez różne moduły, np. w kontekście generycznych serwerów (`GenServer`), aplikacji `OTP` itp.
+
+2. **Polimorfizm parametryczny**: Behaviours wspierają polimorfizm parametryczny, gdzie różne moduły implementują ten sam zestaw funkcji, co pozwala na wymienne użycie tych modułów.
+
+3. **Jak działają**: Behaviours są definiowane za pomocą `@callback` i `@macrocallback`, a moduł, który implementuje dane zachowanie, musi używać `@behaviour` oraz zaimplementować wszystkie zadeklarowane funkcje.
+
+4. **Przykład**: `GenServer` jest przykładem zachowania w Elixirze, które moduły mogą implementować, aby działać jako serwery generyczne.
+
+### Podsumowanie
+
+Podsumowując, protokoły są bardziej elastyczne i koncentrują się na polimorfizmie dla różnych typów danych, natomiast zachowania są bardziej strukturalne i służą do tworzenia wspólnych interfejsów dla modułów.
 
 ## Typowanie (adnotacje typu)
 
@@ -359,91 +556,6 @@ Typowanie danych w Elixirze za pomocą `@spec`, `@type`, `@typep` i `@callback` 
 ### Dodatkowe informacje
 
 Więcej o `typespec` można znaleźć w oficjalnej dokumentacji tutaj.
-
-## Zachowania (interfejsy)
-
-W Elixirze `zachowania` (ang. `behaviours`) są mechanizmem podobnym do interfejsów w innych językach programowania. Pozwalają one definiować zestaw funkcji, które muszą być zaimplementowane przez moduł, który deklaruje, że implementuje dany behaviour.
-
-1. **Definiowanie zachowań:**
-
-```elixir
-defmodule MyBehaviour do
-  @callback my_function(arg :: any) :: any
-end
-```
-
-1. **Implementowanie zachowań:**
-
-```elixir
-defmodule MyImplementation do
-  @behaviour MyBehaviour
-
-  @impl MyBehaviour
-  def my_function(arg) do
-    # Implementacja funkcji
-    arg
-  end
-end
-```
-
-1. **Sprawdzanie implementacji:**
-
-Elixir sprawdza, czy moduł implementujący behaviour rzeczywiście definiuje wszystkie wymagane funkcje. Jeśli nie, kompilator zgłosi błąd.
-
-### Przykład
-
-Załóżmy, że chcemy zdefiniować behaviour dla prostego serwera:
-
-```elixir
-defmodule ServerBehaviour do
-  @callback start_link(args :: any) :: {:ok, pid} | {:error, reason :: any}
-  @callback handle_call(request :: any, from :: {pid, reference}, state :: any) :: {:reply, response :: any, new_state :: any}
-end
-```
-
-Następnie możemy zaimplementować ten behaviour w konkretnym module:
-
-```elixir
-defmodule MyServer do
-  @behaviour ServerBehaviour
-
-  def start_link(args) do
-    # Implementacja start_link
-    {:ok, self()}
-  end
-
-  def handle_call(request, _from, state) do
-    # Implementacja handle_call
-    {:reply, :ok, state}
-  end
-end
-```
-
-Behaviours w Elixirze są potężnym narzędziem do tworzenia elastycznych i modularnych aplikacji, umożliwiającym definiowanie i egzekwowanie kontraktów między różnymi częściami systemu.
-
-## Protokoły kontra zachowania
-
-W języku Elixir zarówno `protokoły` (ang. `protocols`), jak i `zachowania` (ang. `behaviours`) są mechanizmami, które wspierają polimorfizm, ale używane są w różnych kontekstach i mają różne zastosowania.
-
-### Protokoły (Protocols)
-
-1. **Cel**: Protokoły w Elixirze są używane do definiowania wspólnego interfejsu dla różnych typów danych. Dzięki nim można stworzyć zestaw funkcji, które różne typy danych mogą implementować w różny sposób.
-
-2. **Polimorfizm ad hoc**: Protokoły umożliwiają polimorfizm ad hoc, co oznacza, że można definiować, jak dana funkcja powinna działać dla różnych typów danych bez konieczności modyfikowania samych typów.
-
-3. **Jak działają**: Aby użyć protokołów, najpierw definiuje się protokół za pomocą `defprotocol`, a następnie implementuje się go dla różnych typów za pomocą `defimpl`.
-
-4. **Przykład**: Można zdefiniować protokół `String.Chars` do konwersji różnych typów danych na łańcuchy znaków.
-
-### Zachowania (Behaviours)
-
-1. **Cel**: Behaviours są używane do definiowania zestawu funkcji, które moduł musi zaimplementować. Często stosowane są do tworzenia abstrakcji, które będą implementowane przez różne moduły, np. w kontekście generycznych serwerów (`GenServer`), aplikacji `OTP` itp.
-
-2. **Polimorfizm parametryczny**: Behaviours wspierają polimorfizm parametryczny, gdzie różne moduły implementują ten sam zestaw funkcji, co pozwala na wymienne użycie tych modułów.
-
-3. **Jak działają**: Behaviours są definiowane za pomocą `@callback` i `@macrocallback`, a moduł, który implementuje dane zachowanie, musi używać `@behaviour` oraz zaimplementować wszystkie zadeklarowane funkcje.
-
-4. **Przykład**: `GenServer` jest przykładem zachowania w Elixirze, które moduły mogą implementować, aby działać jako serwery generyczne.
 
 ## Podsumowanie
 
