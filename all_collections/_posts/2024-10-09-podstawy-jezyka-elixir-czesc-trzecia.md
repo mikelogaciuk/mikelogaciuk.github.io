@@ -18,6 +18,7 @@ category:
   - [Prosty producent/konsumer](#prosty-producentkonsumer)
   - [Procesy zlinkowane](#procesy-zlinkowane)
   - [Task](#task)
+  - [Agent](#agent)
 - [Podsumowanie](#podsumowanie)
 - [Referencje](#referencje)
 
@@ -155,12 +156,14 @@ To umożliwia używanie `task`'ów w tzw `supervision trees`, udostępniając do
 
 Natomiast bardzo rzadko będziecie tak naprawdę używać funkcjonalności procesów i tasków bezpośrednio.
 
+### Agent
+
 Ku temu stworzono `Agents`, które jako abstrakcje w okół stanu wchodzą w skład mechanizmów `OTP`.
 
 Dla przykładu:
 
 ```elixir
-{:ok, pid} = Agent.start_link(fn -> %{} end)
+{:ok, pid} = Agent.start_link(fn -> %{} end) # {:ok, #PID<0.12.0>}
 ```
 
 ```elixir
@@ -171,13 +174,32 @@ Agent.update(pid, fn map -> Map.put(map, :hello, :world) end)
 Agent.get(pid, fn map -> Map.get(map, :hello) end)
 ```
 
+Możemy też tego agenta oczywiście zatrzymać:
+
+```elixir
+Agent.stop(pid)
+```
+
+Dodatkowo możemy nadać mu nazwę z pomocą `:atom'u`:
+
+```elixir
+{:ok, store} = Agent.start_link(fn -> %{} end, name: :store) # {:ok, #PID<0.43.0>}
+```
+
+Natomiast... Nie jest to najlepsza praktyka, zwłaszcza w programach, które mogą mięć setki agentów. Po drugie atomy nie są odśmiecane, więc możemy dosyć sprawnie zapełnić pamięć mając np. miliony atomów tworzonych np. per proces.
+
+W tym przypadku lepszym rozwiązaniem będzie użycie `GenServer` oraz `Supervisor`'a.
+
 ## Podsumowanie
 
 To by było na tyle w tej części (krótszej niż pozostałe), kontynuacja oczywiście znajdzie się w kolejnym artykule.
 
+Natomiast wiele ciekawych rzeczy nt. agent'ów, GenServer oraz Supervisor, znajdziecie także: [tutaj](https://hexdocs.pm/elixir/agents.html).
+
 ## Referencje
 
-- [Elixir v17.2](https://hexdocs.pm/elixir/1.17.2/Kernel.html)
+- [Elixir 1.18.0](https://hexdocs.pm/elixir/1.18.0/Kernel.html)
+- [The Little Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook)
 - [From Ruby to Elixir](https://pragprog.com/titles/sbelixir/from-ruby-to-elixir/)
 - [Learn Functional Programming with Elixir](https://www.oreilly.com/library/view/learn-functional-programming/9781680505757/)
 - [Programming Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
