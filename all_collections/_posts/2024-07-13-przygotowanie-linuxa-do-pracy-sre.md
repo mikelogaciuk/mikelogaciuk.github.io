@@ -73,7 +73,7 @@ W tym przypadku instrukcje dostosowane są do systemów z rodziny Debiana (aktua
   - [Kerberos](#kerberos)
   - [Oracle Client](#oracle-client)
   - [Microsoft SQL Server ODBC](#microsoft-sql-server-odbc)
-- [Languages](#languages)
+- [Języki](#języki)
   - [Python](#python)
   - [Ruby](#ruby)
   - [LSP](#lsp)
@@ -93,6 +93,7 @@ W tym przypadku instrukcje dostosowane są do systemów z rodziny Debiana (aktua
     - [Dart](#dart)
   - [Flutter](#flutter)
   - [Chrome](#chrome)
+  - [PHP](#php)
 - [Bonus](#bonus)
   - [DuckDB](#duckdb)
 
@@ -877,7 +878,7 @@ sudo dpkg -i msodbcsql17_17.10.5.1-1_amd64.deb
 sudo dpkg -i msodbcsql18_18.3.2.1-1_amd64.deb
 ```
 
-## Languages
+## Języki
 
 ### Python
 
@@ -1287,6 +1288,20 @@ EOF
 wget -O- https://dl.google.com/linux/linux_signing_key.pub |gpg --dearmor > /etc/apt/trusted.gpg.d/google.gpg
 
 sudo apt update && sudo apt install google-chrome-stable
+```
+
+### PHP
+
+By zainstalować PHP oraz Composer'a (packet manager), należy:
+
+```shell
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
+```
+
+W razie czego, Laravel'a instalujemy tak:
+
+```shell
+composer global require laravel/installer
 ```
 
 ## Bonus
