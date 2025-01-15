@@ -1304,6 +1304,21 @@ W razie czego, Laravel'a instalujemy tak:
 composer global require laravel/installer
 ```
 
+Dodatkowo można zainstalować `frankenphp` w przypadku niechęci do `Apache'a`:
+
+```shell
+curl https://frankenphp.dev/install.sh | sh
+mv frankenphp /usr/local/bin/
+
+# Serve the public/ directory
+frankenphp php-server -r public/
+
+# Run a command-line script
+frankenphp php-cli script.php
+```
+
+Generalnie w świecie `PHP` wiele się zmieniło od mojego 'ostatniego razu' z Nim.
+
 ## Bonus
 
 ### DuckDB
