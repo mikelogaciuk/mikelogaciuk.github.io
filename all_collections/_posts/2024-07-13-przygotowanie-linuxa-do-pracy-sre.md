@@ -1295,7 +1295,9 @@ sudo apt update && sudo apt install google-chrome-stable
 By zainstalować PHP oraz Composer'a (packet manager), należy:
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
+sudo add-apt-repository ppa:ondrej/php -y && sudo apt update
+sudo apt install php8.3 -y
+sudo apt install php8.3-cgi php8.3-cli php8.3-common php8.3-curl
 ```
 
 W razie czego, Laravel'a instalujemy tak:
