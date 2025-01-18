@@ -1300,6 +1300,13 @@ sudo apt install php8.3 -y
 sudo apt install php8.3-cgi php8.3-cli php8.3-common php8.3-curl
 ```
 
+```shell
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+```
+
 W razie czego, Laravel'a instalujemy tak:
 
 ```shell
