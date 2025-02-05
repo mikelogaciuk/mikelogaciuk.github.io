@@ -49,8 +49,8 @@ category: ["javascript", "js", "typescript", "ts", "front-end"]
   - [Moduły](#moduły)
     - [Eksportowanie i importowanie modułów](#eksportowanie-i-importowanie-modułów)
   - [Typy zaawansowane](#typy-zaawansowane)
-    - [Union Types](#union-types)
-    - [Intersection Types](#intersection-types)
+    - [Typy Union](#typy-union)
+    - [Typy Intersection](#typy-intersection)
     - [Typy generyczne](#typy-generyczne)
   - [Narzędzia](#narzędzia)
     - [ts-node](#ts-node)
@@ -100,7 +100,7 @@ const subtract = function (a, b) {
 // Arrow Function (lambda, anominowa - jak zwał tak zwał)
 const multiply = (a, b) => a * b;
 
-// Immediately Invoked Function Expression (IIFE)
+// IIFE, czyli ang. Immediately Invoked Function Expression
 (function () {
   console.log("IIFE executed");
 })();
@@ -116,7 +116,7 @@ if (x > 10) {
   console.log("x is 10 or less");
 }
 
-// Switch
+// Switch, odpowiednik Elixirowego case'a
 switch (x) {
   case 10:
     console.log("x is 10");
@@ -125,19 +125,19 @@ switch (x) {
     console.log("x is not 10");
 }
 
-// For Loop
+// Pętla for
 for (let i = 0; i < 5; i++) {
   console.log(i);
 }
 
-// While Loop
+// Pętla While
 let i = 0;
 while (i < 5) {
   console.log(i);
   i++;
 }
 
-// Do-While Loop
+// Pętla Do-While
 let j = 0;
 do {
   console.log(j);
@@ -188,7 +188,7 @@ delete person.age;
 // Metody obiektów
 let keys = Object.keys(person); // Klucze
 let values = Object.values(person); // Wartości
-let entries = Object.entries(person); // Get entries
+let entries = Object.entries(person); // Wpisy
 ```
 
 ## Promise'y oraz Async/Await
@@ -305,7 +305,7 @@ john.greet();
 ```js
 class Employee extends Person {
   constructor(name, age, jobTitle) {
-    super(name, age); // Call the parent class constructor
+    super(name, age); // Konstruktor 'rodzica'
     this.jobTitle = jobTitle;
   }
 
@@ -315,8 +315,8 @@ class Employee extends Person {
 }
 
 let jane = new Employee("Jane", 25, "Software Engineer");
-jane.greet(); // Output: Hello, my name is Jane and I am 25 years old.
-jane.work(); // Output: Jane is working as a Software Engineer.
+jane.greet(); // Hello, my name is Jane and I am 25 years old.
+jane.work(); // Jane is working as a Software Engineer.
 ```
 
 ### Metody statyczne
@@ -328,7 +328,7 @@ class MathUtil {
   }
 }
 
-console.log(MathUtil.add(5, 3)); // Output: 8
+console.log(MathUtil.add(5, 3)); // 8
 ```
 
 ### Getters, setters
@@ -430,7 +430,7 @@ class Bird extends AbstractAnimal {
 }
 
 let bird = new Bird();
-bird.speak(); // Output: Bird chirps
+bird.speak(); // Bird chirps
 
 // let animal = new AbstractAnimal(); // Error: Cannot construct AbstractAnimal instances directly
 ```
@@ -658,7 +658,7 @@ const user: Person = { firstName: "John", lastName: "Doe" };
 
 ### Typy zaawansowane
 
-#### Union Types
+#### Typy Union
 
 ```typescript
 let value: string | number;
@@ -666,7 +666,7 @@ value = "Hello";
 value = 42;
 ```
 
-#### Intersection Types
+#### Typy Intersection
 
 ```typescript
 interface ErrorHandling {
