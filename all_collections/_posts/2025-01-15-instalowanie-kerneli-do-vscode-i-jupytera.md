@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ETS w Elixirze
+title: Instalowanie kerneli do VSCode i Jupytera
 date: 2025-01-15
 category:
   [
