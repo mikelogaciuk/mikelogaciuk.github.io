@@ -56,6 +56,7 @@ category:
     - [Inertia](#inertia)
     - [Meteor](#meteor)
     - [NextJS](#nextjs)
+    - [Remix](#remix)
 - [Pozostałe](#pozostałe)
   - [Go](#go)
   - [Gleam](#gleam)
@@ -287,6 +288,12 @@ Został stworzony przez firmę Vercel, Next.jsoferuje szereg funkcji, które uł
 
 Jedną z głównych jego zalet jest wsparcie dla server-side rendering (SSR) oraz statycznego generowania stron (SSG). Dzięki tym funkcjom, strony są renderowane na serwerze lub generowane w czasie kompilacji, co pozwala na szybsze ładowanie i lepszą widoczność w wyszukiwarkach.
 
+#### Remix
+
+`Remix` to kolejny framework typu fullstack, która pozwala skupić się na interfejsie użytkownika i pracować nad standardami internetowymi, aby zapewnić szybkie, zgrabne i odporne środowisko użytkownika.
+
+Większość aplikacji internetowych fetch'uje dane komponentów lub API, tworząc kaskady żądań, co powoduje wolniejsze ładowanie i spowolnienie aplikacji. Remix podobnie jak Meteor ładuje dane równolegle na serwerze i wysyła w pełni uformowany dokument HTML.
+
 ## Pozostałe
 
 ### Go
@@ -342,3 +349,4 @@ Choć na ten moment mogę zdradzić, że w mej opinii bardzo kuszącym w tym p
 - [Inertia.js](https://inertiajs.com/)
 - [Meteor](https://www.meteor.com/)
 - [NextJS](https://nextjs.org/)
+- [Remix](https://remix.run/)
