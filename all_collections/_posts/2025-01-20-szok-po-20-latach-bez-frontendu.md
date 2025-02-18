@@ -24,16 +24,16 @@ category:
 
 - [Spis treści](#spis-treści)
 - [Wstęp](#wstęp)
-- [CSS \& Tailwind](#css--tailwind)
+- [CSS oraz TailwindCSS](#css-oraz-tailwindcss)
 - [PHP](#php)
   - [Laravel](#laravel)
   - [Livewire](#livewire)
   - [PHP - co wkurza?](#php---co-wkurza)
-- [Ruby \& Rails](#ruby--rails)
-- [Elixir, Phoenix, LiveView \& Ash](#elixir-phoenix-liveview--ash)
+- [Ruby on Rails](#ruby-on-rails)
+- [Elixir (BEAM)](#elixir-beam)
   - [Phoenix](#phoenix)
   - [Ash](#ash)
-- [Javascript \& Typescript](#javascript--typescript)
+- [Javascript i Typescript](#javascript-i-typescript)
   - [Środowiska uruchomieniowe](#środowiska-uruchomieniowe)
     - [Nodejs](#nodejs)
     - [Deno](#deno)
@@ -77,7 +77,7 @@ Poniższy artykuł to bardziej takie podsumowanie dla mnie samego niżeli ogół
 
 Idea jest taka, że chcę być w miarę samowystarczalny w projektach, które mógłbym robić dla siebie czy dla firmy - a, nie mogę gdyż moje prehistoryczne `know-how` związane z frontem, pamięta czas manualnego kopiowania plików na FTP i zapisywania build'ów w osobnym archiwum folderów i plików.
 
-## CSS & Tailwind
+## CSS oraz TailwindCSS
 
 W tym obszarze zmian trochę było, szczególnie animacje, przejścia etc. Być może one były, natomiast dostępność tutoriali, dokumentacji, przykładów jest praktycznie nieograniczona.
 
@@ -117,7 +117,7 @@ Instalowanie zależności nadal potrafi napsuć krwi, choć jest lepiej niż z
 
 Jeśli o serwerze mowa, w miejsce leciwego Apache'a, możemy użyć `frankenPHP` napisanego w `Go`.
 
-## Ruby & Rails
+## Ruby on Rails
 
 U `DHH` i w świecie `Ruby` nieustający progres...
 
@@ -129,7 +129,7 @@ Natomiast `Ruby` sam w sobie to już nie ten sam powolny słoń. Obecny YJIT co
 
 Ruby nie trzeba się bać i o dziwo świetnie i bardzo dobrze się skaluje:
 
-## Elixir, Phoenix, LiveView & Ash
+## Elixir (BEAM)
 
 Tu zrobiło się ciekawie, gdyż ekosystem `Elixira` rozrasta się w bardzo szybkim tempie.
 
@@ -147,7 +147,7 @@ Z rzeczy, która strasznie mi się w Ash'u podoba to, to że pierw kładzie nac
 
 Front możemy dodać do samego API per se, lub z pomocą Liveview od Phoenixa. Do wyboru do koloru - klasycznie.
 
-## Javascript & Typescript
+## Javascript i Typescript
 
 Tutaj należy się mała pauza - to co zadziało się przez ten cały czas absencji w pisaniu front'u w mojej opinii w świecie `JS'a` - budzi respekt.
 
