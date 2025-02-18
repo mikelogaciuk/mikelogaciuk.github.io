@@ -315,7 +315,7 @@ To są tylko narzędzia, które albo ułatwią mi albo utrudnią tworzenie ba
 
 Natomiast wiem jedno - by wrócić do front'u muszę pogodzić się z CSS'em i framework'ami do niego i zacząć tworzyć w Nim dobrze wyglądające `UI`.
 
-Choć na ten moment mogę zdradzić, że w mej opinii bardzo kuszącym w tym przypadku jest albo minimalistyczny Svelte we wsparciu Tailwinda lub Nextjs'a.
+Choć na ten moment mogę zdradzić, że w mej opinii bardzo kuszącym w tym przypadku jest albo minimalistyczny `Svelte` wraz `backendem` napisanym w `Ash'u`, lub po prostu fullstack w `NextJS`.
 
 ## Źródła
 
