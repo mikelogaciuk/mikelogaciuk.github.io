@@ -67,15 +67,13 @@ category:
 
 Jak szybko można nabawić się depresji? A no wystarczy po 20 latach zechcieć pogodzić się z frontend'em.
 
-Oczywiście to nie tak, że mieszkałem w krypcie pod skałą i nie zauważyłe, że co chwilę na tzw. frontendzie niczym grzyby po deszczu, wyrastają nowe framework'i, biblioteki czy run engine'y.
+Oczywiście to nie tak, że mieszkałem w krypcie pod skałą i nie zauważyłem że co chwilę na tzw. frontendzie niczym grzyby po deszczu, wyrastają nowe framework'i, biblioteki czy run engine'y.
 
-Natomiast nie wgryzałem się w to nadmiernie - gdyż mój obszar zainteresowań ograniczał się do backend'u i Big Data.
+Natomiast nie wgryzałem się w to nadmiernie - gdyż mój obszar zainteresowań ograniczał się do backend'u i Big Data, a tak naprawdę ostatni raz pisałem cokolwiek na froncie gdy byłem jeszcze w technikum czyli w okolicy 2005/2006 roku, gdzie prym na froncie wiódł PHP i JS w przeglądarce.
 
-Tak naprawdę ostatni raz pisałem cokolwiek na froncie gdy byłem jeszcze w technikum czyli w okolicy 2005/2006 roku, gdzie prym na froncie wiódł PHP i JS w przeglądarce. Od tego czasu zarówno `PHP` czy `CSS` jak i `JS` przeszły sporą metamorfozę, która niezwykle miło mnie zaskoczyła.
+Od tego czasu zarówno `PHP` czy `CSS` jak i `JS` przeszły sporą metamorfozę, która niezwykle miło mnie zaskoczyła.
 
-Poniższy artykuł to bardziej takie podsumowanie dla mnie samego niżeli ogółu, aczkolwiek komuś może się przydać.
-
-Idea jest taka, że chcę być w miarę samowystarczalny w projektach, które mógłbym robić dla siebie czy dla firmy - a, nie mogę gdyż moje prehistoryczne `know-how` związane z frontem, pamięta czas manualnego kopiowania plików na FTP i zapisywania build'ów w osobnym archiwum folderów i plików.
+Poniższy artykuł to bardziej takie podsumowanie dla mnie samego niżeli ogółu, aczkolwiek komuś może się przydać. Idea jest taka, że chcę być w miarę samowystarczalny w projektach, które mógłbym robić dla siebie czy dla firmy - a, nie mogę gdyż moje prehistoryczne `know-how` związane z frontem, pamięta czas manualnego kopiowania plików na FTP i zapisywania build'ów w osobnym archiwum folderów i plików.
 
 ## CSS oraz TailwindCSS
 
