@@ -276,10 +276,6 @@ Z ciekawych rzeczy, na które natrafiłem w trakcie researchu, to choćby `Manif
 
 Tak... dokładnie tak:
 
-![Manifest](/img/fullstack/manifest.build_.png)
-
-I, że też sam na to nigdy nie wpadłem by napisać podobny framework?
-
 ```yaml
 name: Task Management Application
 
