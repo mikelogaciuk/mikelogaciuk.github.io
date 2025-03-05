@@ -336,7 +336,7 @@ Paste:
 ```bash
 {
   "bip": "192.168.200.1/24",
-  "fixed-cidr": "192.168.200.1/25"
+  "fixed-cidr": "192.168.200.1/25",
   "insecure-registries": ["registry:32000"]
 }
 ```
