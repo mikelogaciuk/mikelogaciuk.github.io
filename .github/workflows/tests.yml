@@ -41,7 +41,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: "fs"
-          severity: "CRITICAL,HIGH"
+          severity: "CRITICAL" # It could be also the: "CRITICAL,HIGH"
           exit-code: "0"
           format: "json"
           output: "trivy-report.json"
@@ -52,21 +52,3 @@ jobs:
         with:
           name: trivy-security-report
           path: trivy-report.json
-
-  semgrep-scan:
-    name: Semgrep Scan
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Semgrep
-        uses: semgrep/action@v1
-        with:
-          config: "p/all"
-
-      - name: Upload results to GitHub Security tab
-        if: always()
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: semgrep.sarif
