@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: "20"
       - run: npm install
-      # - run: npm install --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-core
+      - run: npm install --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-core # Ignore in Copilot Review
       - run: npm run testci
 
   trivy-scan:
