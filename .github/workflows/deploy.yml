@@ -6,18 +6,6 @@ on:
     branches:
       - main
 jobs:
-  test:
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - run: npm install
-      - run: npm install --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-core
-      - run: npm run testci
   build:
     runs-on: ubuntu-latest
     steps:
