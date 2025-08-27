@@ -54,7 +54,7 @@ const skillBadges = ref(mapBadges(skills));
       <ul
         class="list-none list-inside mb-6 flex flex-col justify-items-center mx-auto"
       >
-        <li v-for="spec in specializations" :key="spec" class="text - lg">
+        <li v-for="spec in specializations" :key="spec" class="text-lg">
           {{ spec }}
         </li>
       </ul>
@@ -72,7 +72,6 @@ const skillBadges = ref(mapBadges(skills));
           <NuxtLink :to="`/posts/tag/${String(item.element)}`">
             {{ String(item.element) }}
           </NuxtLink>
-          <!-- {{ item.element }} -->
         </div>
       </div>
     </div>
