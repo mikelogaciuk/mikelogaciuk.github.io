@@ -5,6 +5,8 @@ import HomePage from "/pages/index.vue";
 describe("Home Page", () => {
   it("renders the home page and checks for welcome text", () => {
     const wrapper = mount(HomePage);
-    expect(wrapper.text()).toContain("The blog");
+    expect(wrapper.text()).toContain(
+      "Senior DevOps Engineer in TERG S.A. (Media Expert)",
+    );
   });
 });
