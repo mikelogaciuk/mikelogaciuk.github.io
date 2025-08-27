@@ -46,7 +46,7 @@ const skillBadges = ref(mapBadges(skills));
       <h1 class="text-9xl font-bold mb-4 font-stretch-expanded">
         Mike Logaciuk
       </h1>
-      <p class="text-2xl mb-6">
+      <p class="text-3xl mb-6 mt-6">
         Senior DevOps Engineer in TERG S.A. (Media Expert)
       </p>
       <br />
@@ -60,7 +60,7 @@ const skillBadges = ref(mapBadges(skills));
       </ul>
     </div>
     <div>
-      <h2 class="text-4xl mb-6 text-center mt-5">
+      <h2 class="text-3xl mb-6 text-center mt-5">
         The skills list, looks somewhat like:
       </h2>
       <div class="w-xl flex flex-wrap gap-2 justify-center mx-auto">
