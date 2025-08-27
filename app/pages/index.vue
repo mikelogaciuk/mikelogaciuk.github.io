@@ -47,7 +47,7 @@ const skillBadges = ref(mapBadges(skills));
         Mike Logaciuk
       </h1>
       <p class="text-2xl mb-6">
-        I am, a Senior DevOps Engineer in TERG S.A. (Media Expert)
+        Senior DevOps Engineer in TERG S.A. (Media Expert)
       </p>
       <br />
       <p class="text-4xl mb-6">I specialize in:</p>
