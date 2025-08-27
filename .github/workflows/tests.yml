@@ -18,8 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - run: npm install
-      - run: npm install --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-core # Ignore in Copilot Review
+      - run: npm ci
       - run: npm run testci
 
   trivy-scan:
