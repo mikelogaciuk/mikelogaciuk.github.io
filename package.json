@@ -40,7 +40,7 @@
     "eslint": "^9.34.0",
     "gh-pages": "^6.3.0",
     "happy-dom": "^18.0.1",
-    "playwright-core": "^1.54.2",
+    "playwright-core": "^1.55.0",
     "vitest": "^3.2.4"
   }
 }
