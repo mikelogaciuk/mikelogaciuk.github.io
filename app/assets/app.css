@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 /* @import '@nuxt/ui'; */
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
@@ -6,6 +6,10 @@
     nord,
     sunset --default;
   /* prefix: 'd-'; */
+}
+
+@theme {
+  --font-sans: "JetBrains Mono", sans-serif;
 }
 
 /* Typography for Markdown Content */
@@ -26,38 +30,34 @@
   @apply no-underline;
 }
 
-@theme {
-  --font-sans: 'JetBrains Mono', sans-serif;
-}
-
 .badger {
-  @apply inline-block px-3 py-1 text-xs font-medium rounded-lg;
+  @apply inline-block px-3 py-1 text-xs font-medium rounded-lg  text-white dark:text-black;
 }
 
 .badger-accent {
-  @apply bg-accent text-white dark:text-black;
+  @apply bg-accent;
 }
 
 .badger-primary {
-  @apply bg-primary text-white dark:text-black;
+  @apply bg-primary;
 }
 
 .badger-secondary {
-  @apply bg-secondary text-white dark:text-black;
+  @apply bg-secondary;
 }
 
 .badger-info {
-  @apply bg-info text-white dark:text-black;
+  @apply bg-info;
 }
 
 .badger-success {
-  @apply bg-success text-white dark:text-black;
+  @apply bg-success;
 }
 
 .badger-warning {
-  @apply bg-warning text-white dark:text-black;
+  @apply bg-warning;
 }
 
 .badger-error {
-  @apply bg-error text-white dark:text-black;
+  @apply bg-error;
 }
