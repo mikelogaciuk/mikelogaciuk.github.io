@@ -21,3 +21,52 @@ jobs:
       - run: npm install
       # - run: npm install --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-core
       - run: npm run testci
+
+  trivy-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy filesystem scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          severity: "CRITICAL,HIGH"
+          exit-code: "1" # Fails the workflow if CRITICAL or HIGH severity issues are found
+          format: "table"
+
+      - name: Generate JSON report with CRITICAL and HIGH severity
+        if: always()
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          severity: "CRITICAL,HIGH"
+          exit-code: "0"
+          format: "json"
+          output: "trivy-report.json"
+
+      - name: Upload Trivy report as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-security-report
+          path: trivy-report.json
+
+  semgrep-scan:
+    name: Semgrep Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Semgrep
+        uses: semgrep/action@v1
+        with:
+          config: "p/all"
+
+      - name: Upload results to GitHub Security tab
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
