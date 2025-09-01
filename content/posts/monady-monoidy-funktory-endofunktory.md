@@ -38,7 +38,7 @@ W tym artykule przyjrzymy się każdemu z tych pojęć, wyjaśniając je na pros
 
 ## 🔃 Endofunktor
 
-`Endofunktor` to nic innego jak po prostu `typ`, który `'opakowuje'` jakąś wartość, lecz nadal pozostaje w tej samej kategorii typów.
+Kontynuując, `Endofunktor` to nic innego jak po prostu `typ`, który `'opakowuje'` jakąś wartość, lecz nadal pozostaje w tej samej kategorii typów.
 
 W przypadku języka `F#`, jest Nim każdy generyczny typ jak np. `list` czy własny `Box<'T>`:
 
@@ -109,7 +109,7 @@ Tym samym, `applyDiscount` jest `endofunktorem`, gdyż przyjmuje on `SaleTransac
 
 No dobrze, więc skoro `endofunktor` to `funktor`, ale w obrębie jednej kategorii, to czym jest sam `funktor`?
 
-`Funktor` to `endofunktor` z umiejętnością `mapowania` funkcji przez strukturę.
+A no nie zgadniecie?! `Funktor` to `endofunktor` z umiejętnością `mapowania` funkcji przez strukturę.
 
 ![Troll](/img/trollllllf.jpeg)
 
@@ -173,7 +173,7 @@ Możemy ze świętym spokojem przejść do kolejnej kwestii jaką jest **Monoida
 
 ## ➕ Monoida
 
-`Monoida` tudzież `monoid` to struktura z operacją łączenia (`append`) oraz elementem neutralnym (`identity`).
+W skrócie: `Monoida` tudzież `monoid` to struktura z operacją łączenia (`append`) oraz elementem neutralnym (`identity`).
 
 Na przykładzie `retail'u`, może to być suma transakcji:
 
@@ -253,7 +253,7 @@ Na `monoidy` można patrzeć przez pryzmat zbioru zapasów z pustym magazynem i 
 
 ## 🧩 Monada
 
-`Monada` tudzież `monad` to struktura (opakowanie) jak `funktor` z dodatkowymi regułamy sekwencyjnego działania. Innymi słowy: `monada` pozwala na `łączenie` operacji z kontekstem.
+Tajemnicza `Monada` tudzież `monad` to struktura (opakowanie) jak `funktor` z dodatkowymi regułamy sekwencyjnego działania. Innymi słowy: `monada` pozwala na `łączenie` operacji z kontekstem.
 
 Jest to ważny element tzw `Railway Oriented Programming`, o którym więcej możecie przeczytać u Scotta Wlaschin'a: [tutaj](https://fsharpforfunandprofit.com/rop/).
 
