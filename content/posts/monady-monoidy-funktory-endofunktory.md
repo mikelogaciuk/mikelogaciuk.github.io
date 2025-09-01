@@ -210,7 +210,7 @@ Wynik:
 
 W takim przypadku, `combineTransactions` to operacja `monoidalna`, a `emptyTransaction` to element neutralny.
 
-Dla lepszego zobrazowania możey służyć ten bardziej trywialny przykład:
+Dla lepszego zobrazowania może służyć ten bardziej trywialny przykład:
 
 ```fsharp
 let strEmpty = "" // string
