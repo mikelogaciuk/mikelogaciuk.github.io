@@ -175,7 +175,7 @@ Możemy ze świętym spokojem przejść do kolejnej kwestii jaką jest **Monoida
 
 `Monoida` tudzież `monoid` to struktura z operacją łączenia (`append`) oraz elementem neutralnym (`identity`).
 
-Na przykładzie `retail'u`, możey to być suma transakcji:
+Na przykładzie `retail'u`, może to być suma transakcji:
 
 ```fsharp
 let combinedTransactions tx1 tx2 =
