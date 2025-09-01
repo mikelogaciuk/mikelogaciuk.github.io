@@ -309,7 +309,7 @@ let isRefundedTransaction = // SaleTransaction
       IsRefunded = true }
 ```
 
-Finalnie, całość możemy zwalidować korzystając już z wcześnie utworzonej funkcji `mapTransaction`:
+Finalnie, całość możemy zwalidować korzystając już z wcześniej utworzonej funkcji `mapTransaction`:
 
 ```fsharp
 let validateTransactions =
