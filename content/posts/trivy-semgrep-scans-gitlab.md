@@ -7,9 +7,9 @@ language: "en"
 
 ![Adding Trivy & Semgrep scans to your Gitlab Pipeline](/img/cicd-gitlab-sast.png)
 
-## Table of contents
+## 📖 Table of contents
 
-- [Table of contents](#table-of-contents)
+- [📖 Table of contents](#-table-of-contents)
 - [The purpose](#the-purpose)
 - [The template repository](#the-template-repository)
   - [Files structure](#files-structure)
