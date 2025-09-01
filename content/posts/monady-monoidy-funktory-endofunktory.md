@@ -43,7 +43,7 @@ W tym artykule przyjrzymy się każdemu z tych pojęć, wyjaśniając je na pros
 W przypadku języka `F#`, jest Nim każdy generyczny typ jak np. `list` czy własny `Box<'T>`:
 
 ```fsharp
-type Box<`T> = Box of 'T'
+type Box<'T> = Box of 'T'
 let x = Box 666 // x: Box<int>
 
 printfn "%A" x // Box 666
