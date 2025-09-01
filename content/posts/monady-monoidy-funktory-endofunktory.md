@@ -287,7 +287,7 @@ let processTransaction transaction = // SaleTransaction -> Result<SaleTransactio
     validateCurrency transaction |> Result.bind refund
 ```
 
-Dla dobrobytu tworzymy kilka transakcji na potrzeby ewualuacji:
+Dla dobrobytu tworzymy kilka transakcji na potrzeby ewaluacji:
 
 ```fsharp
 let goodTransaction = // SaleTransaction
