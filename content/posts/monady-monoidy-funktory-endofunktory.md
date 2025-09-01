@@ -342,7 +342,7 @@ Podsumowując w sposób `prosty`:
 - `Monoid` to typ z pustym elementem i łączem, spełniający prawo łączności.
 - `Monada` to `funktor` z dodatkowymi operacjami `bind` (`let!`) i `return`, umożliwiająca sekwencyjne łączenie obliczeń.
 
-Natomiast patrząc na to bardziej `matematycznie` możemy to podsuwować, tak:
+Natomiast patrząc na to bardziej `matematycznie` możemy to podsumować, tak:
 
 - `Endofunktor` to `funktor` `F: C -> C`, który działa w obrębie jednej kategorii zachowując przy tym strukturę `morfizmów`.
 - `Funktor` to `homomorfizm` kategorii `F: C -> D`, który odwzorowuje obiekty i morfizmy zachowując ich identyczność oraz kompozycję.
