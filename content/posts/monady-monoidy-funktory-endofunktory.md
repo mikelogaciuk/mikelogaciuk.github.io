@@ -335,7 +335,7 @@ A sama `monada` to `funktor` posiadający reguły sekwencyjnego działania (`bin
 
 ## 💊 Podsumowanie
 
-Podsumowowując w sposób `prosty`:
+Podsumowując w sposób `prosty`:
 
 - `Endofunktor` to `funktor`, ale mający opakowanie wartości (`Box<'T>`, `option`, `list`).
 - `Funktor` to `endofunktor` z funkcją map do przekształcania zawartości.
