@@ -144,7 +144,7 @@ Możemy zmapować dane:
 let discountedTransactions = // list<SaleTransaction>
     mapTransaction (applyDiscount 10m) [ transaction1; transaction2; transaction3 ]
 
-fprintfn "Discounted transactions: \n\n %A" discountedTransactions
+printfn "Discounted transactions: \n\n %A" discountedTransactions
 ```
 
 Otrzymując wynik:
