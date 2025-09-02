@@ -49,7 +49,7 @@ let x = Box 666 // x: Box<int>
 printfn "%A" x // Box 666
 ```
 
-Idąc dalej, `endofunktor` to `funktor`, lecz który jak już wspomniałem - działą w obrębie jednej kategorii, np. funkcja `SaleTransaction` -> `Sale Transaction`.
+Idąc dalej, `endofunktor` to `funktor`, lecz który jak już wspomniałem - działa w obrębie jednej kategorii, np. funkcja `SaleTransaction` -> `Sale Transaction`.
 
 By łatwiej to zobrazować, przyjmijmy, że mamy poniższy typ reprezentujący transakcję:
 

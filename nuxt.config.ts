@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'Personal blog',
+          content: 'Senior DevOps Engineer @ Private blog',
         },
       ],
     },
