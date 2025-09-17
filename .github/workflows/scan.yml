@@ -1,0 +1,99 @@
+name: Scan CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  grype-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Syft & Grype
+        run: |
+          apt-get update && apt-get install -y curl
+          curl -sSfL https://get.anchore.io/syft | sh -s -- -b /usr/local/bin
+          curl -sSfL https://get.anchore.io/grype | sh -s -- -b /usr/local/bin
+
+      - name: Run Syft to generate SBOM
+        run: syft . -o json > sbom.json
+
+      - name: Run Grype scan for all severities (non-failing)
+        run: grype sbom:sbom.json -o json > grype-report.json || true
+
+      - name: Run Grype scan for CRITICAL severity (failing)
+        run: grype sbom:sbom.json --fail-on critical --output table
+
+      - name: Upload Grype report as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grype-security-report
+          path: grype-report.json
+
+  semgrep-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Semgrep
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install semgrep
+
+      - name: Run Semgrep scan
+        run: semgrep --config p/ci --json > semgrep-report.json
+
+      - name: Upload Semgrep report as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: semgrep-security-report
+          path: semgrep-report.json
+
+  trivy-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy filesystem scan for HIGH severity (non-failing)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          severity: "HIGH"
+          exit-code: "0"
+          format: "table"
+
+      - name: Run Trivy filesystem scan for CRITICAL severity (failing)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          severity: "CRITICAL"
+          exit-code: "1"
+          format: "table"
+
+      - name: Generate JSON report with CRITICAL and HIGH severity
+        if: always()
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          severity: "CRITICAL,HIGH"
+          exit-code: "0"
+          format: "json"
+          output: "trivy-report.json"
+
+      - name: Upload Trivy report as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-security-report
+          path: trivy-report.json
