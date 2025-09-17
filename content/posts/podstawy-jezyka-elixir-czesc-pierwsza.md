@@ -301,8 +301,8 @@ elem(passion, 1)
 Keyword lists są często używane do przekazywania opcji do funkcji.
 
 ```elixir
-params = [environment: :prod, users: [:mlog00, :wszc02]]
-bad_params = [environment: :staging, users: [:mlog00, :wszc02]]
+params = [environment: :prod, users: [:mike, :wojtek]]
+bad_params = [environment: :staging, users: [:foo, :bar]]
 ```
 
 ```elixir
