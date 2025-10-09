@@ -12,7 +12,7 @@ language: "en"
 - [📖 Table of contents](#-table-of-contents)
 - [📃 Introduction](#-introduction)
 - [☢️ The core](#-the-core)
-- [🧼🧼 The code](#-the-code)
+- [🧼 The code](#-the-code)
   - [⛑️ The helper](#️-the-helper)
   - [🏃 The flow](#-the-flow)
 - [⚠️ Note](#️-note)
@@ -33,7 +33,7 @@ It would be good to save it inside a `Secret` block in `Prefect`, via UI or by d
 
 For the purpose of this short article, we'll use the name of a block as: `prefect-sentry-dsn`.
 
-## 🧼🧼 The code
+## 🧼 The code
 
 At first, we need to install the `sentry-sdk` package if you haven't done so already inside your project:
 
