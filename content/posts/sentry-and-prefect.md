@@ -26,8 +26,6 @@ In this article, we will explore how to integrate `Sentry`, a powerful error tra
 
 In order to do so, first create, add new application in your `Sentry` dashboard, and get the `DSN` key by copying it for a moment into secure place.
 
-Then, you can use the following code snippet to set up the integration:
-
 Please make sure to stay within the actual window inside a Sentry to make sure that the token doesn't change.
 
 It would be good to save it inside a `Secret` block in `Prefect`, via UI or by doing it manually.
