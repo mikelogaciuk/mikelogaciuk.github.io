@@ -15,6 +15,7 @@ language: "en"
 - [🧼 The code](#-the-code)
   - [⛑️ The helper](#️-the-helper)
   - [🏃 The flow](#-the-flow)
+- [🚀 Whole script](#-whole-script)
 - [⚠️ Note](#️-note)
 
 ## 📃 Introduction
@@ -199,6 +200,77 @@ def my_flow() -> None:
 ```
 
 Once you run the flow, any errors and logs will be captured by `Sentry`.
+
+## 🚀 Whole script
+
+Whole script, should look like this:
+
+```python
+import logging
+import sentry_sdk
+from prefect import get_run_logger
+from prefect.context import get_run_context
+from sentry_sdk.integrations.logging import LoggingIntegration
+from prefect.blocks.system import Secret
+
+
+def init_sentry(
+    traces_sample_rate: float = 0.1,
+    all_logs: bool = False,
+):
+    """The function to initialize Sentry with Prefect.
+
+    :params: traces_sample_rate: The sample rate for tracing, default is 0.5 (50%).
+    :params: all_logs: Whether to capture all logs, default is False.
+    :return: None
+    """
+    # 1. Load Sentry DSN from Prefect Secret Block
+    sentry_dsn = (Secret.load("prefect-sentry-dsn")).get()
+
+    # 2. Check if Sentry is already initialized
+    logger = get_run_logger()
+    if sentry_sdk.Hub.current.client is not None:
+        return
+
+    # 3. Load the Sentry DSN from Prefect Secret Block
+    if not sentry_dsn:
+        logger.warning("Sentry DSN is missing. Skipping Sentry initialization.")
+        return
+
+    match all_logs:
+        case True:
+            sentry_logging = LoggingIntegration(
+                level=logging.INFO,  # Capture info and above as breadcrumbs
+                event_level=logging.ERROR,  # Send errors as events
+            )
+        case False:
+            sentry_logging = LoggingIntegration(
+                level=logging.WARNING,  # Capture warnings and above as breadcrumbs
+                event_level=logging.ERROR,  # Send errors as events
+            )
+
+            # Block Prefect logs below WARNING level to be sent to Sentry
+            prefect_logger = logging.getLogger("prefect")
+            prefect_logger.setLevel(logging.WARNING)
+            prefect_logger.propagate = False
+
+    # 4. Initialize the SDK
+    sentry_sdk.init(
+        dsn=sentry_dsn,
+        send_default_pii=True,
+        enable_logs=True,
+        traces_sample_rate=traces_sample_rate,
+        enable_tracing=True,
+        integrations=[sentry_logging],
+    )
+
+    # 5. Set Context Tags (Only available inside a Prefect run context)
+    run_context = get_run_context()
+    if run_context:
+        sentry_sdk.set_tag("flow_name", run_context.flow.name)
+        sentry_sdk.set_tag("flow_run_name", run_context.flow_run.name)
+        sentry_sdk.set_context("flow_parameters", run_context.flow_run.parameters)
+```
 
 ## ⚠️ Note
 
