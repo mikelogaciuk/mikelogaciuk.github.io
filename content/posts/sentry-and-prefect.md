@@ -1,7 +1,7 @@
 ---
 title: Integrating Sentry with Prefect for Enhanced Workflow Monitoring
 date: 2025-09-13
-tags: ["sentry", "prefect", "monitoring", "workflow", "error-tracking", "devops", "observability", "apm", "logging"]
+tags: ["sentry", "python", "prefect", "monitoring", "workflow", "error-tracking", "devops", "observability", "apm", "logging"]
 language: "en"
 ---
 
@@ -11,7 +11,7 @@ language: "en"
 
 - [📖 Table of contents](#-table-of-contents)
 - [📃 Introduction](#-introduction)
-- [☢️ The core](#-the-core)
+- [☢️ The core](#️-the-core)
 - [🧼 The code](#-the-code)
   - [⛑️ The helper](#️-the-helper)
   - [🏃 The flow](#-the-flow)
