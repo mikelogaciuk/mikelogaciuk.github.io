@@ -20,22 +20,27 @@ language: "en"
     I've never thought of PHP as more than a simple tool to solve problems
     — Rasmus Lerdor
 
-Since the general story about **Php** is usually known, I would rather not dive in it.
+To be honest, the **Php** was the very first programming language I touched and the very first I tried to learn (sort off), thus I decided to share my personal attachment to the language that back then was a big thing, but now is often overlooked and underestimated.
 
-But, since **Php** was my very first language I touched: I decided to share my personal attachment to the language as it was the first programming language I tried to learn (sort off).
+I remember when I started my journey in *coding*, the decision was simple: the **Php**.
 
-I remember when I started my journey in *coding*, the decision was simple: the **Php**. Why? Becuase my friends were using it, so it was obvious to take the same path as them.
+    But why?
 
-But those were early **2000s**, the **2005** to be exact, and I was:
+Becuase my friends were using it, so it was obvious to take the same path as them in order to seek help, eventually.
 
-- Still a kid, so I didn't have a clue what I was doing.
+But those were early **2000s**, the **2005** or so - to be exact and I was still a kid, so I didn't have a clue what I was doing.
+
+For sure, I had some context:
+
 - I knew how computer works, how to build it, how to install OS, how to use it.
 - I just wanted to create a website for my **Counter-Strike** clan.
 - I didn't know anything about programming, web development or so (apart from basics of html and styling).
 - I just knew that I wanted to create a website.
 - Back then, it felt not so hard to do so (at least I thougt so).
 
-So I found a free hosting service that supported **Php** and started my journey and back then, code would like this:
+So I found some free materials, some book in the local library and a free hosting service that supported **Php** and started my journey (kinda).
+
+Back then, the Php was used mostly for server-side rendering of web pages, with a lot of inline code mixed with HTML, like this:
 
 ```php
 <html>
@@ -81,15 +86,16 @@ So I found a free hosting service that supported **Php** and started my journey 
 </html>
 ```
 
-It was an era of Php **4.x** and early **5.x**, **LAMP** stack, **phpbb** by **przemo** (which was a big thing back then).
+It was an era of Php **4.x** and early **5.x**, **LAMP** stack, **phpbb** by **przemo** and others.
 
-The introduction of Php 5, marked a shift from procedural spaghetti code to more structured applications. Frameworks like `CakePHP` and `Symfony` began to emerge, though many devs still wrote inline templates with `<?php echo $title; ?>` scattered across HTML as I did.
+The introduction of Php **5.x**, marked a shift from procedural spaghetti code to more structured applications. Frameworks like `CakePHP` and `Symfony` began to emerge, but they were still in their infancy.
 
-There was no such thing as `CI/CD`, so deploying meant manually uploading files via FTP, stopping the application and re-starting it. Dependency management was a nightmare, as there was no `Composer` yet, and developers often had to bundle libraries directly into their projects and so did I.
+There was no such thing as `CI/CD`, so deploying the application: meant manually uploading files via FTP, stopping the application and re-starting it.
+Dependency management was a nightmare, as there was no `Composer` yet, and developers often had to bundle libraries directly into their projects and so did I.
 
-The website lived for about a year or so and then removed it.
+And I managed to create a website, it didn't look as uggly as it could and it lived for about a year or so and then I removed it.
 
-Then the Ruby on Rails hype came, and I switched to **Ruby**, **Python** and **JavaScript** - but it was only for fun, as I was not doing any serious projects back then.
+Then the Ruby on Rails hype came, and I switched to **Ruby**, **Python** and **JavaScript** - but it was only for fun, as I was not doing any serious projects back then (was too young).
 
 Then, about **2007** I moved on to other things, didn't code for a few years until I joined **TERG S.A.** in **2014**, but that is a different story.
 
@@ -130,6 +136,8 @@ In other words, Laravel is the promise of what the full-stack development should
 
 So, what does the future hold for me and **Php**?
 
-I plan to continue exploring the language and its ecosystem, building small projects to hone my skills. I want to dive deeper into **Laravel**, mastering its features and best practices. In order to be able to deliver full-stack applications on my own, without a need of working with anyone else except myself.
+I want to dive deeper (again) into **Php** and into **Laravel**, mastering its features and best practices in order to create on my own, without a need of working with anyone else except myself and **Php** seems to be a great fit for that.
 
-I just want to have fun of coding again, and **Php** seems to be a great fit for that.
+In short:
+
+    I just want to have fun of coding again.
