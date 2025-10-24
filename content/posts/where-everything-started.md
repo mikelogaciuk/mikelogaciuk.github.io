@@ -17,15 +17,16 @@ language: "en"
   - [Constants and Operators](#constants-and-operators)
   - [Collection types](#collection-types)
   - [Control Structures (functions, loops, conditionals etc.)](#control-structures-functions-loops-conditionals-etc)
+  - [Enums](#enums)
   - [OOP](#oop)
-- [Standard library (extras)](#standard-library-extras)
+- [🤖 Standard library (extras)](#-standard-library-extras)
   - [Filesystem and file I/O](#filesystem-and-file-io)
   - [Streams, locking and atomics](#streams-locking-and-atomics)
   - [Environment, INI and process / OS interaction](#environment-ini-and-process--os-interaction)
   - [Networking and sockets](#networking-and-sockets)
   - [Utilities: JSON, serialization, date/time, hashing, compression](#utilities-json-serialization-datetime-hashing-compression)
   - [SPL and standard containers / iterators](#spl-and-standard-containers--iterators)
-- [References](#references)
+- [🧾 References](#-references)
 
 ## 💊 What is all this about?
 
@@ -269,15 +270,103 @@ $output = " Docker Runner "
 echo "Transformed output: $output \n"; // Transformed output: docker_runner
 ```
 
-### OOP
+### Enums
 
-Php supports object-oriented programming (OOP) with classes, objects, inheritance, interfaces, and traits.
+There are also enums (Php 8.1+) for better type safety:
 
 ```php
+enum UserRole: string {
+    case ADMIN = 'admin';
+    case EDITOR = 'editor';
+    case VIEWER = 'viewer';
+}
 
+function getPermissions(UserRole $role): array {
+    return match ($role) {
+        UserRole::ADMIN => ['create', 'edit', 'delete', 'view'],
+        UserRole::EDITOR => ['edit', 'view'],
+        UserRole::VIEWER => ['view'],
+    };
+}
+
+$role = UserRole::EDITOR;
+$permissions = getPermissions($role);
+
+echo "Permissions for " . $role->value . ": " . implode(", ", $permissions) . "\n"; // Permissions for editor: edit, view
 ```
 
-## Standard library (extras)
+### OOP
+
+Php supports object-oriented programming (OOP).
+
+We would start with the most basic example of a class with properties and methods:
+
+```php
+class Store {
+    public string $storeInternalCode;
+    public array $config;
+
+    public function isOpen(): bool {
+        $hour = (int)date('H');
+        return $hour >= 9 && $hour <= 21;
+    }
+}
+
+$store = new Store();
+$store->storeInternalCode = "STORE_001";
+$store->config = [
+    "currency" => "USD",
+    "size" => "Large",
+    "address" => [
+        "street" => "123 Main St",
+        "city" => "Pine Ridge",
+        "zip" => "12345",
+    ]
+];
+
+echo "Store Code: " . $store->storeInternalCode . "\n"; // Store Code: STORE_001
+echo "Is store open? " . ($store->isOpen() ? "Yes" : "No") . "\n"; // Is store open? Yes/No depending on current time
+echo "Store City: " . $store->config["address"]["city"] . "\n"; // Store City: Pine Ridge
+```
+
+You can always use visibility modifiers (`public`, `protected`, `private`), constructors, destructors, static properties/methods, abstract classes, interfaces, and traits to build more complex OOP structures.
+
+```php
+class Invoice {
+
+    public static array $invoiceNumbers = [];
+    public Store $store;
+    public string $invoiceNumber;
+
+
+    public function __construct(Store $store) {
+        $this->store = $store;
+    }
+
+    private function generateInvoiceNumber(): string {
+        do {
+            $number = 'INV-' . strtoupper(bin2hex(random_bytes(4)));
+        } while (in_array($number, self::$invoiceNumbers));
+
+        self::$invoiceNumbers[] = $number;
+        return $number;
+    }
+
+    public function createInvoice(): void {
+        $this->invoiceNumber = $this->generateInvoiceNumber();
+        echo "Invoice " . $this->invoiceNumber . " created for store " . $this->store->storeInternalCode . "\n";
+    }
+}
+
+$invoice = new Invoice($store);
+$invoice->createInvoice();
+echo "Invoice Number: " . $invoice->invoiceNumber . "\n"; Invoice Number: INV-XXXXXXX
+```
+        ---------------------------
+        And more to come later...
+        ---------------------------
+
+## 🤖 Standard library (extras)
 
 Here are some common standard library functions for OS, files, env, and related tasks, grouped by purpose.
 
@@ -321,7 +410,7 @@ Here are some common standard library functions for OS, files, env, and related 
 - **ArrayObject, ArrayIterator, Iterator, IteratorAggregate** — object wrappers around arrays and custom iterable implementations.
 - **SplDoublyLinkedList, SplStack, SplQueue, SplHeap, SplPriorityQueue, SplFixedArray** — built-in data structures for stacks, queues, heaps and fixed arrays.
 
-## References
+## 🧾 References
 
 - [PHP Manual](https://www.php.net/manual/en/)
 - [Learn in X minutes](https://learnxinyminutes.com/php/)

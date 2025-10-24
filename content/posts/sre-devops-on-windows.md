@@ -191,7 +191,7 @@ In order to set-up `Node` environment, use `nvm`:
 ```shell
 nvm install 22
 nvm use 22
-npm install typescript yarn -g
+npm install -g typescript yarn @github/copilot @pulumi/pulumi
 ```
 
 Sometimes, you may need also `Rust` 🦀 for some CLIs or build tools:
