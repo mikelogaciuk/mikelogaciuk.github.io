@@ -73,6 +73,7 @@ export default defineNuxtConfig({
             'scala',
             'toml',
             'fsharp',
+            'powershell',
             'swift',
             'dart',
           ],
