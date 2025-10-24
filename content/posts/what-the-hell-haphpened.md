@@ -10,12 +10,12 @@ language: "en"
 ## 📖 Table of contents
 
 - [📖 Table of contents](#-table-of-contents)
-- [🐳 The context](#-the-context)
+- [🤖 The context](#-the-context)
 - [🤔 What's the point?](#-whats-the-point)
 - [🛣️ Fast-forward](#️-fast-forward)
-- [🧂Future](#-future)
+- [🧂 Future](#-future)
 
-## The context
+## 🤖 The context
 
     I've never thought of PHP as more than a simple tool to solve problems
     — Rasmus Lerdor
