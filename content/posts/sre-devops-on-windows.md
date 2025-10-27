@@ -36,9 +36,9 @@ language: "en"
     Windows can also be a powerful platform for SRE and DevOps tasks.
     This guide will walk you through setting up a comprehensive SRE/DevOps environment on a Windows machine.
 
-I mean obviously it's a lie, but there are situations when companies force you to use Windows and you have to addapt to it.
+I mean obviously it is kinda joke, but there are situations when companies tend to wish you to use Windows and you have to adapt to it.
 
-So I decided to leave here few notes, to have them always handy.
+So I decided to leave here few notes, to have them always handy in case I would need to work on Windows.
 
 ## 💎 Setting Up Your Environment
 
@@ -119,13 +119,13 @@ wsl --install
 
 This command will install WSL along with the default Linux distribution (usually Ubuntu). After installation, you can launch your Linux environment from the Start menu.
 
-Or do not instally any distribution, because once you install `Docker` via `Rancher Desktop`, it will install its own WSL distribution called `rancher-desktop`.
+Or do not install any distribution, because once you install `Docker` via `Rancher Desktop`, it will install its own WSL distribution called `rancher-desktop` and better would be to use e.g. Alpine or Debian inside container instead of raw Ubuntu.
 
 ## 🐳 Docker
 
 To install `Docker` on Windows, you can use `Rancher Desktop`, which provides a simple way to run Docker containers on Windows using WSL 2, where you can set to use `containerd` or `moby`.
 
-The typical `Docker Desktop` is not free anymore for business use.
+The typical `Docker Desktop` is **not free anymore for business use**, but maybe your company has a license for it.
 
 You can download `Rancher Desktop` from its official website: [here](https://rancherdesktop.io/).
 

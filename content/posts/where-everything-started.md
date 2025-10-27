@@ -15,9 +15,10 @@ language: "en"
 - [📝 Syntax](#-syntax)
   - [Variables and Data Types](#variables-and-data-types)
   - [Constants and Operators](#constants-and-operators)
+  - [Un-packing](#un-packing)
+  - [Casting](#casting)
   - [Collection types](#collection-types)
   - [Control Structures (functions, loops, conditionals etc.)](#control-structures-functions-loops-conditionals-etc)
-  - [Enums](#enums)
   - [OOP](#oop)
 - [🤖 Standard library (extras)](#-standard-library-extras)
   - [Filesystem and file I/O](#filesystem-and-file-io)
@@ -120,6 +121,27 @@ echo "Spaceship operator results: $result, $result2, $result3\n";
 
 All other operators are pretty much standard and similar to other languages.
 
+### Un-packing
+
+You can also un-pack arrays into variables using the `list()` function or the shorthand `[]` syntax:
+
+```php
+$address = ['123 Main St', 'Pine Ridge', 'CA', '90210'];
+[$street, $city, $state, $zip] = $address;
+[,, $stateOnly, ] = $address; // Skipping values
+echo "The state: $stateOnly \n"; // The state: CA
+```
+
+### Casting
+
+In Php, you can cast variables to different types using the `(type)` syntax:
+
+```php
+$number = "42";
+$casted = (int)$number; // Cast to integer
+echo "Casted value: $casted\n";
+```
+
 ### Collection types
 
 The Php has two main collection types: arrays and objects (associative arrays):
@@ -216,6 +238,58 @@ function add(int $a, int $b, ?int $c = null): int
 echo "Sum: " . add(5, 10) . "\n"; // 15
 echo "Sum with optional: " . add(5, 10, 5) . "\n"; // 20
 
+// Default parameters
+function greet(string $name = "Guest"): string
+{
+    return "Hello, $name!";
+}
+```
+
+There are also enums (Php 8.1+) for better type safety:
+
+```php
+enum UserRole: string {
+    case ADMIN = 'admin';
+    case EDITOR = 'editor';
+    case VIEWER = 'viewer';
+}
+
+function getPermissions(UserRole $role): array {
+    return match ($role) {
+        UserRole::ADMIN => ['create', 'edit', 'delete', 'view'],
+        UserRole::EDITOR => ['edit', 'view'],
+        UserRole::VIEWER => ['view'],
+    };
+}
+
+$role = UserRole::EDITOR;
+$permissions = getPermissions($role);
+
+echo "Permissions for " . $role->value . ": " . implode(", ", $permissions) . "\n"; // Permissions for editor: edit, view
+```
+
+And there are also named arguments and more advanced function signatures:
+
+```php
+// Usage of named arguments (parameters) (Php 8.0+)
+enum Runner {
+    case SWARM;
+    case SINGLE;
+    case KUBERNETES;
+}
+
+function setConfiguration(Runner $runner, int $maxJobs = 10, bool $debug = false): void {
+    $config = [
+        "runner" => $runner->name,
+        "max_jobs" => $maxJobs,
+        "debug" => $debug,
+    ];
+    echo "Configuration set: " . json_encode($config) . "\n";
+}
+
+setConfiguration(runner: Runner::KUBERNETES, maxJobs: 15, debug: true);
+setConfiguration(runner: Runner::SINGLE, debug: true);
+
 // Classic while loop
 while ($age < 18) {
     echo "Age is $age, still a minor.\n";
@@ -270,29 +344,32 @@ $output = " Docker Runner "
 echo "Transformed output: $output \n"; // Transformed output: docker_runner
 ```
 
-### Enums
-
-There are also enums (Php 8.1+) for better type safety:
+Of course there are also if statements or ternary operators:
 
 ```php
-enum UserRole: string {
-    case ADMIN = 'admin';
-    case EDITOR = 'editor';
-    case VIEWER = 'viewer';
+$age = 18;
+
+// If statement
+if ($age < 18) {
+    echo "Minor";
+} elseif ($age < 65) {
+    echo "Adult";
+} else {
+    echo "Senior";
 }
 
-function getPermissions(UserRole $role): array {
-    return match ($role) {
-        UserRole::ADMIN => ['create', 'edit', 'delete', 'view'],
-        UserRole::EDITOR => ['edit', 'view'],
-        UserRole::VIEWER => ['view'],
-    };
-}
+// Ternary operator
+$status = ($age < 18) ? "Minor" : "Adult";
+echo "Status: $status\n";
+```
 
-$role = UserRole::EDITOR;
-$permissions = getPermissions($role);
+### Enforce types
 
-echo "Permissions for " . $role->value . ": " . implode(", ", $permissions) . "\n"; // Permissions for editor: edit, view
+In Php since version 7.0 you can enforce types for function parameters and return values. You can specify types like `int`, `float`, `string`, `bool`, `array`, `object`, `callable`, and even class/interface names.
+
+```php
+declare(strict_types=1);
+
 ```
 
 ### OOP
@@ -362,9 +439,10 @@ $invoice = new Invoice($store);
 $invoice->createInvoice();
 echo "Invoice Number: " . $invoice->invoiceNumber . "\n"; Invoice Number: INV-XXXXXXX
 ```
-        ---------------------------
-        And more to come later...
-        ---------------------------
+
+### To be continued...
+
+More will be added later...
 
 ## 🤖 Standard library (extras)
 

@@ -6,7 +6,7 @@ describe("Home Page", () => {
   it("renders the home page and checks for welcome text", () => {
     const wrapper = mount(HomePage);
     expect(wrapper.text()).toContain(
-      "Senior DevOps Engineer in TERG S.A. (Media Expert)",
+      "Senior DevOps Engineer & Code Writer in TERG S.A. (Media Expert)",
     );
   });
 });

@@ -1,15 +1,15 @@
 ---
 title: Adding Trivy & Semgrep scans to your Gitlab Pipeline
 date: 2025-08-25
-tags: ["cicd", "devops", "gitops", "pipeline", "gitlab"]
+tags: ["cicd", "devops", "gitops", "pipeline", "gitlab", "workflow", "security", "trivy", "semgrep"]
 language: "en"
 ---
 
-![Adding Trivy & Semgrep scans to your Gitlab Pipeline](/img/cicd-gitlab-sast.png)
+![Adding Trivy & Semgrep scans to your Gitlab Pipeline](/img/gitlab_and_mascotts.png)
 
-## 📖 Table of contents
+## Table of contents
 
-- [📖 Table of contents](#-table-of-contents)
+- [Table of contents](#table-of-contents)
 - [The purpose](#the-purpose)
 - [The template repository](#the-template-repository)
   - [Files structure](#files-structure)

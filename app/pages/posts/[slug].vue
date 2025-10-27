@@ -11,11 +11,7 @@ const { data: post } = await useAsyncData(`posts-${slug}`, () => {
   <div>
     <div v-if="post" class="mt-10 mb-2 min-w-4xl mx-auto">
       <div class="flex flex-wrap flex-gap gap-1 mb-4">
-        <span
-          v-for="tag in post.tags"
-          :key="String(tag)"
-          :class="`badger badger-${randomBadge()}`"
-        >
+        <span v-for="tag in post.tags" :key="String(tag)" :class="`badger badger-${randomBadge()}`">
           <NuxtLink :to="`/posts/tag/${String(tag)}`">
             {{ String(tag) }}
           </NuxtLink>

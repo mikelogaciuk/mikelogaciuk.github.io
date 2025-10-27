@@ -1,0 +1,22 @@
+let { task, desc, namespace } = require('jake');
+let { exec } = require('child_process');
+let { promisify } = require('util');
+
+let execAsync = promisify(exec);
+
+namespace('devops', () => {
+  desc('Build DevOps Docker Image');
+  task('build', async () => {
+    await execAsync(
+      'docker build -t alpine-devops -f .\\dockerfiles\\alpine.dockerfile .'
+    );
+  });
+  desc('Run DevOps Docker Container');
+  task('run', async () => {
+    await execAsync(
+      process.platform === 'win32'
+        ? 'winpty docker run -it --rm alpine-devops:latest /bin/bash'
+        : 'docker run -it --rm alpine-devops:latest /bin/bash'
+    );
+  });
+});
