@@ -75,3 +75,36 @@ If not, type:
 ```shell
 npm i --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-core
 ```
+
+## 🐳 Additional Docker files
+
+Additional Docker files can be found in the `docker` directory for different purposes, can be build with:
+
+```shell
+docker build -t alpine-devops -f .\dockerfiles\alpine.dockerfile .
+
+# Or by
+jake devops:build
+```
+
+To run it, type:
+
+```shell
+docker run -it --rm alpine-devops:latest /bin/bash
+
+# Or by
+jake devops:run
+```
+
+Please note that on Windows you might need to use `winpty` before the `docker` command to properly handle the interactive terminal.
+
+This command runs the container and opens a Bash shell directly, removing the container after exit. Alternatively, you can use the two-step approach:
+
+```shell
+docker run -dit --name alpine alpine-devops:latest
+docker exec -it alpine /bin/bash
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
