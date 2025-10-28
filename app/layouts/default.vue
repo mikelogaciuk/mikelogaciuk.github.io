@@ -1,11 +1,9 @@
 <template>
-  <div class="flex flex-col h-screen">
+  <div class="flex flex-col min-h-screen bg-base-100">
     <AppHeaderComponent />
-    <AppMainComponent class="flex-1 overflow-y-visible">
-      <!-- <AppMainComponent class="flex-1 w-full m-4 mx-5 bg-base-300 overflow-y-visible"> -->
+    <AppMainComponent class="flex-1 w-full px-2 py-2 sm:px-4 sm:py-4">
       <slot />
     </AppMainComponent>
-
   </div>
 </template>
 

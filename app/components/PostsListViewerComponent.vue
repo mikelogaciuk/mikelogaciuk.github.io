@@ -1,7 +1,16 @@
 <script setup lang="ts">
 import type { LocationQueryValue } from 'vue-router';
 
-defineProps<{ posts: Array<any> }>();
+interface Post {
+  id: string | number;
+  path: string;
+  title: string;
+  date: string;
+  summary: string;
+  language?: string;
+}
+
+defineProps<{ posts: Post[] }>();
 
 // const language = ref("");
 
@@ -9,44 +18,44 @@ defineProps<{ posts: Array<any> }>();
 //   language.value = lang;
 // };
 
+
 const filterPosts = (
-  lang: ComputedRef<string | LocationQueryValue[]>,
-  posts: Array<any>,
-): Array<any> => {
+  lang: string,
+  posts: Post[],
+): Post[] => {
   if (!lang) return posts;
   return posts.filter((post) => post.language === lang);
 };
 
 const route = useRoute();
-const language = computed(() => route.query.lang || "");
+const language = computed(() => {
+  const l = route.query.lang;
+  if (Array.isArray(l)) return l[0] || "";
+  return l || "";
+});
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center w-full">
+  <div class="flex flex-col items-center justify-center w-full px-2 sm:px-0">
     <div class="flex flex-col items-center justify-center mt-2 mb-4 w-full">
-      <div class="flex flex-wrap gap-4 mb-4 justify-center">
-        <h2 class="mr-2">filter by language:</h2>
-        <!-- <button class="badger badger-accent" @click="setLanguage('')">all</button>
-        <button class="badger badger-primary" @click="setLanguage('pl')">polish</button>
-        <button class="badger badger-secondary" @click="setLanguage('en')">english</button> -->
-        <!-- <NuxtLink class="badger badger-accent" :to="{ query: { lang: '' } }"
-          >all</NuxtLink
-        > -->
-        <NuxtLink class="badger badger-primary" :to="{ query: { lang: 'pl' } }">polish</NuxtLink>
-        <NuxtLink class="badger badger-secondary" :to="{ query: { lang: 'en' } }">english</NuxtLink>
-        <NuxtLink class="badger badger-success" to="/posts"> reset </NuxtLink>
+      <div class="flex flex-wrap gap-2 sm:gap-4 mb-4 justify-center">
+        <h2 class="mr-2 text-base sm:text-lg">filter by language:</h2>
+        <NuxtLink class="badger badger-primary text-xs sm:text-base" :to="{ query: { lang: 'pl' } }">polish</NuxtLink>
+        <NuxtLink class="badger badger-secondary text-xs sm:text-base" :to="{ query: { lang: 'en' } }">english
+        </NuxtLink>
+        <NuxtLink class="badger badger-success text-xs sm:text-base" to="/posts"> reset </NuxtLink>
       </div>
     </div>
 
     <div class="flex flex-col items-center justify-center w-full">
-      <div class="flex flex-col mt-2 mb-4 min-w-full">
-        <ul class="list-none">
-          <li v-for="post in filterPosts(language, posts)" :key="post.id" class="mb-4 text-center">
-            <NuxtLink :to="post.path" class="hover:underline">
+      <div class="flex flex-col mt-2 mb-4 w-full">
+        <ul class="list-none w-full">
+          <li v-for="post in filterPosts(language, posts)" :key="post.id" class="mb-4 text-center w-full px-2 sm:px-0">
+            <NuxtLink :to="post.path" class="hover:underline text-lg sm:text-xl font-semibold block w-full truncate">
               {{ post.title }}
             </NuxtLink>
-            <p class="text-gray-600">{{ post.date }}</p>
-            <p class="text-gray-800">{{ post.summary }}</p>
+            <p class="text-gray-600 text-xs sm:text-sm">{{ post.date }}</p>
+            <p class="text-gray-800 text-sm sm:text-base">{{ post.summary }}</p>
           </li>
         </ul>
       </div>

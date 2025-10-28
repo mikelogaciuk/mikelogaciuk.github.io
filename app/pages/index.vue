@@ -45,46 +45,33 @@ const skillBadges = ref(mapBadges(skills));
 </script>
 
 <template>
-  <div>
-    <div
-      class="flex flex-col items-center mx-auto my-auto space-y-10 mt-30 md:mt-50"
-    >
-      <h1
-        class="sm:text-lg sm:mb-2 md:text-5xl md:mb-2 text-9xl font-bold mb-4 font-stretch-expanded"
-      >
+  <div class="px-2 sm:px-0">
+    <div class="flex flex-col items-center mx-auto my-auto space-y-6 mt-10 sm:mt-20 w-full">
+      <h1 class="text-3xl sm:text-5xl font-bold mb-2 text-center font-stretch-expanded">
         Mike Logaciuk
       </h1>
-      <p class="sm:text-lg sm:mb-2 md:text-2xl md:mb-2 text-3xl mb-6 mt-6">
-        Senior DevOps Engineer & Code Writer in TERG S.A. (Media Expert)
+      <p class="text-base sm:text-2xl mb-4 mt-2 text-center">
+        Senior DevOps Engineer
+      </p>
+      <p class="text-base sm:text-2xl mb-4 mt-2 text-center">
+        ...and Code Writer in TERG S.A. (Media Expert)
       </p>
       <br />
-      <p class="sm:text-lg sm:mb-2 md:text-2xl md:mb-2 text-4xl mb-6">
+      <p class="text-base sm:text-2xl mb-4 text-center">
         I specialize in:
       </p>
-      <ul
-        class="sm:mb-2 list-none list-inside mb-6 flex flex-col justify-items-center mx-auto"
-      >
-        <li
-          v-for="spec in specializations"
-          :key="spec"
-          class="sm:text-xs text-lg"
-        >
+      <ul class="list-none list-inside mb-4 flex flex-col items-center mx-auto w-full">
+        <li v-for="spec in specializations" :key="spec" class="text-xs sm:text-lg text-center">
           {{ spec }}
         </li>
       </ul>
     </div>
     <div>
-      <h2
-        class="sm:text-lg sm:mb-2 md:text-2xl md:mb-2 text-3xl mb-6 text-center mt-5"
-      >
+      <h2 class="text-base sm:text-2xl mb-4 text-center mt-5">
         The skills list, looks somewhat like:
       </h2>
-      <div class="w-xl flex flex-wrap gap-2 justify-center mx-auto">
-        <div
-          v-for="item in skillBadges"
-          :key="item.badge"
-          :class="`badger badger-${item.badge}`"
-        >
+      <div class="w-full flex flex-wrap gap-2 justify-center mx-auto">
+        <div v-for="item in skillBadges" :key="item.badge" :class="`badger badger-${item.badge}`">
           <NuxtLink :to="`/posts/tag/${String(item.element)}`">
             {{ String(item.element) }}
           </NuxtLink>
