@@ -233,8 +233,8 @@ In short, the table above, can be extended to:
 | CIDR  | Subnet Mask       | # of Hosts | Typical Use Case                          |
 |-------|-------------------|------------|-------------------------------------------|
 | /8    | 255.0.0.0         | 16,777,216 | Very large networks (e.g., 10.0.0.0/8)    |
-| /16   | 255.255.0.0       | 65,536    | Medium-sized networks (e.g., 172.16.0.0/16)|
 | /12   | 255.240.0.0       | 1,048,574  | Large private networks (e.g., 10.0.0.0/12)|
+| /16   | 255.255.0.0       | 65,536    | Medium-sized networks (e.g., 172.16.0.0/16)|
 | /20   | 255.255.240.0     | 4,094      | Medium-sized subnets, cloud VPCs          |
 | /21   | 255.255.248.0     | 2,046      | Cloud subnets, branch offices             |
 | /22   | 255.255.252.0     | 1,022      | Cloud subnets, small data centers         |
@@ -533,7 +533,7 @@ $ netstat -an | grep :80 | grep ESTABLISHED | wc -l
 
 In this case we can assume that our web server is handling `356123` active connections, which in a real-world scenario would be a lot but not great or terrible either.
 
-So to implement load balancing, we can use tools like **HAProxy**, **Nginx**, **Taefik**, or cloud-based load balancers provided by AWS, Azure, or GCP.
+So to implement load balancing, we can use tools like **HAProxy**, **Nginx**, **Traefik**, or cloud-based load balancers provided by AWS, Azure, or GCP.
 
 But while on-premise, the **Nginx** is one of the most popular choices for load balancing HTTP and HTTPS traffic:
 
@@ -555,6 +555,44 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
+```
+
+Another quite popular is for example `Trefik`:
+
+```yaml
+# traefik.yml
+entryPoints:
+  web:
+    address: ":80"
+
+api:
+  dashboard: true
+
+providers:
+  file:
+    filename: ./dynamic.yml
+
+log:
+  level: INFO
+```
+
+```yaml
+# dynamic.yml
+http:
+  routers:
+    my-router:
+      rule: "Host(`internal.local`)"
+      service: my-backend
+      entryPoints:
+        - web
+
+  services:
+    my-service:
+      loadBalancer:
+        servers:
+          - url: "http://10.0.1.80:8080"
+          - url: "http://10.0.1.80:8080"
+          - url: "10.0.1.80:8080"
 ```
 
 ```shell
