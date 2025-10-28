@@ -26,7 +26,7 @@ language: "en"
   - [How to check my external IP address?](#how-to-check-my-external-ip-address)
   - [NAT](#nat)
   - [Practical Subnetting](#practical-subnetting)
-- [DNS](#dns)
+- [🧿 DNS](#-dns)
   - [Caching and TTL](#caching-and-ttl)
   - [Example DNS Configuration](#example-dns-configuration)
   - [Homelabs and DNS?](#homelabs-and-dns)
@@ -337,7 +337,7 @@ ip route add 10.0.1.0/24 via 192.168.1.1
 
 Remember that you can always check your routing table using: `ip route show`.
 
-## DNS
+## 🧿 DNS
 
 DNS as mentoned before is used to resolve domain names to IP addresses. In a complex network setup with multiple subnets, you might have your own internal DNS server to manage local domain names and their corresponding IP addresses.
 
