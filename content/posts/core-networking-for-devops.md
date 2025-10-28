@@ -37,8 +37,8 @@ language: "en"
     - [Docker Swarm](#docker-swarm)
   - [Other Load Balancing Techniques](#other-load-balancing-techniques)
 - [🐳 Containers and networking](#-containers-and-networking)
+  - [Practicing container networking using Docker Compose](#practicing-container-networking-using-docker-compose)
 - [☁️ Few words about Cloud Networking](#️-few-words-about-cloud-networking)
-- [🐖 To be continued...](#-to-be-continued)
 - [📝 Notes and references](#-notes-and-references)
 
 ## 🤖 Introduction
@@ -675,6 +675,61 @@ While containers can communicate using their IP addresses, it's often more conve
 **Kubernetes (K8s)** extends this concept further by providing a flat network namespace for all containers, allowing them to communicate with each other using their names without needing to know their IP addresses.
 But it also uses different networking models like **CNI (Container Network Interface)** to manage pod-to-pod and pod-to-service communication, and it typically uses large address spaces like `10.244.0.0/16`.
 
+### Practicing container networking using Docker Compose
+
+You can create a simple `docker-compose.yml` file to define multiple services and their networking configurations:
+
+```yaml
+services:
+  redis:
+    image: redis:7
+    networks:
+      redis_net:
+        ipv4_address: 172.20.0.10
+
+  api:
+    image: mikelogaciuk/dummy-api:latest
+    depends_on:
+      - redis
+      - db
+    networks:
+      redis_net:
+        ipv4_address: 172.20.0.20
+      api_net:
+        ipv4_address: 172.21.0.10
+      db_net:
+        ipv4_address: 172.22.0.10
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: example
+    networks:
+      db_net:
+        ipv4_address: 172.22.0.20
+
+networks:
+  redis_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+  api_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/24
+  db_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/24
+```
+
+Note: The code for my containerized dummy API is available on [GitHub](https://github.com/mikelogaciuk/dummy-api) and it includes Static Application Security Testing (SAST) using Semgrep and Grype & Syft.
+
+It has three endpoints: `/`, `/health`, and `/error` to simulate normal and error responses.
+
 ## ☁️ Few words about Cloud Networking
 
 When working with cloud providers like AWS, Azure, or GCP, understanding their networking concepts is crucial. Each provider has its own terminology and services for managing networking, but the most common idea is that it is still based on core networking principles.
@@ -690,9 +745,11 @@ That's why I will mention few core concepts:
 
 For more details, you can refer to the documentation of each cloud provider.
 
-## 🐖 To be continued...
-
 ## 📝 Notes and references
 
+- [Personal notes](./)
 - [Introduction to Networking](https://www.networkacademy.io/ccna/network-fundamentals/introduction-to-networking)
 - [Networking Fundamentals for Developers](https://devops-daily.com/guides/networking-fundamentals)
+- [Video @ The 20% of networking you'll use 80% of the time: Networking tips for DevOps](https://youtu.be/gyXfooY7MqU?si=-HRocLWTzTVkacO8)
+- [Video @ Network Routing for DevOps](https://www.youtube.com/watch?v=1GJw2rfXJGc)
+- [Video @ This homelab setup is my favorite one yet.](https://youtu.be/2yplBzPCghA?si=iHcT6NOTEq3Wlhf7)
