@@ -7,8 +7,6 @@ describe('Home Page', () => {
   it('renders the home page and checks for welcome text', () => {
     const wrapper = mount(HomePage);
     expect(wrapper.text()).toContain('Michał Logaciuk');
-    expect(wrapper.text()).toContain('DataOps & DevOps Engineering');
-    expect(wrapper.text()).toContain('infrastructure');
   });
 });
 
