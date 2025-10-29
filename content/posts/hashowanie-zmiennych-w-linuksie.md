@@ -1,7 +1,7 @@
 ---
 title: Hashowanie zmiennych w Linuksie
 date: 2024-05-01
-tags: ["linux", "passwords", "vault"]
+tags: ["linux", "devops", "sre", "security", "passwords", "vault"]
 language: "pl"
 ---
 

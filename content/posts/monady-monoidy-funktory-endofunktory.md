@@ -1,7 +1,7 @@
 ---
 title: Monady, monoidy, funktory i endofunktory
 date: 2025-08-31
-tags: ["functional", "programming", "fsharp", "monads", "monoids", "functors", "endofunctors"]
+tags: ["functional", "programming", "fsharp", "monads", "monoids", "functors", "endofunctors", "fp", "category-theory"]
 language: "pl"
 ---
 

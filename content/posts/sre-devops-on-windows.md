@@ -1,7 +1,7 @@
 ---
 title: "Setting up SRE & DevOps Environment on Windows"
-date: 2025-06-01
-tags: ["devops", "sre", "windows"]
+date: 2025-01-01
+tags: ["devops", "sre", "windows", "setup", "guide", "configuration"]
 language: "en"
 ---
 

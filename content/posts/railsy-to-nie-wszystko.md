@@ -1,7 +1,7 @@
 ---
 title: Rails'y to nie wszystko
 date: 2023-12-12
-tags: ["learning", "programming", "ruby", "sinatra", "sequel", "rails"]
+tags: ["programming", "ruby", "sinatra", "sequel", "rails", "coding", "automation", "backend", "notes", "materials"]
 language: "pl"
 ---
 
