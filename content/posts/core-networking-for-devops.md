@@ -1,7 +1,7 @@
 ---
 title: "Core networking for DevOps and SRE's"
-date: 2025-09-13
-tags: ["devops", "sre", "networking", "infrastructure"]
+date: 2025-04-26
+tags: ["devops", "sre", "networking", "infrastructure", "linux", "windows"]
 language: "en"
 ---
 

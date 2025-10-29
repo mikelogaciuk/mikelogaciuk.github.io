@@ -19,7 +19,14 @@ language: "en"
   - [Casting](#casting)
   - [Collection types](#collection-types)
   - [Control Structures (functions, loops, conditionals etc.)](#control-structures-functions-loops-conditionals-etc)
+  - [Enforce types](#enforce-types)
   - [OOP](#oop)
+  - [Classes and property promotion (new way)](#classes-and-property-promotion-new-way)
+  - [Inheritance](#inheritance)
+  - [Interfaces](#interfaces)
+  - [Traits](#traits)
+- [💎 Namespaces and their usage](#-namespaces-and-their-usage)
+- [❤️‍🔥 Summing up](#️-summing-up)
 - [🤖 Standard library (extras)](#-standard-library-extras)
   - [Filesystem and file I/O](#filesystem-and-file-io)
   - [Streams, locking and atomics](#streams-locking-and-atomics)
@@ -63,7 +70,7 @@ Which is the same as `console.log` in JavaScript or `print` in Python.
 And we are ready to go. You can run your script using the built-in Php server by executing:
 
 ```shell
-php index.PHP
+php index.php
 ```
 
 Or with a local server:
@@ -402,11 +409,47 @@ $store->config = [
 ];
 
 echo "Store Code: " . $store->storeInternalCode . "\n"; // Store Code: STORE_001
-echo "Is store open? " . ($store->isOpen() ? "Yes" : "No") . "\n"; // Is store open? Yes/No depending on current time
+echo "Is store open? " . ($store->isOpen() ? "Yes" : "No") . "\n"; // Is store open? Yes/No
+// Depending on current time
 echo "Store City: " . $store->config["address"]["city"] . "\n"; // Store City: Pine Ridge
 ```
 
-You can always use visibility modifiers (`public`, `protected`, `private`), constructors, destructors, static properties/methods, abstract classes, interfaces, and traits to build more complex OOP structures.
+But you can always use constructors to initialize properties:
+
+```php
+class Store {
+
+    public function __construct(public string $storeInternalCode, public array $config) {
+        $this->storeInternalCode = $storeInternalCode;
+        $this->config = $config;
+
+    }
+
+    public function isOpen(): bool {
+        $hour = (int)date('H');
+        return $hour >= 9 && $hour <= 21;
+    }
+}
+
+$store = new Store(
+    storeInternalCode: "STORE_001",
+    config: [
+        "currency" => "USD",
+        "size" => "Large",
+        "address" => [
+            "street" => "123 Main St",
+            "city" => "Pine Ridge",
+            "zip" => "12345",
+        ]
+    ]
+);
+
+echo "Is store open? " . ($store->isOpen() ? "Yes" : "No") . "\n";
+```
+
+Of course, you can always use visibility modifiers (`public`, `protected`, `private`), `destructors`, `static properties/methods`, `abstract classes`, `interfaces`, and `traits` to build more complex OOP structures.
+
+For example, here is another example with static properties and methods, constructors, and more complex logic:
 
 ```php
 class Invoice {
@@ -437,12 +480,167 @@ class Invoice {
 
 $invoice = new Invoice($store);
 $invoice->createInvoice();
-echo "Invoice Number: " . $invoice->invoiceNumber . "\n"; Invoice Number: INV-XXXXXXX
+echo "Invoice Number: " . $invoice->invoiceNumber . "\n"; // Invoice Number: INV-XXXXXXX
 ```
 
-### To be continued...
+### Classes and property promotion (new way)
 
-More will be added later...
+There is a slight difference in defining classes in pre and post Php 8.0 versions, thanks to the new constructor property promotion feature:
+
+**Pre Php 8.0**:
+
+```php
+class User {
+    public string $name;
+    public int $age;
+
+    public function __construct(string $name, int $age) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+}
+```
+
+**Post Php 8.0**
+
+```php
+class User {
+    public function __construct(public string $name, public int $age) {}
+
+    public function isAdult(): bool {
+        return $this->age >= 18;
+    }
+}
+```
+
+There is no need to explicitly declare properties and assign them in the constructor - the promotion does it automatically.
+
+So no more typing `$this->property = $property;` for each property.
+
+### Inheritance
+
+Php of course supports inheritance (the classical Animal and Cat example):
+
+```php
+class Animal {
+    public function makeSound(): string {
+        return "Some generic sound";
+    }
+}
+
+class Cat extends Animal {
+    public function makeSound(): string {
+        return "Meow";
+    }
+}
+
+$cat = new Cat();
+echo $cat->makeSound(); // Meow
+```
+
+You can also block inheritance using the `final` keyword:
+
+```php
+class Chasis {
+    public final function getMaterial(): string {
+        return "Aluminum";
+    }
+}
+
+class Car extends Chasis {
+    // This will cause an error
+    // public function getMaterial(): string {
+    //     return "Steel";
+    // }
+```
+
+And also use Union Types:
+
+```php
+class Discount {
+    public function applyDiscount(int|float $amount, int|float $discount): int|float {
+        return $amount - $discount;
+    }
+}
+```
+
+### Interfaces
+
+Similarly to other OOP languages, Php supports interfaces to define contracts for classes:
+
+```php
+interface Logger {
+    public function log(string $message): void;
+}
+
+class FileLogger implements Logger {
+    public function log(string $message): void {
+        file_put_contents('app.log', $message . PHP_EOL, FILE_APPEND);
+    }
+}
+
+$logger = new FileLogger();
+$logger->log("This is a log message.");
+```
+
+### Traits
+
+```php
+trait LoggerTrait {
+    public function log(string $message): void {
+        file_put_contents('app.log', $message . PHP_EOL, FILE_APPEND);
+    }
+}
+
+class FileLogger {
+    use LoggerTrait;
+}
+
+$logger = new FileLogger();
+$logger->log("This is a log message.");
+```
+
+The **main difference** between **traits** and **interfaces** is that traits can provide default implementations for methods, while interfaces cannot, and they can be used to compose behavior across multiple classes.
+
+So in other words, *traits are neither classes nor interfaces* - they are reusable pieces of code that can be included within classes to share functionality.
+
+In order to use traits, you use the `use` keyword inside a class definition, like shown in the example above.
+
+## 💎 Namespaces and their usage
+
+Php uses namespaces to organize code and avoid name collisions. You can define a namespace at the top of your Php file using the `namespace` keyword:
+
+```php
+# model/ExampleModel.php
+namespace App\Models;
+
+class ExampleModel {
+    public function getData(): string {
+        return "Some data from ExampleModel";
+    }
+}
+```
+
+And then you can import and use that class in another file using the `use` keyword:
+
+```php
+use App\Models\ExampleModel;
+
+$model = new ExampleModel();
+echo $model->getData(); // Some data from ExampleModel
+```
+
+## ❤️‍🔥 Summing up
+
+**So far so good!**
+
+The overall feel of modern Php is quite nice and familiar if you have experience with other C-like languages.
+
+It feels kinda very similar to I am use do in Typescript and feels really productive and nice to write and read, especially using modern features like arrow functions, match expressions, union types, constructor property promotion, interfaces, traits, and more.
+
+Time to deep-dive into the **Laravel** world next!
+
+PS. Here is also a small cheat-sheet of some common standard library functions for quick reference, below.
 
 ## 🤖 Standard library (extras)
 

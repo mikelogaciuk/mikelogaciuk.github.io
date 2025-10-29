@@ -1,7 +1,7 @@
 ---
 title: Podstawy języka Elixir (część pierwsza)
 date: 2024-10-01
-tags: ["elixir", "programming", "functional", "fp", "erlang"]
+tags: ["elixir", "programming", "functional", "fp", "erlang", "coding", "notes", "materials"]
 language: "pl"
 ---
 

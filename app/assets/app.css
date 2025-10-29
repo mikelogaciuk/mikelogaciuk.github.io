@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 /* @import '@nuxt/ui'; */
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
@@ -9,7 +9,7 @@
 }
 
 @theme {
-  --font-sans: "JetBrains Mono", sans-serif;
+  --font-sans: 'JetBrains Mono', sans-serif;
 }
 
 /* Typography for Markdown Content */

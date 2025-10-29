@@ -48,13 +48,10 @@ const skillBadges = ref(mapBadges(skills));
   <div class="px-2 sm:px-0">
     <div class="flex flex-col items-center mx-auto my-auto space-y-6 mt-10 sm:mt-20 w-full">
       <h1 class="text-3xl sm:text-5xl font-bold mb-2 text-center font-stretch-expanded">
-        Mike Logaciuk
+        Michał Logaciuk
       </h1>
-      <p class="text-base sm:text-2xl mb-4 mt-2 text-center">
-        Senior DevOps Engineer
-      </p>
-      <p class="text-base sm:text-2xl mb-4 mt-2 text-center">
-        ...and Code Writer in TERG S.A. (Media Expert)
+      <p class="text-base sm:text-2xl mb-4 mt-15 text-center">
+        Senior DevOps Engineer in TERG S.A. (Media Expert)
       </p>
       <br />
       <p class="text-base sm:text-2xl mb-4 text-center">
@@ -68,7 +65,7 @@ const skillBadges = ref(mapBadges(skills));
     </div>
     <div>
       <h2 class="text-base sm:text-2xl mb-4 text-center mt-5">
-        The skills list, looks somewhat like:
+        The skills:
       </h2>
       <div class="w-full flex flex-wrap gap-2 justify-center mx-auto">
         <div v-for="item in skillBadges" :key="item.badge" :class="`badger badger-${item.badge}`">

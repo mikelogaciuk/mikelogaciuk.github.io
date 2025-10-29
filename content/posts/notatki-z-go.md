@@ -1,7 +1,7 @@
 ---
 title: Notatki z Go
 date: 2023-02-21
-tags: ["go", "golang", "notes", "programming"]
+tags: ["go", "golang", "notes", "programming", "coding", "materials"]
 language: "pl"
 ---
 

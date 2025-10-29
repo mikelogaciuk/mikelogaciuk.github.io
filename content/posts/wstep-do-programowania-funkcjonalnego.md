@@ -1,7 +1,7 @@
 ---
 title: Wstęp do programowania funkcjonalnego
 date: 2024-07-01
-tags: ["functional", "programming", "fp", "elixir", "haskell"]
+tags: ["functional", "programming", "fp", "elixir", "haskell", "coding", "notes", "materials"]
 language: "pl"
 ---
 

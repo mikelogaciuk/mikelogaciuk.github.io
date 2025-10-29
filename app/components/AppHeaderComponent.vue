@@ -7,9 +7,9 @@
       <!-- <UIcon name="devicon-plain:gardener" /> -->
     </div>
     <div class="w-full sm:w-8/12 flex flex-col sm:flex-row items-center gap-2 sm:gap-6 justify-center text-center">
-      <NuxtLink to="/" class="px-2 py-1 rounded hover:bg-base-200">home</NuxtLink>
-      <!-- <NuxtLink to="/skills" class="px-2 py-1 rounded hover:bg-base-200">Skills</NuxtLink> -->
-      <NuxtLink to="/posts" class="px-2 py-1 rounded hover:bg-base-200">posts</NuxtLink>
+      <NuxtLink to="/" class="px-2 py-1 rounded hover:bg-base-200">_home</NuxtLink>
+      <NuxtLink to="/posts" class="px-2 py-1 rounded hover:bg-base-200">_posts</NuxtLink>
+      <NuxtLink to="/about" class="px-2 py-1 rounded hover:bg-base-200">_about</NuxtLink>
     </div>
     <div class="w-full sm:w-2/12 flex justify-center sm:justify-end mt-2 sm:mt-0">
       <input type="checkbox" value="nord" class="toggle toggle-xs theme-controller">

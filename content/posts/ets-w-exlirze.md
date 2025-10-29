@@ -1,7 +1,7 @@
 ---
 title: ETS w Elixirze
 date: 2024-11-01
-tags: ["elixir", "programming", "functional", "fp", "erlang"]
+tags: ["elixir", "programming", "functional", "fp", "erlang", "notes", "ets", "cache"]
 language: "pl"
 ---
 

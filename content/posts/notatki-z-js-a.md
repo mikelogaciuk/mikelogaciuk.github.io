@@ -1,7 +1,7 @@
 ---
 title: Notatki z JS'a
 date: 2024-01-01
-tags: ["javascript", "typescript", "programming", "notes"]
+tags: ["javascript", "typescript", "coding", "js", "ts", "programming", "notes"]
 language: "pl"
 ---
 

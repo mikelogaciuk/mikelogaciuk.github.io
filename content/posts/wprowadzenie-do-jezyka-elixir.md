@@ -1,7 +1,7 @@
 ---
 title: Wprowadzenie do języka Elixir
 date: 2024-08-01
-tags: ["elixir", "programming", "functional", "fp", "erlang"]
+tags: ["elixir", "programming", "functional", "fp", "erlang", "coding", "notes", "materials"]
 language: "pl"
 ---
 

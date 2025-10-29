@@ -3,9 +3,6 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-  build: {
-    parallel: true,
-  },
   // ssr: true,
   // nitro: {
   //   preset: 'static',
@@ -40,7 +37,7 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           // Get the themes from here: https://shiki.style/themes
-          theme: 'catppuccin-mocha',
+          theme: 'rose-pine-moon',
           // theme: "rose-pine",
           // Get the languages from here: https://shiki.style/languages
           langs: [

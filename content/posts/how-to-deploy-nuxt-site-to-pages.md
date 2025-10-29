@@ -1,7 +1,7 @@
 ---
 title: How to deploy Nuxt static site to Github Pages?
 date: 2025-09-01
-tags: ["cicd", "devops", "devsecops", "gitops", "pipeline", "actions", "workflow"]
+tags: ["cicd", "ci", "cd", "devops", "sre", "devsecops", "gitops", "pipeline", "actions", "workflow"]
 language: "en"
 ---
 

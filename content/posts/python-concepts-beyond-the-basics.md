@@ -1,7 +1,7 @@
 ---
-title: "Python - Some advanced concepts, you probably didn't learn in school"
-date: 2025-10-11
-tags: ["coding", "python", "programming", "freeware", "course", "notes", "materials"]
+title: "Python - Some concepts beyond basics"
+date: 2025-06-06
+tags: ["python", "programming", "course", "notes"]
 language: "en"
 ---
 
@@ -26,7 +26,7 @@ language: "en"
   - [Functools](#functools)
   - [Iterators](#iterators)
   - [Generators](#generators)
-- [📝 To be continued...](#-to-be-continued)
+- [📝 To be continued](#-to-be-continued)
 
 ## 🧠 Introduction
 
@@ -36,14 +36,14 @@ language: "en"
 
 I find it easy to read and write (but not as beautiful as Ruby is), yet powerful enough to handle almost any task, because of its already mentioned `glue` nature.
 
-Those notes are intended to cover a little bit more advanced Python concepts then materials taught in school, things that are usually scattered around various courses and documentations, and are response to some payware corporate courses about $1000+ per seat.
+Those notes are intended to cover a little bit more non-basic Python concepts, things that are usually scattered around various courses and documentations, and are response to some payware corporate courses about $1000+ per seat.
 
 The material was written, based on:
 
 - Personal knowledge (happily low level, but still some... 🪬).
 - Official Python documentation.
-- Various free and paid courses tables of contents available online.
-- And `Claude Sonnet`... as a reviewer and proofreader.
+- Various free and paid courses ToC's available online.
+- And `Claude Sonnet` and `GPT 4.1`... as a reviewer and proofreader.
 
 ### Important note
 
@@ -303,7 +303,7 @@ Those little ones, are anonymous functions defined using the `lambda` keyword. T
 
 In JS it would an arrow function like this:
 
-```javascript
+```js
 let echo = (x) => console.log(x);
 
 echo("Hello, World!"); // Outputs: Hello, World!
@@ -458,4 +458,6 @@ for number in count_up_to(10):
     print(number)
 ```
 
-## 📝 To be continued...
+## 📝 To be continued
+
+Stay tuned for further parts of this course....
