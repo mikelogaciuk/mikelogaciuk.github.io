@@ -150,3 +150,5 @@ That friction is real and discouraging.
 
 I wish the ecosystem had a clearer, more opinionated path for new or returning developers: one that balances flexibility with simplicity.
 Until then, anyone revisiting PHP and Laravel should brace for a journey through a maze of choices—each valid, but none definitive.
+
+Maybe it's time for PHP to re-brand it, for example into `Hyperscript`, with at least one canonical runtime and starter that just works out of the box on all major platforms and then move to re-structure its ecosystem around that with frameworks in mind.
