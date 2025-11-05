@@ -29,8 +29,8 @@ The config can be found in `nuxt.config.ts` and `content.config.ts`.
 In order to use it, as your template just clone the repo and install the dependencies:
 
 ```shell
-git clone https://github.com/mikelogaciuk/mikelogaciuk.github.io.git
-npm ci
+npx nuxi init my-project -t https://codeload.github.com/mikelogaciuk/nuxlee/tar.gz/main
+cd my-project && npm i
 ```
 
 ## 🏃 Running locally
