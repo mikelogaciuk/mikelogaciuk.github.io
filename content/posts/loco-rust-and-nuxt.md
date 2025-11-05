@@ -17,7 +17,6 @@ language: "en"
 - [🚀 Running up](#-running-up)
 - [🤖 Final effect](#-final-effect)
 
-
 ## 🧠 Introduction
 
 The [Loco.RS framework](https://loco.rs) is a powerful tool for building web applications in Rust. When combined with [Nuxt](https://nuxtjs.org), a popular Vue.js framework, developers can create robust fullstack applications with ease.
