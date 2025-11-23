@@ -8,16 +8,10 @@ interface Post {
   date: string;
   summary: string;
   language?: string;
+  draft?: boolean;
 }
 
 defineProps<{ posts: Post[] }>();
-
-// const language = ref("");
-
-// const setLanguage = (lang: string) => {
-//   language.value = lang;
-// };
-
 
 const filterPosts = (
   lang: string,
