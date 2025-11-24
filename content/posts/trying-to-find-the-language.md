@@ -23,17 +23,20 @@ language: en
 
 Since few years, I've been exploring various programming languages, trying to find the one that truly resonates with me. Each language has its own strengths and weaknesses, and the choice often depends on the specific use case. However, the journey to find the "right" language can be both exciting and overwhelming.
 
-As some already know, my journey started with Php back in the early 2000s, then I moved to Python and Ruby few years later. Together with Javascript and Typescript, these four languages have been my main tools for data engineering, automation and scriping stuff. While pure JS was mostly worked in pre-TERG era days.
+As some already know, my journey started with Php back in the early 2000s, then I moved to Python and Ruby few years later. Together with Javascript and Typescript, these four languages have been my main tools for data engineering, automation and scriping stuff. While pure JS was mostly used in pre-TERG era days.
 
-While Ruby and Python and Typescript, server me well for API development, some front-end and scripting, I always felt a pull towards something more performant and modern.
+As a person without without a formal computer science background, few times I found myself struggling with the theoretical aspects of programming languages (especially raw algorithms). Concepts like memory management or low-lever concepts were challenging but not impossible to understand.
 
-As a person without without a formal computer science background, I often found myself struggling with the theoretical aspects of programming languages. Concepts like memory management, concurrency, and type systems were more abstract to me, but not impossible to understand. Usually there was a feeling that I felt the problem, even while not fully grasping the underlying concepts. Kinda like having a blurry vision of the big picture from the distance or the past.
+Usually there was a feeling that I felt the problem, even while not fully grasping the underlying concepts. Kinda like having a blurry vision of the big picture from the distance or the past.
 
-But it doesn't mean that I didn't write code. And it doesn't mean that my code was like sh*t.
+But it doesn't mean that I didn't write code that worked, and it doesn't mean that my code was like sh*t. on the contrary:
 
-On the contrary, I wrote a lot of code, mostly in Python and Ruby, but also in other languages like Go, Elixir, F#. Each language taught me something new and helped me grow as a developer.
+    My colleagues were kinda surprised,
+    when they heard that I have no CS degree,
+    while looking at my code quality
+    and my overal understanding of complex systems and system design.
 
-Funny, that my colleagues from my department were kinda suprised when they heard that I have no CS degree, while looking at my code quality and understanding of complex systems.
+While Python, Ruby and Typescript, served me well, I always felt a pull towards something more performant and modern. I wrote a lot of code, mostly in those three mentioned earlier, but also in other languages like Go, Elixir, F# and each language taught me something new and helped me grow as a developer.
 
 However, as time went on, I started to feel a sense of burnout. The constant switching between languages and paradigms made it difficult to maintain a deep understanding of any one language. I found myself longing for a language that could offer both performance and modern features, while also being approachable for someone without a formal CS background, but whiling to grasp the algorithms in a proper academic way.
 
@@ -103,8 +106,15 @@ Te language's emphasis on safety and performance makes it worth the effort. And 
 
 ## ❤️ Conclusion
 
-In conclusion, my journey to find the "right" programming language has been both exciting and challenging. Each language has its own strengths and weaknesses, and the choice often depends on the specific use case. While I haven't found a single language that meets all my needs, I have learned a lot from each language I have explored.
+In conclusion, my journey to find the "right" programming language has been both exciting and challenging. Each language has its own strengths and weaknesses, and the choice often depends on the specific use case.
+
+It's obvious, that I have learned a lot from each language I have explored.
 
 Ultimately, the "right" language is the one that best fits your needs and allows you to build the applications you envision. Whether it's FSharp, Elixir, Go, Scala, Rust, or any other language, the key is to keep learning and growing as a developer. After all, the journey is just as important as the destination.
 
-While feeling that I didn't found my new main language, I still keep using Python, Ruby and Typescript or pure JS for specific tasks, as they are still great tools for data engineering, scripting, API's and web development and probably will stay with me for long time.
+I still keep using Python, Ruby and Typescript or pure JS for specific tasks, as they are still great tools for data engineering, scripting, API's and web development and probably will stay with me for long time.
+
+But for new projects, especially private ones, I find myself increasingly drawn to Rust or Scala, for their modern features, and strong community support.
+
+    I wish that Scala community will finally grow-up...
+    And I wish that Rust will become more mainstream...
