@@ -170,4 +170,4 @@ Now, the only thing left is to commit the code and see the pipeline working.
 
 Next step would be to add those templates to all existing repositories.
 
-Of course, the ideal would be to block any merges without a successed pipelines and secure the main branch from direct pushes.
+Of course, the ideal would be to block any merges without a successful pipelines and secure the main branch from direct pushes.

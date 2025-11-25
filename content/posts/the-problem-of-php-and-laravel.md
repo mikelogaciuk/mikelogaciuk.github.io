@@ -116,7 +116,7 @@ On the other hand if they wanted to compete against `Next.js` or `Nuxt.js`, they
 
 ## 🐍 💎 Contrast with Python and Ruby newcomer experience
 
-Languages like **Python** and **Ruby** present a different first impression to beginners because their ecosystems are more opinionated about project bootsrapping.
+Languages like **Python** and **Ruby** present a different first impression to beginners because their ecosystems are more opinionated about project bootstrapping.
 
 As such:
 

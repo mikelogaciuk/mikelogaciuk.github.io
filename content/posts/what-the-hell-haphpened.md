@@ -26,7 +26,7 @@ I remember when I started my journey in *coding*, the decision was simple: the *
 
     But why?
 
-Becuase my friends were using it, so it was obvious to take the same path as them in order to seek help, eventually.
+Because my friends were using it, so it was obvious to take the same path as them in order to seek help, eventually.
 
 But those were early **2000s**, the **2005** or so - to be exact and I was still a kid, so I didn't have a clue what I was doing.
 
@@ -36,7 +36,7 @@ For sure, I had some context:
 - I just wanted to create a website for my **Counter-Strike** clan.
 - I didn't know anything about programming, web development or so (apart from basics of html and styling).
 - I just knew that I wanted to create a website.
-- Back then, it felt not so hard to do so (at least I thougt so).
+- Back then, it felt not so hard to do so (at least I thought so).
 
 So I found some free materials, some book in the local library and a free hosting service that supported **Php** and started my journey (kinda).
 
@@ -93,7 +93,7 @@ The introduction of Php **5.x**, marked a shift from procedural spaghetti code t
 There was no such thing as `CI/CD`, so deploying the application: meant manually uploading files via FTP, stopping the application and re-starting it.
 Dependency management was a nightmare, as there was no `Composer` yet, and developers often had to bundle libraries directly into their projects and so did I.
 
-And I managed to create a website, it didn't look as uggly as it could and it lived for about a year or so and then I removed it.
+And I managed to create a website, it didn't look as ugly as it could and it lived for about a year or so and then I removed it.
 
 Then the Ruby on Rails hype came, and I switched to **Ruby**, **Python** and **JavaScript** - but it was only for fun, as I was not doing any serious projects back then (was too young).
 
@@ -105,7 +105,7 @@ Then, about **2007** I moved on to other things, didn't code for a few years unt
 
 Because lately I have been thinking about my early days in programming and even since I am **DevOps Engineer** now, I still feel a need of writing things down, creating stuff, building things. Even if it's just for myself, the satisfaction of creating something from scratch is rewarding. But to do so, I need a stack that is easy to set up, has great tooling and is batteries included - which allows to see results quickly.
 
-While the modern web development landscape is dominated by **JavaScript** (with frameworks like React, Angular, and Vue.js) and even this blog is built with *Nuxt 4*, I felt a nostalgic pull towards **Php**. Especially while working in internal projects and seing all the Php codebase around me.
+While the modern web development landscape is dominated by **JavaScript** (with frameworks like React, Angular, and Vue.js) and even this blog is built with *Nuxt 4*, I felt a nostalgic pull towards **Php**. Especially while working in internal projects and seeing all the Php codebase around me.
 
 So I decided to revisit **Php** and to give it another go, but this time with a modern twist.
 
