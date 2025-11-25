@@ -162,7 +162,7 @@ def calculate_total_revenue(price: float, quantity: int) -> float:
     return price * quantity
 ```
 
-Example above not only shows the typing hints in the function signature, but also in the docstring, while using another documentation style, the **reST** (reStructuredText) which is an abbrevation of Sphinx.
+Example above not only shows the typing hints in the function signature, but also in the docstring, while using another documentation style, the **reST** (reStructuredText) which is an abbreviation of Sphinx.
 
 We can also use more complex types from the `typing` module, such as `List`, `Dict`, `Tuple`, `Optional`, and even custom types.
 

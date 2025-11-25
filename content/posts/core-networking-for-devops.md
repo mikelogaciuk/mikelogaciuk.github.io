@@ -29,7 +29,7 @@ language: "en"
 - [🧿 DNS](#-dns)
   - [Caching and TTL](#caching-and-ttl)
   - [Example DNS Configuration](#example-dns-configuration)
-  - [Homelabs and DNS?](#homelabs-and-dns)
+  - [Home-labs and DNS?](#home-labs-and-dns)
 - [♾️ Basic security considerations](#️-basic-security-considerations)
 - [💎 Load Balancing and High Availability](#-load-balancing-and-high-availability)
   - [Load balancing in Docker and Kubernetes](#load-balancing-in-docker-and-kubernetes)
@@ -53,7 +53,7 @@ Note:
 
 - This materials is not a replacement for formal networking courses or certifications.
 - Practical experience and hands-on labs are highly recommended to solidify your understanding of networking concepts.
-- It was written in past mainly for my own learning purpuroses, so excuse any possible mistakes or inaccuracies.
+- It was written in past mainly for my own learning purposes, so excuse any possible mistakes or inaccuracies.
 - I used Claude Sonnet 3.7 and GPT-4.1 to help me re-write and structure the content of my original notes to be on par with [Networking Fundamentals for Developers](https://devops-daily.com/guides/networking-fundamentals) ToC.
 - Notes were really old, dated back to my technical high-school days (pre 2010), so lot of stuff had to be rewritten.
 
@@ -339,7 +339,7 @@ Remember that you can always check your routing table using: `ip route show`.
 
 ## 🧿 DNS
 
-DNS as mentoned before is used to resolve domain names to IP addresses. In a complex network setup with multiple subnets, you might have your own internal DNS server to manage local domain names and their corresponding IP addresses.
+DNS as mentioned before is used to resolve domain names to IP addresses. In a complex network setup with multiple subnets, you might have your own internal DNS server to manage local domain names and their corresponding IP addresses.
 
 As already mentioned, you can use `nslookup` or `dig` to query DNS records:
 
@@ -443,9 +443,9 @@ api     IN      A       192.168.1.30
 
 **But remember that DNS configuration can vary significantly based on the DNS server software being used and the specific requirements of your network and hope that the DevOps guy, is not going to be responsible for managing DNS servers as well** 🪬.
 
-### Homelabs and DNS?
+### Home-labs and DNS?
 
-For homelab purposes, you can always use just a simple `hosts` (or `/etc/hosts` on Linux) file to map hostnames to IP addresses without setting up a full DNS server:
+For home-lab purposes, you can always use just a simple `hosts` (or `/etc/hosts` on Linux) file to map hostnames to IP addresses without setting up a full DNS server:
 
 ```plaintext
 192.168.1.10 ns1.example.local
@@ -455,7 +455,7 @@ For homelab purposes, you can always use just a simple `hosts` (or `/etc/hosts` 
 127.0.0.1 k3d.local
 ```
 
-Or you can use lightweight DNS servers like **dnsmasq** or **Pi-hole** to manage DNS for your homelab network. These tools can provide DNS resolution, DHCP services, and ad-blocking capabilities in a simple and efficient manner.
+Or you can use lightweight DNS servers like **dnsmasq** or **Pi-hole** to manage DNS for your home-lab network. These tools can provide DNS resolution, DHCP services, and ad-blocking capabilities in a simple and efficient manner.
 
 For example, here is a config snippet for `dnsmasq`:
 
@@ -752,4 +752,4 @@ For more details, you can refer to the documentation of each cloud provider.
 - [Networking Fundamentals for Developers](https://devops-daily.com/guides/networking-fundamentals)
 - [Video @ The 20% of networking you'll use 80% of the time: Networking tips for DevOps](https://youtu.be/gyXfooY7MqU?si=-HRocLWTzTVkacO8)
 - [Video @ Network Routing for DevOps](https://www.youtube.com/watch?v=1GJw2rfXJGc)
-- [Video @ This homelab setup is my favorite one yet.](https://youtu.be/2yplBzPCghA?si=iHcT6NOTEq3Wlhf7)
+- [Video @ This home-lab setup is my favorite one yet.](https://youtu.be/2yplBzPCghA?si=iHcT6NOTEq3Wlhf7)

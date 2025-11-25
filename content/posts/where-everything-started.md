@@ -40,7 +40,7 @@ language: "en"
 
 This is a part of my nostalgic journey to the roots of my programming adventure: the **Php**.
 
-More specifically, this is a collection of re-newed notes and somekind of cheat-sheet for the **Php** language which I decided lately to revisit. About which you can read more in my [previous post](https://mikelogaciuk.github.io/posts/what-the-hell-haphpened/).
+More specifically, this is a collection of re-freshed notes and some kind of cheat-sheet for the **Php** language which I decided lately to revisit. About which you can read more in my [previous post](https://mikelogaciuk.github.io/posts/what-the-hell-haphpened/).
 
 Since no one is really reading my blog and the site is more like a personal archive, I can always come back to it when needed - which makes it a best place to store notes in this way.
 
