@@ -2,7 +2,16 @@
 
 ## About
 
-Minimalistic personal blog for `Github Pages`.
+Minimalistic personal blog for `Github Pages` built with Nuxt 3 and Nuxt Content.
+
+**Version:** 1.0.0  
+**Tech Stack:** Nuxt 4.x, Vue 3, TypeScript, TailwindCSS 4.x, DaisyUI 5.x
+
+## 📖 Documentation
+
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Comprehensive technical documentation covering project structure, components, configuration, and development guidelines
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and release notes
+- **[.github/copilot-instructions.md](.github/copilot-instructions.md)** - GitHub Copilot code generation guidelines and best practices
 
 ## 🚀 Modules used
 
@@ -76,35 +85,30 @@ If not, type:
 npm i --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-core
 ```
 
-## 🐳 Additional Docker files
+## 🏗️ Project Structure
 
-Additional Docker files can be found in the `docker` directory for different purposes, can be build with:
-
-```shell
-docker build -t alpine-devops -f .\dockerfiles\alpine.dockerfile .
-
-# Or by
-jake devops:build
+```plaintext
+├── app/                  # Application source code
+│   ├── components/       # Vue components
+│   ├── pages/           # File-based routing
+│   ├── layouts/         # Layout templates
+│   └── helpers/         # Utility functions
+├── content/             # Markdown content
+│   ├── posts/          # Published blog posts (24+)
+│   └── drafts/         # Draft content
+├── tests/              # Vitest test suite
+├── public/             # Static assets
+└── dockerfiles/        # Docker configurations
 ```
 
-To run it, type:
-
-```shell
-docker run -it --rm alpine-devops:latest /bin/bash
-
-# Or by
-jake devops:run
-```
-
-Please note that on Windows you might need to use `winpty` before the `docker` command to properly handle the interactive terminal.
-
-This command runs the container and opens a Bash shell directly, removing the container after exit. Alternatively, you can use the two-step approach:
-
-```shell
-docker run -dit --name alpine alpine-devops:latest
-docker exec -it alpine /bin/bash
-```
+For detailed architecture information, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📝 Version
+
+Current version: **1.0.0** (Released: November 26, 2025)
+
+See [CHANGELOG.md](CHANGELOG.md) for detailed release notes and version history.

@@ -1,11 +1,11 @@
 ---
-title: "Trying to Find the Language... the Right One"
+title: "Trying to find that one language... sort of"
 date: 2025-11-22
 tags: [programming, languages, development, burnout, elixir, scala, go, golang, rust, fsharp]
 language: en
 ---
 
-![Trying to Find the Language... the Right One](/img/rusty-and-others.png)
+![Trying to Find...](/img/rusty-and-others.png)
 
 ## 📖 Table of contents
 
@@ -16,6 +16,8 @@ language: en
 - [🐦‍⬛ Crystal](#-crystal)
 - [🐋 Go](#-go)
 - [🧰 Scala](#-scala)
+- [🐘 Php](#-php)
+- [📘 Typescript](#-typescript)
 - [🦀 Rust](#-rust)
 - [❤️ Conclusion](#️-conclusion)
 
@@ -36,11 +38,11 @@ But it doesn't mean that I didn't write code that worked, and it doesn't mean th
     while looking at my code quality
     and my overall understanding of complex systems and system design.
 
-While Python, Ruby and Typescript, served me well, I always felt a pull towards something more performant and modern. I wrote a lot of code, mostly in those three mentioned earlier, but also in other languages like Go, Elixir, F# and each language taught me something new and helped me grow as a developer.
+And I wrote a lot of code, mostly in languages mentioned earlier, but there were occasional excursions.
 
 However, as time went on, I started to feel a sense of burnout. The constant switching between languages and paradigms made it difficult to maintain a deep understanding of any one language. I found myself longing for a language that could offer both performance and modern features, while also being approachable for someone without a formal CS background, but whiling to grasp the algorithms in a proper academic way.
 
-Thats why I started my journey of language searching crusade...
+Thats why I started my journey of language searching crusade and it was kinda surprising and refreshing...
 
 ## 👽 FSharp
 
@@ -92,6 +94,30 @@ That being said, I still see a lot of potential in Scala. Its combination of obj
 
 I hope that the Scala community will finally grow-up and start to focus on the language's strengths, rather than getting bogged down in versioning issues.
 
+## 🐘 Php
+
+Php is a language that I have a long history with, having started my programming journey with it back in early 2000s. While Php has its strengths, I stopped coding in it around 2008, when I left the high-school.
+
+While Php is still widely used for a web development, I found it to be kind of troublesome in terms of use apart from web development context. While both Laravel and Symfony are great frameworks, I found myself fighting with the language's inconsistencies and quirks, especially on Windows.
+
+Wish there were better options for building command-line applications and scripts in Php, but overall, I found the language to be less enjoyable to work with compared to other languages like Python or Ruby.
+
+Another problem is the Laravel and its strange idea of starters.
+
+For example, I could find over 5 different ways to start a new Laravel project, each with its own pros and cons. This fragmentation made it difficult to choose the right approach for my projects.
+
+## 📘 Typescript
+
+And here comes the Typescript, the superset of Javascript, which became my go-to language for example for this blog itself.
+
+Typescript offers a great balance between performance, modern features, and community support. Its static typing system allows me to catch errors at compile-time, reducing the chances of runtime errors. The language's support for modern JavaScript features, such as async/await and modules, makes it easy to write clean and maintainable code.
+
+Another huge advantage is the vast front-end ecosystem, which allows to create full-stack applications with ease, using frameworks like Nuxt.js.
+
+With a companion of Bun, the modern JavaScript runtime, Typescript becomes even more appealing. Bun's focus on performance and developer experience makes it a great fit for building efficient applications.
+
+The damn thing allows me to even build single-file executables from a Typescript code, which is a game-changer for distributing command-line applications and other things.
+
 ## 🦀 Rust
 
 Rust is a systems programming language that has gained popularity in recent years for its focus on safety, performance, and concurrency. Its unique ownership model and strong type system make it a great fit for building reliable and efficient applications.
@@ -106,14 +132,11 @@ The language's emphasis on safety and performance makes it worth the effort. And
 
 In conclusion, my journey to find the "right" programming language has been both exciting and challenging. Each language has its own strengths and weaknesses, and the choice often depends on the specific use case. It's obvious, that I have learned a lot from each language I have explored.
 
-Ultimately, the "right" language is the one that best fits your needs and allows you to build the applications you envision. Whether it's FSharp, Elixir, Go, Scala, Rust, or any other language, the key is to keep learning and growing as a developer. After all, the journey is just as important as the destination.
+**Ultimately, the "right" language is the one that best fits your needs** and allows you to build the applications you envision. Whether it's FSharp, Elixir, Go, Scala, Rust or Typescript, or any other language, the key is to keep learning and growing as a developer. After all, the journey is just as important as the destination.
 
-I still keep using Python, Ruby and Typescript or pure JS for specific tasks, as they are still great tools for data engineering, scripting, API's and web development and probably will stay with me for long time.
+I'll still keep using Python and Ruby for specific tasks, as I written hundreds of thousands lines of code. And yet this code still runs in production. Even today...
 
-But for new projects, especially private ones, I find myself increasingly drawn to Rust or Scala, for their modern features, and strong community support.
-
-    I wish that Scala community will finally grow-up...
-    And I wish that Rust will become more mainstream...
+But for new projects, especially private ones, I find myself increasingly drawn to Rust or Typescript, for their modern features, and strong community support. Especially the combination of both languages, where Typescript is used for front-end and Rust for back-end or performance-critical tasks, seems to be a promising approach.
 
 Time will show, because I would like to avoid the burnout in future, by sticking to one or two languages only, instead of jumping between many different ones.
 After all, the goal is to find a language that not only meets my technical needs but also brings joy and satisfaction to my work as a developer.
