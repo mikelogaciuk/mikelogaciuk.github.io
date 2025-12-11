@@ -177,7 +177,7 @@ Core languages used by SRE/DevOps engineers, are mainly `Bash` or `Powershell`, 
 So to install them, use:
 
 ```shell
-scoop install python ruby go nvm
+scoop install python ruby go nvm bun
 ```
 
 While for Python and Ruby, you should install additional packages, like:
@@ -192,6 +192,14 @@ In order to set-up `Node` environment, use `nvm`:
 nvm install 22
 nvm use 22
 npm install -g typescript yarn @github/copilot @pulumi/pulumi
+```
+
+For `bun`, just install it via scoop as above and then use it to install packages per project basis.
+
+The only thing is that you should add `@types` packages manually when needed, as `bun` does not install them automatically yet:
+
+```shell
+bun add -d @types/bun
 ```
 
 Sometimes, you may need also `Rust` 🦀 for some CLIs or build tools:
