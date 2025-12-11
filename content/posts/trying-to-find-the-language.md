@@ -16,6 +16,7 @@ language: en
 - [🐋 Go](#-go)
 - [🧰 Scala](#-scala)
 - [📘 Typescript](#-typescript)
+- [🦀 Rust](#-rust)
 - [💷 The functional shift](#-the-functional-shift)
 - [👽 FSharp](#-fsharp)
 - [🧴 Elixir](#-elixir)
@@ -88,9 +89,17 @@ Another huge advantage is the vast front-end ecosystem, which allows to create f
 
 With a companion of Bun, the modern JavaScript runtime, Typescript becomes even more appealing. Bun's focus on performance and developer experience makes it a great fit for building efficient applications and thus you can even build single-file executables with it.
 
+## 🦀 Rust
+
+Rust is a systems programming language that has gained popularity in recent years for its focus on safety, performance, and concurrency. Its unique ownership model and strong type system make it a great fit for building reliable and efficient applications.
+
+While the borrow-checker and ownership model are supposedly hard to grasp, I found them to be quite intuitive for more functional oriented programmers. Once you get the hang of it, Rust's memory safety guarantees and zero-cost abstractions make it a joy to work with.
+
+The main downside of Rust is its steep learning curve in terms of really broad syntax, while the basic cheat-sheets look really simple - once you got into complex topics it becomes slight a mess in terms of syntax.
+
 ## 💷 The functional shift
 
-For me, the  functional programming paradigm was always more interesting than typical object-oriented programming, code felt always more elegant and expressive when written in a functional style.
+For me, the functional programming paradigm was always more interesting than typical object-oriented programming, code felt always more elegant and expressive when written in a functional style.
 
 Less prone to side effects and easier to reason about, especially when dealing with complex data transformations.
 
