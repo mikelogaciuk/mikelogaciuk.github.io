@@ -73,6 +73,7 @@ export default defineNuxtConfig({
             'powershell',
             'swift',
             'dart',
+            'hcl',
           ],
         },
       },

@@ -1,6 +1,6 @@
 ---
 title: "Multipass: Your Local Cloud-Like Environment"
-date: 2025-11-23
+date: 2025-12-17
 tags: ["devops", "virtualization", "multipass", "cloud-init", "terraform", "infrastructure", "ubuntu", "virtualbox", "development"]
 language: "en"
 ---
