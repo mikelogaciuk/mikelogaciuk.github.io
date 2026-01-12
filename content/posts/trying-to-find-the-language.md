@@ -26,11 +26,9 @@ language: en
 
 Since few years, I've been exploring various programming languages, trying to find the one that truly resonates with me. Each language has its own strengths and weaknesses, and the choice often depends on the specific use case. However, the journey to find the "right" language can be both exciting and overwhelming.
 
-As some already know, my journey started with Php back in the early 2000s, then I moved to Python and Ruby few years later. Together with Javascript and Typescript, these four languages have been my main tools for data engineering, automation and scripting stuff. While pure JS was mostly used in pre-TERG era days.
+As some already know, my journey started with Php back in the early 2000s, then I moved to Python and Ruby few years later. Together with Javascript, these languages have been my main tools for data engineering, automation and scripting stuff. While pure JS was mostly used in pre-TERG era days.
 
     However, as time went on, I started to feel a sense of burnout.
-
-I found myself longing for a language that could offer both performance and modern features, while also being approachable for someone without a formal CS background (if it even matters)
 
 Thats why I started my journey of language searching crusade and it was kinda surprising and refreshing...
 
