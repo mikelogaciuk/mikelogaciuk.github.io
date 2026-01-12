@@ -139,7 +139,7 @@ In conclusion, my journey to find the "right" programming language has been both
 
 I'll still keep using Python and Ruby for specific tasks, as I written hundreds of thousands lines of code. And yet this code still runs in production. Even today...
 
-But for new projects, especially private ones, I find myself increasingly drawn to Elixir or Typescript, for their modern features, and strong community support.
+But for new projects, especially private ones, I find myself increasingly drawn to `Elixir` or `Typescript`, for their modern features, and strong community support, but will also stay in touch pretty much with `F#`, `Ruby` and `Python`.
 
 Time will show, because I would like to avoid the burnout in future, by sticking to one or two languages only, instead of jumping between many different ones.
 After all, the goal is to find a language that not only meets my technical needs but also brings joy and satisfaction to my work as a developer.
