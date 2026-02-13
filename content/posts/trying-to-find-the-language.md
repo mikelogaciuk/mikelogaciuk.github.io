@@ -38,13 +38,13 @@ Php is a language that I have a long history with, having started my programming
 
 That's why I decided to revisit Php during my language exploration journey.
 
-While Php is still widely used for a web development, I found it to be kind of troublesome in terms of use apart from web development context. While both Laravel and Symfony are great frameworks, I found myself fighting with the language's inconsistencies and quirks, especially on Windows.
+While Php is still widely used for a web development, I found it to be kind of troublesome in terms of use apart from web development context. While both Laravel and Symfony are great frameworks, I found myself fighting with the language's inconsistencies and quirks, especially on Windows (while on my Fedora any problem exists).
 
 Wish there were better options for building command-line applications and scripts in Php, but overall, I found the language to be less enjoyable to work with compared to other languages like Python or Ruby.
 
-Another problem is the Laravel and its strange idea of starters.
+Another problem is the Laravel and its strange idea of starters. For example, I could find over 5 different ways to start a new Laravel project, each with its own pros and cons. This fragmentation made it difficult to choose the right approach for my projects, which is not an problem in for example Rails or Phoenix.
 
-For example, I could find over 5 different ways to start a new Laravel project, each with its own pros and cons. This fragmentation made it difficult to choose the right approach for my projects.
+But I have to admit, that something in my guts still makes me want to give Php another chance for a longer run and I might to do so in future.
 
 ## 🐦‍⬛ Crystal
 
@@ -55,41 +55,37 @@ But the Crystal major problem is not its syntax or performance, but rather its e
 - The tooling in terms of packaging and dependency management, is not as mature as other languages.
 - The second problem is the lack of official language server (LSP), which made it difficult to get proper IDE support and code completion.
 
-Thus, while Crystal has a lot of potential, I abandoned it fairly quickly.
+Thus, while Crystal has a lot of potential, I abandoned it fairly quickly - but once it gets more mature and has a proper language server, I certainly will give it another chance.
 
 ## 🐋 Go
 
-Go, on the other hand, felt like a `C` for idiots (like me). Its simplicity and focus on performance made it a great fit for building efficient applications. The language's built-in concurrency model allowed me to easily write code that could take advantage of multi-core processors.
+Go, on the other hand, felt like a `C` for idiots (like me), due to its simplicity and focus on performance. It allows you to build efficient applications, even while not having a proper computer science background.
 
 But Go's simplicity also meant that I stumbled upon the all and mighty: `if err != nil` pattern, which while being explicit and clear, felt a bit repetitive and verbose at times.
 
 Once the code grows and the error handling becomes a must - the `if err != nil` starts to pile up and make the code less readable and because of that I had few times when I couldn't find the bug in my code because of the excessive error handling, which made it hard to spot the actual logic of the code.
 
+And to make it even more funny, Github Copilot head a hard time finding the error itself.
+
 ## 🧰 Scala
 
-Scala is another language that I explored during my journey (mainly by studying its syntax). Its combination of object-oriented and functional programming paradigms made it a versatile language for building complex applications.
+Scala is another language that I explored during my journey (mainly by studying its syntax). Its combination of object-oriented and functional programming paradigms made it an awesome journey to explore.
 
-The language's strong type system and support for higher-order functions allowed me to write some dummy code that was both expressive and safe - reducing the chances of runtime errors.
+The language's strong type system and support for higher-order functions allowed gave a feeling of safety at the Rust level I might say, probably reducing the chances of runtime errors to a minimum. Even while Scala is often portrayed as complex and intimidating and also really hard to learn: it felt that it isn't.
 
-The Scala is not so hard as it is often portrayed, it has nice Ruby / Python-like syntax, which makes it approachable for someone without a formal CS background but with a strong Python / Ruby experience.
+I mean: of course, if you want to learn it by heart - you'll bleed but it has nice Ruby / Python-like syntax overall and it is quite approachable for someone without a formal CS background (but with a strong Python / Ruby experience).
 
-However, the Scala partitioning between Scala 2 and Scala 3, becomes a real hurdle for me. And while Scala 2 is not that bad, the Scala 3 with its new features and syntax changes is more appealing to me. But the lack of backward compatibility makes it hard to justify using it for production applications.
+However, the Scala partitioning between Scala 2 and Scala 3, becomes a real hurdle for me. Becauise Scala 3 with its new features and syntax changes is more appealing to me. But the lack of backward compatibility and the fact that many libraries and frameworks are still stuck on Scala 2, makes it difficult to fully embrace Scala 3. This fragmentation in the Scala ecosystem is a real shame, as it prevents developers from fully enjoying the benefits of the language and its modern features.
 
 I hope that the Scala community will finally grow-up and start to focus on the language's strengths, rather than getting bogged down in versioning issues.
 
 ## 📘 Typescript
 
-And here comes the Typescript, the superset of Javascript, which became my go-to language for example for this blog itself.
-
-Typescript offers a great balance between performance, modern features, and community support. Its static typing system allows me to catch errors at compile-time, reducing the chances of runtime errors. The language's support for modern JavaScript features, such as async/await and modules, makes it easy to write clean and maintainable code.
-
-Another huge advantage is the vast front-end ecosystem, which allows to create full-stack applications with ease, using frameworks like Nuxt.js.
-
-With a companion of Bun, the modern JavaScript runtime, Typescript becomes even more appealing. Bun's focus on performance and developer experience makes it a great fit for building efficient applications and thus you can even build single-file executables with it.
+And here comes the Typescript...: The superset of Javascript, which became my go-to language for example for this blog itself and a succesor of JS in situations when JS was needed.
 
 ## 🦀 Rust
 
-Rust is a systems programming language that has gained popularity in recent years for its focus on safety, performance, and concurrency. Its unique ownership model and strong type system make it a great fit for building reliable and efficient applications.
+Rust is a systems programming language that has gained popularity in recent years for its focus on safety, performance, and concurrency. Its unique ownership model and strong type system make it a strong contender to be a C++ killer.
 
 While the borrow-checker and ownership model are supposedly hard to grasp, I found them to be quite intuitive for more functional oriented programmers. Once you get the hang of it, Rust's memory safety guarantees and zero-cost abstractions make it a joy to work with.
 
@@ -97,9 +93,7 @@ The main downside of Rust is its steep learning curve in terms of really broad s
 
 ## 💷 The functional shift
 
-For me, the functional programming paradigm was always more interesting than typical object-oriented programming, code felt always more elegant and expressive when written in a functional style.
-
-Less prone to side effects and easier to reason about, especially when dealing with complex data transformations.
+For me, the functional programming paradigm was always more interesting than typical object-oriented programming, code felt always more elegant and expressive when written in a functional style. Less prone to side effects and easier to reason about, especially when dealing with complex data transformations.
 
 That's why in the later part of my journey, I found myself watching Youtube video about `some universal programming language` that allows you to program on `paper` without a hassle.
 
@@ -111,7 +105,7 @@ While FSharp is a powerful language with elegant, expressive and really interest
 
 But after some research, I found that it is very popular in complex financial systems and that it is widely used in Domain Driven Design; and that made me appreciate the language more.
 
-While I didn't end up using FSharp as my primary language, I did learn a lot from it. The functional programming concepts and the emphasis on immutability have influenced my coding style, especially in Python and our all data engineering pipelines.
+While I didn't end up using FSharp as my primary language, I did learn a lot from it. The functional programming concepts and the emphasis on immutability have influenced my coding style, especially in Python and my all data engineering pipelines (where this style is applicable).
 
 To this day, I still occasionally use FSharp for specific tasks, especially when working with domain modelling, just to experiment and prototype. Its concise syntax and powerful type system make it a joy to work with, even if it's not my main language and used mainly for fun.
 
@@ -121,9 +115,9 @@ But its occasional ability to interop with C# and .NET ecosystem, makes it a via
 
 Elixir is another functional programming language that caught my attention during my journey. Its focus on concurrency and fault-tolerance made it a great fit for building scalable applications. The actor model and the use of lightweight processes allowed me to build mock-up apps that could handle a vast number of concurrent tasks with ease.
 
-Elixir uses the Erlang VM, which has a long history of reliability and uptime. This made me feel confident in building API's that could handle failures gracefully.
+Elixir uses the Erlang VM, which has a long history of reliability and uptime and allows you to build API's that could handle failures gracefully (`Let it crash principle`).
 
-But the language, while interesting, with beautiful Ruby-like syntax, can be a bit too overwhelming at start, but not in a terms of pure functional programming, but rather in terms of the Erlang ecosystem and its conventions... However, once you get past the initial learning curve, Elixir becomes a joy to work with. You just need to switch your mind and it will finally click.
+But the language, while interesting, with beautiful Ruby-like syntax, can be a bit too overwhelming at start, but not in a terms of pure functional programming, but rather in terms of the Erlang ecosystem and its conventions and configuration... However, once you get past the initial learning curve, Elixir becomes a joy to work with. You just need to switch your mind and it will finally click.
 
 Another great reason for Elixir is its community; that is passionate and supportive and the author of the language, `José Valim`, is very active and engaged with the community.
 
@@ -135,9 +129,6 @@ In conclusion, my journey to find the "right" programming language has been both
 
 **Ultimately, the "right" language is the one that best fits your needs** and allows you to build the applications you envision. Whether it's FSharp, Elixir, Go, Scala, Rust or Typescript, or any other language, the key is to keep learning and growing as a developer. After all, the journey is just as important as the destination.
 
-I'll still keep using Python and Ruby for specific tasks, as I written hundreds of thousands lines of code. And yet this code still runs in production. Even today...
+I'll still keep using `Python` and `Ruby` as my daily drivers, because of their versatility and the vast ecosystem of libraries and frameworks that they offer and beceause of my actual `DevOps` role.
 
-But for new projects, especially private ones, I find myself increasingly drawn to `Elixir` or `Typescript`, for their modern features, and strong community support, but will also stay in touch pretty much with `F#`, `Ruby` and `Python`.
-
-Time will show, because I would like to avoid the burnout in future, by sticking to one or two languages only, instead of jumping between many different ones.
-After all, the goal is to find a language that not only meets my technical needs but also brings joy and satisfaction to my work as a developer.
+But for new projects, especially private ones, I find myself to use any language that I find interesting at the moment, and this is what makes `code writing` for me a fun and enjoyable journey, rather than a chore.

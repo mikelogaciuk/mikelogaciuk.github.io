@@ -101,14 +101,9 @@ npm i --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-co
 └── dockerfiles/        # Docker configurations
 ```
 
-For detailed architecture information, see [ARCHITECTURE.md](ARCHITECTURE.md).
+For detailed architecture information, see [ARCHITECTURE.md](ARCHITECTURE.md) 
+(generated with Copilot).
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📝 Version
-
-Current version: **1.0.0** (Released: November 26, 2025)
-
-See [CHANGELOG.md](CHANGELOG.md) for detailed release notes and version history.

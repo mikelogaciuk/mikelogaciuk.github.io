@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import { test, expect, it, describe } from 'vitest';
-import HomePage from '/pages/index.vue';
-import AboutPage from '/pages/about.vue';
+import HomePage from '../app/pages/index.vue';
+import AboutPage from '../app/pages/about.vue';
 
 describe('Home Page', () => {
   it('renders the home page and checks for welcome text', () => {
@@ -15,7 +15,7 @@ describe('About Page', () => {
     const wrapper = mount(AboutPage);
     expect(wrapper.text()).toContain('About Me');
     expect(wrapper.findComponent({ name: 'TimeLineComponent' }).exists()).toBe(
-      true
+      true,
     );
   });
 });
