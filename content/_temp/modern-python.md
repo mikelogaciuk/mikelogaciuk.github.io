@@ -1,5 +1,5 @@
 ---
-title: "Python - Some concepts beyond basics"
+title: "Modern Python is Awesome"
 date: 2025-06-06
 tags: ["python", "programming", "course", "notes"]
 language: "en"
