@@ -32,7 +32,7 @@ language: "en"
 
         Python language, the glue that rules them all.
 
-**Python**, the language that I professionally use on daily basis for more than 8 years now, and I still love it.
+**Python**, is the language that I professionally use as my daily driver for more than 8 years now, and I still love it, even today.
 
 I find it easy to read and write (but not as beautiful as Ruby is), yet powerful enough to handle almost any task, because of its already mentioned `glue` nature.
 
@@ -41,27 +41,23 @@ Those notes are intended to cover a little bit more non-basic Python concepts, t
 The material was written, based on:
 
 - Personal knowledge (happily low level, but still some... 🪬).
-- Official Python documentation.
-- Various free and paid courses ToC's available online.
-- And `Claude Sonnet` and `GPT 4.1`... as a reviewer and proofreader.
+- Official Python documentation and PEPs.
+- Tables of contents of various paid articles scattered on-line.
+- Various articles on one and only RealPython site (thanks for inspiration for topics to cover folks).
+- And `Claude Sonnet 4.5`, `Claude Haiku 4.5` and `GPT 5.2`... as little army of reviewers and proofreaders.
 
 ### Important note
 
 This course is a work in progress and will be updated regularly with new content and examples.
-Feel free to check back often for the latest updates
+Feel free to check back often for the latest updates and stuff.
 
-It is not going to cover basics of Python and algorithms,
-as those are widely covered in other free materials.
+It is not going to cover basics of Python and algorithms, as those are widely covered in other free materials.
 
-And one word about algorithms...
+And one word about algorithms..., while it might feel tempting to cover those a little bit, yet seems to be problematic for personally.
 
-        I probably never wrote any complex algorithm during my career as a developer,
-        since those are mostly handled by libraries and frameworks.
+Seems I am living example of a `DevOps Engineer` without `Computer Science` background, I probably never wrote any complex algorithm from scratch during my career as a developer, and lived without problems. Apart from those who cover complex `POS` to `ERP` complex business/corporate logic, but those are mainly Data Engineering algorithms.
 
-        Except from complex sales data processing algorithms,
-        but those are usually written in hybrid mode: SQL + Python and others.
-
-And that's why I tend to call my self: `Code Writer` instead of `Developer` (in terms: of software engineering).
+And that's why I tend to call my self: `Code Writer` rather of `Developer`.
 
 ## 🗄️ Documenting the code
 
