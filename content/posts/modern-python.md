@@ -1,6 +1,6 @@
 ---
-title: "Modern Python is Awesome"
-date: 2025-06-06
+title: "Modern Python is actually pretty good"
+date: 2026-02-12
 tags: ["python", "programming", "course", "notes"]
 language: "en"
 ---
@@ -86,7 +86,7 @@ def pep_style_function(param1, param2):
 
 ### Sphinx Style
 
-Another style, *which I personally like more is the Sphinx style* that feels more structured and easier to read:
+Another style, *which I personally like more, is the Sphinx style*:
 
 ```python
 def sphinx_style_function(param1, param2):
@@ -142,9 +142,13 @@ def google_style_function(param1, param2):
 
 As you may noticed in the previous examples, there are typing hints used in the function definitions and docstrings to indicate the expected types of parameters and return values.
 
-And yes, while Python is a dynamically typed language, using typing hints can greatly improve code readability and help with static analysis tools (which nowadays work so great - that I could think that the language is statically typed).
+And yes, while Python is a dynamically typed language, using typing hints can greatly improve code readability and help with static analysis tools (which nowadays work so great - that I could even think that the language is statically typed).
 
-Hints were added in Python 3.5 via the `typing` module and have been widely adopted since then:
+Having type hints allows language servers and IDEs to provide better code completion, error checking, and overall improved developer experience. It also serves as documentation for other developers who may be reading or using the code.
+
+Personally I prefer to use: `basedpyright`, together with `ruff`, but I will move to `ty` instead of `basedpyright` in the future, once it will go out of a beta stage, because of its better performance, since `basedpyright` can sometimes slow down a little bit on corporate notebooks even at 25k lines of code, while `ty` is supposed to be much faster.
+
+But, going back to the topic, type hints were added in Python 3.5 via the `typing` module and have been widely adopted since then:
 
 ```python
 def calculate_total_revenue(price: float, quantity: int) -> float:
@@ -177,29 +181,17 @@ def process_data(data: List[Dict[str, Union[int, str]]]) -> Dict[str, int]:
         key = item.get("type", "unknown")
         summary[key] = summary.get(key, 0) + 1
     return summary
-
-## Or
-def process_data_alt(data: List[Dict[str, int | str]]) -> Dict[str, int]:
-    """
-    Process a list of data dictionaries and return a summary.
-
-    :param data (List[Dict[str, int | str]]): List of data dictionaries.
-    :return (Dict[str, int]): Summary dictionary with counts.
-    """
-    summary = {}
-    for item in data:
-        key = item.get("type", "unknown")
-        summary[key] = summary.get(key, 0) + 1
-    return summary
 ```
+
+More complex types and examples will be introduced later down the text, but for now, the main point is that using type hints can greatly enhance the readability and maintainability of your code, and it's a good practice to use them whenever possible, especially in larger codebases or when working in teams.
 
 ## 🧮 Functional Programming
 
 Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. It emphasizes the use of functions as first-class citizens, allowing them to be passed as arguments, returned from other functions, and assigned to variables.
 
-But... In Python, functional programming is not the primary paradigm, as Python is a multi-paradigm language that supports both procedural and object-oriented programming. However, Python does provide several features that facilitate functional programming.
+But... In Python, functional programming is not the primary paradigm, as Python is a multi-paradigm language that supports both procedural and object-oriented programming, however, it does provide several features that facilitate functional programming.
 
-The most notable anti-feature is that in Python can have a side effects, because of its mutable data structures and stateful objects, but it can be always be avoided by following functional programming principles like ensuring immutability (by not over-writing existing values) and avoiding side effects at all costs.
+The most notable anti-feature is that in Python can have a side effects, because of its mutable data structures and stateful objects, but it can be always avoided by following functional programming principles like ensuring immutability (by not over-writing existing values) and avoiding side effects at all costs.
 
 ### Args and Kwargs
 
@@ -244,7 +236,7 @@ mixed_args_kwargs_func("runner", {"course": "Python"}, 666, name="John", lastnam
 
 Okay, but you may ask... what is the real use of that?
 
-That's easy, it allows you to create functions that can accept a variable number of arguments, making them more flexible and reusable. This is particularly useful when you don't know in advance how many arguments will be passed to the function, for example:
+Well, that's easy: it allows you to create functions that can accept a variable number of arguments, making them more flexible and reusable. This is particularly useful when you don't know in advance how many arguments will be passed to the function, for example:
 
 ```python
 # Without *args - rigid
@@ -272,7 +264,7 @@ create_user(name="Jane", email="jane@example.com", age=25, role="admin")
 
 ### Functions as parameters
 
-In Python , functions are first-class citizens, which means they can be passed as arguments to other functions, returned from other functions, and assigned to variables. This allows for higher-order functions, which are functions that operate on other functions.
+In Python, functions are first-class citizens, which means they can be passed as arguments to other functions, returned from other functions, and assigned to variables. This allows for higher-order functions, which are functions that operate on other functions.
 
 For example, validation mechanism for email addresses (the simplest one possible) would be looking like this:
 
@@ -300,9 +292,7 @@ Those little ones, are anonymous functions defined using the `lambda` keyword. T
 In JS it would an arrow function like this:
 
 ```js
-let echo = (x) => console.log(x);
-
-echo("Hello, World!"); // Outputs: Hello, World!
+let echo = (x) => console.log(x); // Outputs: Hello, World!
 ```
 
 In Php it would look like this:
@@ -319,9 +309,16 @@ shout = lambda x: x.upper()
 print(shout("Hello, World!"))  # Outputs: HELLO, WORLD!
 ```
 
-Of course, the unfortunate part is that Python's syntax for lambda functions is not as clean and concise as in some other languages, which can make them less appealing to use.
+While it is still a lambda function, it is not as clean and concise as in some other languages, which can make them less appealing to use, take `Elixir` for example:
 
-Lambda functions are commonly used in situations where a small function is needed for a short period of time, such as in higher-order functions like `map()`, `filter()`, and `sorted()`.
+```elixir
+shout = fn x -> String.upcase(x) end
+IO.puts(shout.("Hello, World!"))  # Outputs: HELLO,
+```
+
+Isn't that just beautiful? I mean, look at that syntax... it's like poetry in motion, while Python's lambda functions are more like... well, let's just say they are not as elegant.
+
+But we must live with that, so it's nice to know that lambda functions are commonly used in situations where a small function is needed for a short period of time, such as in higher-order functions like `map()`, `filter()`, and `sorted()`.
 
 ```python
 fake_data_from_range = range(1, 15)
@@ -380,7 +377,7 @@ for k, g in groupby(sorted(data), lambda x: x[0]):
 
 ### Functools
 
-The module called `functools` gives us a bunch of high-order functions that allow us to work with functions in a more functional way, such as `reduce`, `partial`, `lru_cache`, and more.
+The module called `functools` gives us a bunch of high-order functions that allow us to work with functions in a more functional way, such as `partial`, `lru_cache`, and more.
 
 For example, the `lru_cache` decorator can be used to cache the results of a function based on its arguments, which can improve performance for functions that are called frequently with the same arguments:
 
@@ -394,7 +391,7 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 ```
 
-But probably one of the most import from the `pack` is the `wraps` decorator, that is used to preserve the metadata of the original function when creating decorators:
+But probably one of the most important from the `functools` module is the `wraps` decorator, that is used to preserve the metadata of the original function when creating decorators:
 
 ```python
 from functools import wraps
@@ -422,6 +419,8 @@ dummy_func("test")
 # Function 'dummy_func' returned: Function executed with test
 # 'Function executed with test'
 ```
+
+While something similar can be achieved without using wraps, example with `mixins`, but it feels more Pythonic to use `wraps` to preserve the original function's metadata, such as its name and docstring, which can be important for debugging and documentation purposes.
 
 ### Iterators
 
