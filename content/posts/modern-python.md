@@ -26,6 +26,10 @@ language: "en"
   - [Functools](#functools)
   - [Iterators](#iterators)
   - [Generators](#generators)
+- [🎫 Colletions](#-colletions)
+  - [Defaultdict](#defaultdict)
+- [NamedTuple](#namedtuple)
+- [🧑 Object-Oriented Programming](#-object-oriented-programming)
 - [📝 To be continued](#-to-be-continued)
 
 ## 🧠 Introduction
@@ -292,7 +296,7 @@ Those little ones, are anonymous functions defined using the `lambda` keyword. T
 In JS it would an arrow function like this:
 
 ```js
-let echo = (x) => console.log(x); // Outputs: Hello, World!
+let echo = (x) => console.log(x); // Outputs: x
 ```
 
 In Php it would look like this:
@@ -302,7 +306,7 @@ $shout = fn($x) => strtoupper($x);
 echo $shout("Hello, World!"); // Outputs: HELLO, WORLD!
 ```
 
-But unfortunately in Python it looks like this:
+But unfortunately in Python it looks like this 👹:
 
 ```python
 shout = lambda x: x.upper()
@@ -321,8 +325,8 @@ Isn't that just beautiful? I mean, look at that syntax... it's like poetry in mo
 But we must live with that, so it's nice to know that lambda functions are commonly used in situations where a small function is needed for a short period of time, such as in higher-order functions like `map()`, `filter()`, and `sorted()`.
 
 ```python
-fake_data_from_range = range(1, 15)
-evens = list(filter(lambda x: x % 2 == 0, fake_data_from_range))
+fake_data_from_range: range = range(1, 15)
+evens: list[int] = list[int](filter(lambda x: x % 2 == 0, fake_data_from_range))
 print(evens)  # Outputs: [2, 4, 6, 8, 10, 12, 14]
 ```
 
@@ -338,11 +342,11 @@ Python provides a concise way to create lists and dictionaries using comprehensi
 
 ```python
 # List comprehension
-squares = [x**2 for x in range(10)]
+squares: list[int] = [x**2 for x in range(10)]
 print(squares)  # Outputs: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
 # Dictionary comprehension
-cubes = {x: x**3 for x in range(5)}
+cubes: dict[int, int] = {x: x**3 for x in range(5)}
 print(cubes)  # Outputs: {0: 0, 1: 1, 2: 8, 3: 27, 4: 64}
 ```
 
@@ -350,11 +354,11 @@ Those can be also combined with conditional statements to filter items:
 
 ```python
 # List comprehension with condition
-evens = [x for x in range(10) if x % 2 == 0]
+evens: list[int] = [x for x in range(10) if x % 2 == 0]
 print(evens)  # Outputs: [0, 2, 4, 6, 8]
 
 # Dictionary comprehension with condition
-cubes = {x: x**3 for x in range(5) if x % 2 == 0}
+cubes: dict[int, int] = {x: x**3 for x in range(5) if x % 2 == 0}
 print(cubes)  # Outputs: {0: 0, 2: 8, 4: 64}
 ```
 
@@ -365,10 +369,10 @@ There is also a module called `itertools` that gives you a lot of useful functio
 ```python
 from itertools import groupby
 
-data = [('apple', 1), ('banana', 2), ('apple', 3), ('banana', 4)]
+data: list[tuple[str, int]] = [("apple", 1), ("banana", 2), ("apple", 3), ("banana", 4)]
 
 for k, g in groupby(sorted(data), lambda x: x[0]):
-    print(k, list(g))
+    print(k, list[Any](g))
 
 # Output:
 # apple [('apple', 1), ('apple', 3)]
@@ -385,7 +389,7 @@ For example, the `lru_cache` decorator can be used to cache the results of a fun
 from functools import lru_cache
 
 @lru_cache(maxsize=256)
-def fibonacci(n):
+def fibonacci(n: int) -> int:
     if n < 2:
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
@@ -433,7 +437,7 @@ iterator = iter(range(5, 100))
 
 print(next(iterator))
 
-place = 0
+place: int = 0
 while place < 10:
     print(next(iterator))
 
@@ -452,6 +456,80 @@ def count_up_to(n: int):
 for number in count_up_to(10):
     print(number)
 ```
+
+## 🎫 Colletions
+
+Python provides a built-in module called `collections` that offers specialized container datatypes, such as `namedtuple`, `deque`, `Counter`, `OrderedDict`, and more. These can be very useful for various data manipulation tasks and can often provide better performance than using regular lists or dictionaries.
+
+### Defaultdict
+
+Is the one that allows you to specify a default value for keys that do not exist in the dictionary, which can help avoid `KeyError` exceptions:
+
+```python
+from collections import defaultdict
+
+products_dict: defaultdict[Any, defaultdict[Any, dict[str, str | float | int]]] = defaultdict(
+    lambda: defaultdict[Any, dict[str, str | float | int]](
+        lambda: {"warehouse": "main", "sku": "", "price": 0.0, "quantity": 0}
+    )
+)
+
+# Accessing a non-existent key will return the default value
+print(
+    products_dict["electronics"]["laptop"]
+)  # {'warehouse': 'main', 'sku': '', 'price': 0.0, 'quantity': 0}
+
+# Add a new product and it will work as expected
+products_dict["electronics"]["laptop"] = {
+    "warehouse": "main",
+    "sku": "LAP123",
+    "price": 999.99,
+    "quantity": 10,
+}
+print(
+    products_dict["electronics"]["laptop"]
+)  # {'warehouse': 'main', 'sku': 'LAP123', 'price': 999.99, 'quantity': 10}
+
+```
+
+## NamedTuple
+
+This can be particularly useful when defining a structured data like configuration, where you want to have default values for certain keys, but still allow for overrides when needed:
+
+```python
+from collections import namedtuple
+
+Opts = namedtuple("Opts", ["host", "port", "debug"])
+opts: Opts = Opts(host="localhost", port=8080, debug=True)
+print(opts.host)  # Outputs: localhost
+print(opts.port)  # Outputs: 8080
+print(opts.debug)  # Outputs: True
+```
+
+But you can also use `NamedTuple` from the `typing` module, which is a more modern and flexible way to define named tuples with type hints:
+
+```python
+class Opts(NamedTuple):
+    host: str
+    port: int
+    debug: bool
+
+    def is_port_ok(self) -> bool:
+        return 8080 <= self.port <= 65535
+
+
+opts: Opts = Opts(host="localhost", port=6000, debug=True)
+print(opts.host)  # Outputs: localhost
+print(opts.port)  # Outputs: 6000
+print(opts.debug)  # Outputs: True
+print(opts.is_port_ok())  # Outputs: False
+```
+
+As you can see, using `NamedTuple` from the `typing` module allows us to define methods on the named tuple, which can be useful for adding behavior to our data structures while still maintaining immutability and type safety.
+
+## 🧑 Object-Oriented Programming
+
+While I am not going to cover basic OOP concepts, I will cover some of more non-basic ones like `dataclasses`, `class` or `instance` methods, `properties`, `NamedTuple`s, `attrs` and more.
 
 ## 📝 To be continued
 
