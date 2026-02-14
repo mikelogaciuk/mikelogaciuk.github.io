@@ -40,15 +40,16 @@ language: "en"
 
 I find it easy to read and write (but not as beautiful as Ruby is), yet powerful enough to handle almost any task, because of its already mentioned `glue` nature.
 
-Those notes are intended to cover a little bit more non-basic Python concepts, things that are usually scattered around various courses and documentations, and are response to some payware corporate courses about $1000+ per seat.
+Those notes are intended to cover a little bit more of non-basic Python concepts, things that are usually scattered around various courses and articles.
 
-The material was written, based on:
+The text is based on:
 
-- Personal knowledge (happily low level, but still some... 🪬).
+- My personal knowledge...
 - Official Python documentation and PEPs.
-- Tables of contents of various paid articles scattered on-line.
-- Various articles on one and only RealPython site (thanks for inspiration for topics to cover folks).
-- And `Claude Sonnet 4.5`, `Claude Haiku 4.5` and `GPT 5.2`... as little army of reviewers and proofreaders.
+- Various articles on one and only RealPython site (thanks for inspiration for topics to cover).
+
+
+The LLM Agents of `Claude Sonnet 4.5`, `Claude Haiku 4.5` and `GPT 5.2`, where used as little army of reviewers and proofreaders.
 
 ### Important note
 
@@ -56,12 +57,6 @@ This course is a work in progress and will be updated regularly with new content
 Feel free to check back often for the latest updates and stuff.
 
 It is not going to cover basics of Python and algorithms, as those are widely covered in other free materials.
-
-And one word about algorithms..., while it might feel tempting to cover those a little bit, yet seems to be problematic for personally.
-
-Seems I am living example of a `DevOps Engineer` without `Computer Science` background, I probably never wrote any complex algorithm from scratch during my career as a developer, and lived without problems. Apart from those who cover complex `POS` to `ERP` complex business/corporate logic, but those are mainly Data Engineering algorithms.
-
-And that's why I tend to call my self: `Code Writer` rather of `Developer`.
 
 ## 🗄️ Documenting the code
 
@@ -150,7 +145,9 @@ And yes, while Python is a dynamically typed language, using typing hints can gr
 
 Having type hints allows language servers and IDEs to provide better code completion, error checking, and overall improved developer experience. It also serves as documentation for other developers who may be reading or using the code.
 
-Personally I prefer to use: `basedpyright`, together with `ruff`, but I will move to `ty` instead of `basedpyright` in the future, once it will go out of a beta stage, because of its better performance, since `basedpyright` can sometimes slow down a little bit on corporate notebooks even at 25k lines of code, while `ty` is supposed to be much faster.
+Personally I prefer to use: `basedpyright`, together with `ruff`, but I will move to `ty` instead of `basedpyright` in the future, once it will go out of a beta stage, because of its better performance. Unfortunately `basedpyright` can slow down a little bit even on corporate notebooks with Intel Core Ultra 7 155H (22 vCPU) while having only 25k lines of code.
+
+Language server `ty` made by **Astral.sh** (from the creators of `ruff` and `uv`) is supposed to be much faster.
 
 But, going back to the topic, type hints were added in Python 3.5 via the `typing` module and have been widely adopted since then:
 
@@ -529,8 +526,8 @@ As you can see, using `NamedTuple` from the `typing` module allows us to define 
 
 ## 🧑 Object-Oriented Programming
 
-While I am not going to cover basic OOP concepts, I will cover some of more non-basic ones like `dataclasses`, `class` or `instance` methods, `properties`, `NamedTuple`s, `attrs` and more.
+While I am not going to cover basic OOP concepts, I will cover some of (...) and more.
 
 ## 📝 To be continued
 
-Stay tuned for further parts of this course....
+Further code and text will be added in not distant future.
