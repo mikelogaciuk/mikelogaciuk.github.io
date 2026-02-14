@@ -28,7 +28,7 @@ language: "en"
   - [Generators](#generators)
 - [🎫 Colletions](#-colletions)
   - [Defaultdict](#defaultdict)
-- [NamedTuple](#namedtuple)
+  - [NamedTuple](#namedtuple)
 - [🧑 Object-Oriented Programming](#-object-oriented-programming)
 - [📝 To be continued](#-to-be-continued)
 
@@ -492,7 +492,7 @@ print(
 
 ```
 
-## NamedTuple
+### NamedTuple
 
 This can be particularly useful when defining a structured data like configuration, where you want to have default values for certain keys, but still allow for overrides when needed:
 
