@@ -193,6 +193,12 @@ Only add custom CSS when:
 2. Creating reusable utility classes
 3. TailwindCSS utilities are insufficient
 
+#### Animation Patterns
+
+- Use `IntersectionObserver` combined with `.reveal-on-scroll` and `.animate-reveal` classes for slide-up entrance animations.
+- Use `.stagger-[1-5]` classes to sequence entrance delays.
+- Use `scroll-snap-type: y proximity` on section wrappers for full-page storytelling flows.
+
 Place custom CSS in `app/assets/app.css` using `@apply` directive:
 
 ```css

@@ -2,9 +2,9 @@
 
 ## About
 
-Minimalistic personal blog for `Github Pages` built with Nuxt 3 and Nuxt Content.
+Modern personal portfolio and blog for `Github Pages` featuring a full-page scroll narrative layout, built with Nuxt 3 and Nuxt Content.
 
-**Version:** 1.0.0  
+**Version:** 2.0.0
 **Tech Stack:** Nuxt 4.x, Vue 3, TypeScript, TailwindCSS 4.x, DaisyUI 5.x
 
 ## 📖 Documentation
@@ -101,8 +101,12 @@ npm i --save-dev @nuxt/test-utils vitest @vue/test-utils happy-dom playwright-co
 └── dockerfiles/        # Docker configurations
 ```
 
-For detailed architecture information, see [ARCHITECTURE.md](ARCHITECTURE.md) 
+For detailed architecture information, see [ARCHITECTURE.md](ARCHITECTURE.md)
 (generated with Copilot).
+
+## ✨ Acknowledgements
+
+The v2.0.0 overhaul—including the modern full-page scroll architecture, typography normalization, and viewport-aware dynamic pagination—was designed and pair-programmed with the help of **Google Antigravity**.
 
 ## 📄 License
 
