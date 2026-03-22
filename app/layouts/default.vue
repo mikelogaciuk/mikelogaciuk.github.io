@@ -9,4 +9,8 @@
 
 <script lang="ts" setup></script>
 
-<style></style>
+<style>
+html {
+  scrollbar-gutter: stable;
+}
+</style>
