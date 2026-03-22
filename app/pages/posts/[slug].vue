@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { randomBadge } from "@/helpers/badgeMapper";
-
 const slug = useRoute().params.slug;
 const { data: post } = await useAsyncData(`posts-${slug}`, () => {
   return queryCollection("blog").path(`/posts/${slug}`).first();
@@ -8,31 +6,53 @@ const { data: post } = await useAsyncData(`posts-${slug}`, () => {
 </script>
 
 <template>
-  <div>
-    <div v-if="post" class="mt-10 mb-2 min-w-4xl mx-auto">
-      <div class="flex flex-wrap flex-gap gap-1 mb-4">
-        <span v-for="tag in post.tags" :key="String(tag)" :class="`badger badger-${randomBadge()}`">
-          <NuxtLink :to="`/posts/tag/${String(tag)}`">
-            {{ String(tag) }}
-          </NuxtLink>
-        </span>
+  <div class="max-w-6xl mx-auto px-4 py-8 sm:py-16">
+    <article v-if="post" class="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-a:text-primary">
+      
+      <!-- Header -->
+      <div class="mb-12 text-center sm:text-left">
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-6">
+          <span class="text-sm font-bold tracking-widest uppercase text-primary bg-primary/10 px-3 py-1 rounded-lg">
+            {{ new Date(post.date).toLocaleDateString() }}
+          </span>
+          <div class="flex gap-2">
+            <NuxtLink 
+              v-for="tag in post.tags" 
+              :key="String(tag)"
+              :to="`/posts/tag/${String(tag)}`"
+              class="px-3 py-1 text-xs font-semibold bg-base-200 hover:bg-base-300 transition-colors rounded-lg border border-base-300 text-base-content/80"
+            >
+              #{{ String(tag) }}
+            </NuxtLink>
+          </div>
+        </div>
+        
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-8 leading-tight">
+          {{ post.title }}
+        </h1>
       </div>
-    </div>
 
-    <div v-if="post" class="mb-10 min-w-4xl mx-auto prose">
-      <div class="text-sm mt-2 mb-2">
-        <span>{{ new Date(post.date).toLocaleDateString() }}</span>
+      <div class="divider opacity-30 mb-12" />
+
+      <!-- Main Content -->
+      <div class="bg-base-100 rounded-3xl">
+        <ContentRenderer :value="post" />
       </div>
-      <div class="text-5xl font-semibold">
-        <span>{{ post.title }}</span>
+
+      <div class="divider opacity-30 mt-20 mb-12" />
+
+      <!-- Footer Navigation -->
+      <div class="flex justify-center sm:justify-start mb-16">
+        <NuxtLink 
+          to="/posts" 
+          class="inline-flex items-center gap-3 px-8 py-4 font-bold bg-base-200/50 border border-base-300 hover:bg-base-200 hover:border-primary/40 rounded-2xl transition-all duration-300 hover:-translate-x-1"
+        >
+          <span class="text-xl leading-none">&larr;</span> 
+          <span>Back to All Posts</span>
+        </NuxtLink>
       </div>
-      <ContentRenderer :value="post" />
-      <div class="flex flex-col items-center">
-        <span class="badge badge-secondary">
-          <NuxtLink to="/posts">Back to posts</NuxtLink>
-        </span>
-      </div>
-    </div>
+      
+    </article>
   </div>
 </template>
 

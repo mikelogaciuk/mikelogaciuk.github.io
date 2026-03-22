@@ -120,8 +120,9 @@ Global layout providing consistent structure across all pages:
 
 **Home/Landing Page**
 
-- Personal introduction (Michał Logaciuk - Senior DevOps Engineer)
-- Specialization areas (DataOps, DevOps, Data Analysis, Back-End)
+- Full-page scroll-snapping narrative layout (`scroll-snap-type: y proximity`)
+- 5 distinct sections: Hero (with rotating titles), Tech Stack (skills showcase), Featured Work (Key Achievements cards), Latest Writing (Featured Posts), and Engineering Philosophy/Contact.
+- IntersectionObserver-based reveal animations (`.reveal-on-scroll` with staggered delays)
 - Skills showcase with randomized color badges (35+ skills)
 - Skills are clickable and link to tag-filtered post pages
 - Fully responsive design
@@ -155,9 +156,10 @@ Global layout providing consistent structure across all pages:
 
 #### `PostsListViewerComponent.vue`
 
-**Purpose:** Unified blog post list renderer with filtering
+**Purpose:** Unified blog post list renderer with filtering and pagination
 **Features:**
 
+- Viewport-aware dynamic pagination (calculates items per page based on `window.innerHeight`)
 - Language filter (Polish/English) via query params
 - Displays post title, date, and summary
 - Fully responsive with mobile-first design
