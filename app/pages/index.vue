@@ -126,8 +126,7 @@
               Available-To-Purchase (ATP) & reservation engine in Elixir/BEAM utilizing ETS, Broadway, Apache Kafka, and
               PostgreSQL.
               Benchmarked to handle 1.2M req/min with sub-millisecond response times, establishing the functional
-              requirements and architec-
-              tural baseline for the production .NET/CSharp implementation.
+              requirements and architectural baseline for the production .NET/CSharp implementation.
             </p>
             <ul class="text-sm font-bold text-base-content/60 space-y-2">
               <li class="flex items-center gap-2">
@@ -147,27 +146,31 @@
                 class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all duration-700 pointer-events-none" />
 
               <div class="text-secondary mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v20" />
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-database-zap">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M3 5V19A9 3 0 0 0 15 21.84" />
+                  <path d="M21 5V8" />
+                  <path d="M21 12L18 17H22L19 22" />
+                  <path d="M3 12A9 3 0 0 0 14.59 14.87" />
                 </svg>
               </div>
               <h3
-                class="text-2xl sm:text-3xl font-bold mb-4 text-base-content/90 group-hover:text-secondary transition-colors">
-                Infrastructure & Security Transformation
+                class="text-2xl sm:text-3xl font-bold mb-4 text-base-content/90 group-hover:text-primary transition-colors">
+                Data Engineering & ERP Modernization
               </h3>
               <p class="text-base-content/70 text-lg leading-relaxed mb-6">
-                Architected and deployed a custom Prefect cluster from scratch, implementing unique cloud-function
-                capabilities. Established automated, department-wide security scanning standards that directly drove the
-                core IT transformation process.
+                Completely re-architected legacy POS and ERP (Comarch & D365) integrations. Led the migration of 100+
+                fragile SSIS packages into robust, hand-crafted Prefect workflows using Python, Pandas, DuckDB, and
+                Polars.
               </p>
               <ul class="text-sm font-bold text-base-content/60 space-y-2">
                 <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 rounded-full bg-primary" /> Custom Prefect cluster infrastructure
+                  <div class="w-1.5 h-1.5 rounded-full bg-secondary" /> Modular, hand-crafted integration logic
                 </li>
                 <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 rounded-full bg-primary" /> Department-wide security integration
+                  <div class="w-1.5 h-1.5 rounded-full bg-secondary" /> High-performance DuckDB & Polars ETLs
                 </li>
               </ul>
             </div>
@@ -179,10 +182,14 @@
                 class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all duration-700 pointer-events-none" />
 
               <div class="text-secondary mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v20" />
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-cloud-sync">
+                  <path d="m17 18-1.535 1.605a5 5 0 0 1-8-1.5" />
+                  <path d="M17 22v-4h-4" />
+                  <path d="M20.996 15.251A4.5 4.5 0 0 0 17.495 8h-1.79a7 7 0 1 0-12.709 5.607" />
+                  <path d="M7 10v4h4" />
+                  <path d="m7 14 1.535-1.605a5 5 0 0 1 8 1.5" />
                 </svg>
               </div>
               <h3
@@ -191,7 +198,8 @@
               </h3>
               <p class="text-base-content/70 text-lg leading-relaxed mb-6">
                 Architected and deployed a custom Prefect cluster from scratch, implementing unique cloud-function
-                capabilities. Established automated, department-wide security scanning standards that directly drove the
+                capabilities when there was no documentation for it. Established automated, department-wide security
+                scanning standards that directly drove the
                 core IT transformation process.
               </p>
               <ul class="text-sm font-bold text-base-content/60 space-y-2">
