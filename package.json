@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.11.2",
+    "@nuxt/devtools": "^4.0.0-alpha.17",
     "@nuxt/eslint": "^1.15.1",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.15.0",
@@ -23,8 +24,11 @@
     "daisyui": "^5.5.18",
     "jake": "^10.9.4",
     "nuxt": "^4.3.1",
+    "seroval": "^1.6.4",
+    "shell-quote": "^1.10.0",
     "simple-git": "^3.33.0",
     "tailwindcss": "^4.1.18",
+    "tar": "^7.5.22",
     "vue": "^3.5.28",
     "vue-router": "^4.6.4"
   },
