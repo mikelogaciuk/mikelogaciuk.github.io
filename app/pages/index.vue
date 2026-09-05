@@ -14,19 +14,16 @@
             class="reveal-on-scroll stagger-2 text-xl sm:text-2xl lg:text-3xl font-medium text-base-content/80 text-balance flex flex-col md:flex-row items-center md:items-start md:gap-2 justify-center md:justify-start overflow-hidden">
             <span class="inline-grid relative text-primary font-bold text-center md:text-left h-8 sm:h-auto">
               <!-- Animated mapped titles -->
-              <span 
-                v-for="(title, index) in titles" 
-                :key="title" 
-                class="col-start-1 row-start-1 transition-all duration-700 w-full" 
-                :class="[
-                  currentTitleIndex === index ? 'opacity-100 translate-y-0' : 
-                  (index < currentTitleIndex || (currentTitleIndex === 0 && index === titles.length - 1)) ? 'opacity-0 -translate-y-8 pointer-events-none' : 'opacity-0 translate-y-8 pointer-events-none'
-                ]"
-              >
+              <span v-for="(title, index) in titles" :key="title"
+                class="col-start-1 row-start-1 transition-all duration-700 w-full" :class="[
+                  currentTitleIndex === index ? 'opacity-100 translate-y-0' :
+                    (index < currentTitleIndex || (currentTitleIndex === 0 && index === titles.length - 1)) ? 'opacity-0 -translate-y-8 pointer-events-none' : 'opacity-0 translate-y-8 pointer-events-none'
+                ]">
                 {{ title }}
               </span>
               <!-- Invisible ghost ensures width/height doesn't stutter -->
-              <span class="col-start-1 row-start-1 invisible pointer-events-none">Senior DevOps Engineer</span>
+              <span class="col-start-1 row-start-1 invisible pointer-events-none">Staff Platform & Systems
+                Engineer</span>
             </span>
             <span class="hidden md:inline text-primary opacity-50 px-2 select-none">|</span>
             <span>TERG S.A. (Media Expert)</span>
@@ -79,12 +76,14 @@
         </div>
       </div>
     </section>
-    
+
     <!-- Section 3: Key Achievements -->
-    <section class="snap-section flex flex-col justify-center min-h-[85vh] px-4 py-16 lg:py-24 max-w-6xl mx-auto w-full">
+    <section
+      class="snap-section flex flex-col justify-center min-h-[85vh] px-4 py-16 lg:py-24 max-w-6xl mx-auto w-full">
       <div class="space-y-12 w-full">
         <div class="text-center md:text-left reveal-on-scroll stagger-1">
-          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary pb-2">
+          <h2
+            class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary pb-2">
             Featured Work
           </h2>
           <p class="text-xl sm:text-2xl font-medium text-base-content/70">
@@ -92,43 +91,118 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
           <!-- Achievement 1 -->
-          <div class="bg-base-200/40 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] border border-base-300 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group reveal-on-scroll stagger-2 relative overflow-hidden">
-            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700 pointer-events-none" />
-            
+          <div
+            class="bg-base-200/40 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] border border-base-300 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group reveal-on-scroll stagger-2 relative overflow-hidden">
+            <div
+              class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700 pointer-events-none" />
+
             <div class="text-primary mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-brain-circuit">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                <path d="M9 13a4.5 4.5 0 0 0 3-4" />
+                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+                <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+                <path d="M6 18a4 4 0 0 1-1.967-.516" />
+                <path d="M12 13h4" />
+                <path d="M12 18h6a2 2 0 0 1 2 2v1" />
+                <path d="M12 8h8" />
+                <path d="M16 8V5a2 2 0 0 1 2-2" />
+                <circle cx="16" cy="13" r=".5" />
+                <circle cx="18" cy="3" r=".5" />
+                <circle cx="20" cy="21" r=".5" />
+                <circle cx="20" cy="8" r=".5" />
+              </svg>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-base-content/90 group-hover:text-primary transition-colors">
-              Data Engineering & ERP Modernization
+            <h3
+              class="text-2xl sm:text-3xl font-bold mb-4 text-base-content/90 group-hover:text-primary transition-colors">
+              High-Throughput Core Architecture
             </h3>
             <p class="text-base-content/70 text-lg leading-relaxed mb-6">
-              Completely re-architected legacy POS and ERP (Comarch & D365) integrations. Led the migration of 100+ fragile SSIS packages into robust, hand-crafted Prefect workflows using Python, Pandas, DuckDB, and Polars.
+              Designed and developed the reference proof-of-concept (PoC) for a high-availability
+              Available-To-Purchase (ATP) & reservation engine in Elixir/BEAM utilizing ETS, Broadway, Apache Kafka, and
+              PostgreSQL.
+              Benchmarked to handle 1.2M req/min with sub-millisecond response times, establishing the functional
+              requirements and architec-
+              tural baseline for the production .NET/CSharp implementation.
             </p>
             <ul class="text-sm font-bold text-base-content/60 space-y-2">
-              <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-secondary" /> Modular, hand-crafted integration logic</li>
-              <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-secondary" /> High-performance DuckDB & Polars ETLs</li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-secondary" /> High-Throughput & Low-Latency Systems (1M+
+                req/min)
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-secondary" /> Performance focused mindset
+              </li>
             </ul>
           </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Achievement 2 -->
+            <div
+              class="bg-base-200/40 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] border border-base-300 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group reveal-on-scroll stagger-3 relative overflow-hidden">
+              <div
+                class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all duration-700 pointer-events-none" />
 
-          <!-- Achievement 2 -->
-          <div class="bg-base-200/40 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] border border-base-300 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group reveal-on-scroll stagger-3 relative overflow-hidden">
-            <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all duration-700 pointer-events-none" />
-            
-            <div class="text-secondary mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+              <div class="text-secondary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3
+                class="text-2xl sm:text-3xl font-bold mb-4 text-base-content/90 group-hover:text-secondary transition-colors">
+                Infrastructure & Security Transformation
+              </h3>
+              <p class="text-base-content/70 text-lg leading-relaxed mb-6">
+                Architected and deployed a custom Prefect cluster from scratch, implementing unique cloud-function
+                capabilities. Established automated, department-wide security scanning standards that directly drove the
+                core IT transformation process.
+              </p>
+              <ul class="text-sm font-bold text-base-content/60 space-y-2">
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-primary" /> Custom Prefect cluster infrastructure
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-primary" /> Department-wide security integration
+                </li>
+              </ul>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-base-content/90 group-hover:text-secondary transition-colors">
-              Infrastructure & Security Transformation
-            </h3>
-            <p class="text-base-content/70 text-lg leading-relaxed mb-6">
-              Architected and deployed a custom Prefect cluster from scratch, implementing unique cloud-function capabilities. Established automated, department-wide security scanning standards that directly drove the core IT transformation process.
-            </p>
-            <ul class="text-sm font-bold text-base-content/60 space-y-2">
-              <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-primary" /> Custom Prefect cluster infrastructure</li>
-              <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-primary" /> Department-wide security integration</li>
-            </ul>
+
+            <!-- Achievement 3 -->
+            <div
+              class="bg-base-200/40 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] border border-base-300 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group reveal-on-scroll stagger-3 relative overflow-hidden">
+              <div
+                class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all duration-700 pointer-events-none" />
+
+              <div class="text-secondary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3
+                class="text-2xl sm:text-3xl font-bold mb-4 text-base-content/90 group-hover:text-secondary transition-colors">
+                Infrastructure & Security Transformation
+              </h3>
+              <p class="text-base-content/70 text-lg leading-relaxed mb-6">
+                Architected and deployed a custom Prefect cluster from scratch, implementing unique cloud-function
+                capabilities. Established automated, department-wide security scanning standards that directly drove the
+                core IT transformation process.
+              </p>
+              <ul class="text-sm font-bold text-base-content/60 space-y-2">
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-primary" /> Custom Prefect cluster infrastructure
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-primary" /> Department-wide security integration
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -185,8 +259,9 @@
           </h2>
           <div class="text-xl sm:text-2xl font-medium text-base-content/80 leading-relaxed text-balance space-y-6">
             <p>
-              I believe that the best infrastructure is invisible. It should empower developers to ship faster, safely,
-              and without friction.
+              I believe that the best infrastructure is invisible. Most performance is achieved through careful design
+              and optimization. Best infrastructure should empower developers to ship faster, safely, and without
+              friction.
             </p>
             <p>
               Automation isn't just about saving time; it's about reducing cognitive load and eliminating human error. I
@@ -234,8 +309,8 @@
           </h2>
           <div class="text-xl sm:text-2xl font-medium text-base-content/80 leading-relaxed text-balance space-y-6">
             <p>
-              Whether you want to discuss POS systems architecture or integration, need help scaling your data
-              pipelines, or just want to swap tech horror stories — I'm always open to a chat.
+              Whether you want to discuss systems architecture, need help scaling your data pipelines, or just want to
+              swap tech horror stories — I'm always open to a chat.
             </p>
           </div>
         </div>
@@ -299,32 +374,33 @@ import { onMounted, onUnmounted, ref } from 'vue';
 const featuredPosts = await queryCollection("blog").order("date", "DESC").limit(3).all();
 
 const titles = [
-  "Senior DevOps Engineer",
-  "POS Architect",
+  "Staff Platform & Systems Engineer",
+  "Principal IT Architect",
+  "Lead SRE/DevOps Ops Engineer",
   "Code Writer",
-  "Data Engineer"
 ];
 const currentTitleIndex = ref(0);
 
 const specializations: string[] = [
-  "DataOps & DevOps Engineering",
-  "Data Analysis & Architecture",
-  "Back-End Development",
-  "ERP & POS Integration",
+  "System Architecture & Resilience",
+  "Data Infrastructure, Streaming & Integration",
+  "DataOps Infrastructure & Automation",
+  "High-Throughput Core Architecture",
+  "Enterprise Integrations & Modernization",
 ];
 
 const skillCategories: Record<string, string[]> = {
   "Infrastructure & Cloud": [
-    "docker", "kubernetes", "terraform", "linux", "windows", "networking", "iac"
+    "docker", "swarm", "kubernetes", "terraform", "iac", "gitops"
   ],
   "Development": [
-    "python", "go", "ruby", "elixir", "crystal", "bash", "sql", "plsql"
+    "python", "ruby", "elixir", "go", "sql", "distributed systems", "event-driven architecture"
   ],
   "DevOps & SRE": [
     "cicd", "devops", "sre", "sdlc", "microservices", "architecture"
   ],
   "Data & Observability": [
-    "etl", "bi", "data modeling", "data warehousing", "grafana", "kibana", "elasticsearch", "splunk"
+    "etl", "bi", "data modeling", "data warehousing", "grafana", "kibana", "elasticsearch", "sentry", "splunk", "rca", "apm", "distributed tracing", "observability", "monitoring", "alerting"
   ],
 };
 
