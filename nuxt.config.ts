@@ -29,8 +29,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/fonts',
     '@nuxt/eslint',
-    '@nuxt/ui',
-    '@nuxt/test-utils/module',
+    // '@nuxt/ui',
+    // '@nuxt/test-utils/module',
   ],
   content: {
     build: {
