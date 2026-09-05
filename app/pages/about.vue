@@ -7,7 +7,7 @@
         About Me
       </h1>
       <p class="text-xl sm:text-2xl font-medium text-base-content/80">
-        Code Writer, Tinkerer, and Automation Enthusiast.
+        Staff Platform & Systems Engineer, Code Writer and Automation Enthusiast.
       </p>
     </div>
 
@@ -32,12 +32,14 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-primary block" /> Who am I?
               </h3>
               <p>
-                A passionate <strong class="text-primary font-semibold">DataOps & DevOps Engineer</strong> and how I
+                A passionate <strong class="text-primary font-semibold">Staff Platform & Systems Engineer</strong> and
+                how I
                 like to call myself: a <strong class="text-primary font-semibold">Code Writer</strong>,
                 relentless tinkerer, and lifelong learner. My journey started with
                 curiosity and a keyboard, and has taken me through the wilds of Architecture, Design, Data
-                Engineering and DevOps chaos, to the elegance of functional programming, and the art of building things
-                that (usually) work.
+                Engineering and DevOps/SRE chaos, to the elegance of functional programming, and the art of building
+                things
+                that (usually) work with performance in mind..
               </p>
             </div>
 
@@ -78,15 +80,12 @@
             My Journey
           </h3>
           <div class="pl-2">
-            <TimeLineComponent
-              class="timeline-align-left"
-              :events="[
-                { year: 2014, title: 'Helpdesk Support & Team Leader' },
-                { year: 2016, title: 'L3 Support & IT Operations' },
-                { year: 2016, title: 'SQL Server Applications Administrator' },
-                { year: 2023, title: 'Senior DevOps & DataOps Engineer' }
-              ]"
-            />
+            <TimeLineComponent class="timeline-align-left" :events="[
+              { year: 2014, title: 'IT Administrator & Systems Support ' },
+              { year: 2016, title: 'Senior Data Engineer' },
+              { year: 2023, title: 'Senior DevOps Engineer' },
+              { year: 2025, title: 'Staff Platform & Systems Engineer ' }
+            ]" />
           </div>
         </div>
       </div>
